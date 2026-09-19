@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Pusat Panel — BarberGo Kasflow</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0B2FD1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
+<style>
+:root{--blue:#0B2FD1;--blue2:#2563EB;--bluesoft:#E8F0FF;--bk:#0F172A;--bg:#F8FAFC;--card:#FFFFFF;--tx:#0F172A;--tx2:#64748B;--tx3:#94A3B8;--bd:#E2E8F0;--line:#EDF2F7;--hov:#F1F5F9;--hov2:#F8FAFC;--soft:#F1F5F9;--soft2:#F1F5F9;--soft3:#F1F5F9;--input:#FFFFFF;--selbg:#E8F0FF;--gr:#16A34A;--wn:#F59E0B;--dn:#EF4444;--r:14px;--sh:0 1px 3px rgba(15,23,42,.05)}
+body.dark{--bg:#0A1020;--card:#0F172A;--tx:#F1F5F9;--tx2:#94A3B8;--tx3:#64748B;--bd:#1E293B;--line:#182338;--hov:#16213A;--hov2:#111A30;--soft:#16213A;--soft2:#1E293B;--soft3:#111A30;--input:#0B1322;--selbg:rgba(37,99,235,.2);--sh:0 1px 3px rgba(0,0,0,.5)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scrollbar-color:#CBD5E1 var(--bg)}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--tx);font-size:13.5px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',monospace}
+.hide{display:none!important}
+button{font-family:inherit;border:none;background:none;cursor:pointer;color:inherit}
+input,select,textarea{font-family:inherit;font-size:13px;color:var(--tx);background:var(--input);border:1px solid var(--bd);border-radius:8px;padding:9px 12px;width:100%;outline:none;transition:border-color .15s,box-shadow .15s}
+input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,47,209,.15)}
+input:disabled{opacity:.6;cursor:not-allowed}
+label.f{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--tx3);margin:14px 0 6px}
+::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:#CBD5E1;border-radius:8px}::-webkit-scrollbar-track{background:transparent}
+svg.lucide,i[data-lucide]{width:16px;height:16px;flex:none}
+a{color:inherit;text-decoration:none}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-2px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.lgmk{display:block}.lgmk .lgA{fill:var(--bk)}body.dark .lgmk .lgA{fill:#F1F5F9}.lgmk .lgB{fill:var(--blue)}
+.logomk{width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex:none}
+.logomk svg{width:100%;height:100%}
+.wordmark{font:800 15px 'Plus Jakarta Sans',Inter,sans-serif;color:var(--tx);letter-spacing:-.01em;display:inline-flex;align-items:center}
+.wordmark .wdot{width:6px;height:6px;background:var(--blue);border-radius:2px;margin-left:3px;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:12.5px;border-radius:8px;height:36px;padding:0 14px;transition:.15s}
+.btn.pri{background:var(--blue);color:#fff}.btn.pri:hover{background:var(--blue2);color:#fff}
+.btn.pri:disabled,.btn.dng:disabled{opacity:.5;cursor:not-allowed}
+.btn.wa{background:var(--gr);color:#fff}.btn.wa:hover{filter:brightness(1.08)}
+.btn.gho{border:1px solid var(--bd);background:var(--card);color:var(--tx)}.btn.gho:hover{border-color:var(--blue);color:var(--blue)}
+.btn.dng{background:rgba(239,68,68,.08);color:var(--dn)}.btn.dng:hover{background:rgba(239,68,68,.16)}
+.btn.sm{height:30px;padding:0 10px;font-size:11.5px}
+.ibtn{width:30px;height:30px;border-radius:8px;border:1px solid var(--bd);display:inline-flex;align-items:center;justify-content:center;color:var(--tx2);transition:.15s;flex:none;background:var(--card)}
+.ibtn:hover{color:var(--blue);border-color:var(--blue)}
+.ibtn svg{width:14px;height:14px}
+.badge{display:inline-flex;align-items:center;padding:4px 8px;border-radius:99px;font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+.b-paid{background:rgba(22,163,74,.1);color:#16A34A}
+.b-can{background:rgba(239,68,68,.1);color:var(--dn)}
+.b-warn{background:rgba(245,158,11,.12);color:#B45309}
+.b-gray{background:var(--soft2);color:var(--tx2)}
+.b-gold2{background:rgba(245,158,11,.14);color:#B45309}
+.b-pro{background:rgba(124,58,237,.1);color:#7C3AED}
+.b-admin{background:var(--selbg);color:var(--blue)}
+body.dark .b-admin{color:#93B4FF}
+.chip{border:1px solid var(--bd);background:var(--card);border-radius:99px;padding:7px 14px;font-size:12px;font-weight:600;color:var(--tx2);transition:.15s}
+.chip:hover{color:var(--tx)}
+.chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tabs{display:inline-flex;background:var(--soft);border-radius:8px;padding:3px;gap:2px}
+.tabs button{padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;color:var(--tx2)}
+.tabs button.on{background:var(--card);color:var(--tx);box-shadow:var(--sh)}
+.sw{width:40px;height:23px;border-radius:99px;background:var(--bd);position:relative;transition:.2s;flex:none;cursor:pointer;margin-left:auto}
+.sw::after{content:'';position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 2px rgba(15,23,42,.2)}
+.sw.on{background:var(--blue)}.sw.on::after{left:20px}
+/* sidebar */
+#sidebar{position:fixed;left:0;top:0;bottom:0;width:238px;background:var(--card);display:flex;flex-direction:column;z-index:70;border-right:1px solid var(--line)}
+.logo{height:56px;display:flex;align-items:center;gap:9px;padding:0 16px;flex:none}
+#navList{flex:1;overflow-y:auto;padding:6px 12px 12px}
+.ssec{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:var(--tx3);margin:16px 10px 6px}
+.sitem{display:flex;align-items:center;gap:10px;width:100%;height:38px;padding:0 11px;border-radius:8px;color:var(--tx);opacity:.85;font-size:12.5px;font-weight:500;position:relative;text-align:left;transition:.12s}
+.sitem svg{width:16px;height:16px;color:var(--tx2)}
+.sitem span.lbl{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sitem:hover{background:var(--hov);opacity:1}
+.sitem.active{background:var(--selbg);opacity:1;font-weight:600;color:var(--blue)}
+.sitem.active svg{color:var(--blue)}
+.sitem.active::before{content:'';position:absolute;left:0;top:10px;width:3px;height:18px;border-radius:2px;background:var(--blue)}
+.sbadge{min-width:18px;height:18px;border-radius:99px;background:var(--blue);color:#fff;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;padding:0 5px;flex:none}
+.sfoot{padding:12px;flex:none}
+.themeRow{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:10px;width:100%;text-align:left;transition:.12s}
+.themeRow:hover{background:var(--hov)}
+.themeRow .tic{width:32px;height:32px;border-radius:9px;background:var(--soft2);display:flex;align-items:center;justify-content:center;color:var(--tx2);flex:none}
+.themeRow b{font-size:12.5px;display:block;line-height:1.2}
+.themeRow small{font-size:10.5px;color:var(--tx2)}
+.planFoot{margin-top:10px;border:1px solid var(--bd);border-radius:12px;padding:12px 13px;background:var(--hov2)}
+.planFoot .pf-l{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3)}
+.planFoot .pf-n{font-size:13.5px;font-weight:800;margin-top:3px}
+.planFoot .pf-f{font-size:10.5px;color:var(--tx2);margin-top:3px;line-height:1.45}
+/* header & main */
+.main{margin-left:238px;min-height:100vh;display:flex;flex-direction:column}
+#header{height:64px;background:var(--card);display:flex;align-items:center;gap:12px;padding:0 24px;flex:none;border-bottom:1px solid var(--line)}
+.hdate{font-size:12px;color:var(--tx2);white-space:nowrap}
+.hsp{flex:1}
+.havatar{width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--bd);flex:none}
+.havatar img{width:100%;height:100%;object-fit:cover}
+.h-logo-m{display:none}
+#hnav{display:none;background:var(--card);padding:10px 14px;gap:8px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;border-bottom:1px solid var(--line)}
+#hnav::-webkit-scrollbar{display:none}
+.hchip{flex:none;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px;border-radius:99px;border:1px solid var(--bd);background:var(--card);font-size:12px;font-weight:600;color:var(--tx2);transition:.15s}
+.hchip svg{width:14px;height:14px}
+.hchip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+#view{padding:24px;max-width:1380px;width:100%;margin:0 auto;flex:1;animation:vin .25s ease}
+@keyframes vin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.phead{margin-bottom:20px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.phead h1{font:700 24px 'Plus Jakarta Sans',Inter,sans-serif;letter-spacing:-.02em;color:var(--tx)}
+.phead p{font-size:12.5px;color:var(--tx2);margin-top:3px}
+/* cards */
+.card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--sh)}
+.pad{padding:20px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.gdash{display:grid;grid-template-columns:1fr 340px;gap:16px;align-items:start}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpi{height:118px;padding:18px;display:flex;flex-direction:column;justify-content:space-between}
+.kpi .lab{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--tx3)}
+.kpi .val{font:700 28px 'Plus Jakarta Sans',Inter,sans-serif;letter-spacing:-.02em;line-height:1;color:var(--tx)}
+.kpi .sub{font-size:11px;color:var(--tx2)}
+.up{color:var(--gr);font-weight:700}.down{color:var(--dn);font-weight:700}
+.chead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.chead h3{font-size:15px;font-weight:600}
+.blk-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:10px}
+.lg-row{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--tx2)}
+.lg-dot{width:9px;height:9px;border-radius:3px;flex:none}
+/* chart */
+.chartBox{position:relative}
+.ctip{position:absolute;transform:translate(-50%,-115%);background:var(--bk);color:#fff;border-radius:8px;padding:7px 11px;font-size:11px;pointer-events:none;display:none;white-space:nowrap;z-index:5}
+body.dark .ctip{background:#1E293B;border:1px solid var(--bd)}
+.ctip b{display:block;font-size:12px}
+/* svc bars & recent */
+.svcrow{display:flex;align-items:center;gap:12px;padding:10px 0}
+.svcrow .nm{flex:1;min-width:0}
+.svcrow .nm b{font-size:13px;font-weight:600;display:block}
+.svcrow .bar{height:6px;border-radius:99px;background:var(--soft2);margin-top:6px;overflow:hidden}
+.svcrow .bar i{display:block;height:100%;border-radius:99px;background:var(--tx2)}
+.svcrow:first-of-type .bar i{background:var(--blue)}
+.svcrow .pc{font-size:12px;font-weight:700;width:38px;text-align:right}
+.rrow{display:flex;align-items:center;gap:13px;padding:12px 2px;border-bottom:1px solid var(--line)}
+.rrow:last-child{border-bottom:none}
+.rrow .in{flex:1;min-width:0}
+.rrow .in b{font-size:13px;font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rrow .in small{font-size:11.5px;color:var(--tx2)}
+/* table */
+.tblw{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.tbl th{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--tx2);text-align:left;padding:8px 12px;border-bottom:1px solid var(--bd);white-space:nowrap}
+.tbl td{padding:0 12px;height:54px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:middle}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tbody tr{transition:background .12s;cursor:pointer}
+.tbl tbody tr:hover{background:var(--hov2)}
+.pager{display:flex;gap:6px;justify-content:flex-end;align-items:center;padding:14px 4px 2px}
+.pager button{min-width:30px;height:30px;border-radius:8px;border:1px solid var(--bd);background:var(--card);font-size:12px;font-weight:600;color:var(--tx2);padding:0 8px}
+.pager button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.pager button:disabled{opacity:.4;cursor:default}
+/* dropdown */
+.dd{position:relative}
+.dd-menu{position:absolute;top:calc(100% + 6px);right:0;background:var(--card);border:1px solid var(--bd);border-radius:10px;box-shadow:0 8px 24px rgba(15,23,42,.12);min-width:210px;z-index:80;display:none;overflow:hidden;animation:ddIn .15s ease}
+.dd.open .dd-menu{display:block}
+.dd-left .dd-menu{left:0;right:auto}
+@keyframes ddIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.dd-item{display:flex;gap:10px;align-items:center;padding:10px 13px;font-size:12.5px;width:100%;text-align:left;transition:.12s}
+.dd-item:hover{background:var(--hov)}
+.dd-h{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);padding:10px 13px 4px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.dd-sep{height:1px;background:var(--bd);margin:4px 0}
+.gs-item{display:flex;align-items:center;gap:10px;padding:9px 13px;font-size:12.5px;width:100%;text-align:left;transition:.1s}
+.gs-item:hover{background:var(--hov)}
+.gs-item .gt{flex:1;min-width:0}
+.gs-item .gt b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gs-item .gt small{color:var(--tx2);font-size:11px}
+.gs-foot{font-size:10px;color:var(--tx3);padding:7px 13px;border-top:1px solid var(--bd)}
+mark{background:var(--selbg);color:var(--blue);font-weight:700;border-radius:2px;padding:0 1px}
+/* search */
+.srch{position:relative}
+.srch>svg,.srch>i{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--tx3);pointer-events:none}
+.srch input{padding-left:33px}
+/* scrim modal drawer push */
+#scrim{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:90;opacity:0;pointer-events:none;transition:opacity .2s}
+#scrim.on{opacity:1;pointer-events:auto}
+#modalRoot{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px}
+#modalRoot.on{display:flex}
+.modal{background:var(--card);border-radius:16px;border:1px solid var(--bd);max-width:460px;width:100%;max-height:90vh;overflow:auto;padding:22px;animation:mIn .2s ease}
+@keyframes mIn{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
+.modal h3{font-size:16px;font-weight:700}
+.mrow{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;flex-wrap:wrap}
+#drawerR{position:fixed;top:0;right:0;bottom:0;width:380px;max-width:94vw;background:var(--card);border-left:1px solid var(--bd);z-index:95;transform:translateX(105%);transition:transform .25s ease;display:flex;flex-direction:column}
+#drawerR.on{transform:none}
+.dr-head{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--bd)}
+.dr-body{flex:1;overflow-y:auto;padding:18px}
+.dtl{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--line)}
+.dtl:last-of-type{border-bottom:none}
+.dtl .dl{width:110px;flex:none;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--tx3);padding-top:2px}
+.dtl .dv{flex:1;min-width:0;font-size:13px}
+#pushStack{position:fixed;top:16px;right:16px;z-index:300;display:flex;flex-direction:column;gap:10px;width:350px;max-width:calc(100vw - 24px)}
+.push{display:flex;gap:12px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:13px 14px 15px;box-shadow:0 12px 32px rgba(15,23,42,.18);animation:pIn .3s cubic-bezier(.2,.8,.3,1);position:relative;overflow:hidden;text-align:left;width:100%}
+.push.out{opacity:0;transform:translateX(30px) scale(.97);transition:.25s ease}
+@keyframes pIn{from{opacity:0;transform:translateX(44px) scale(.96)}to{opacity:1;transform:none}}
+.push .pic{width:37px;height:37px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:none}
+.push .pic svg{width:17px;height:17px}
+.push .pt{flex:1;min-width:0}
+.push .pt b{display:block;font-size:12.5px;font-weight:700;line-height:1.3;padding-right:4px}
+.push .pt span{display:block;font-size:11.5px;color:var(--tx2);line-height:1.45;margin-top:2px;word-break:break-word}
+.push .px{flex:none;width:22px;height:22px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--tx3)}
+.push .px:hover{background:var(--hov);color:var(--tx)}
+.push .px svg{width:13px;height:13px}
+.push .prog{position:absolute;left:0;bottom:0;height:3px;width:100%}
+.push .prog i{display:block;height:100%;background:var(--blue);border-radius:0 3px 3px 0;animation:prog linear forwards}
+@keyframes prog{from{width:100%}to{width:0}}
+/* plan rows */
+.planRow{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin-bottom:10px;transition:.15s;position:relative}
+.planRow:hover{border-color:var(--tx3)}
+.planRow.sel{border-color:var(--blue);background:var(--selbg)}
+.planRadio{width:20px;height:20px;border-radius:50%;border:2px solid var(--tx3);flex:none;display:flex;align-items:center;justify-content:center}
+.planRow.sel .planRadio{border-color:var(--blue)}
+.planRow.sel .planRadio::after{content:'';width:9px;height:9px;border-radius:50%;background:var(--blue)}
+.planName{font-size:14.5px;font-weight:700;display:block}
+.planDur{font-size:11px;color:var(--tx2);display:block;margin-top:1px}
+.planPrice{margin-left:auto;text-align:right;flex:none}
+.planPrice b{font:700 15px 'Plus Jakarta Sans',Inter,sans-serif;color:var(--tx);display:block}
+.planPrice i{display:block;font-style:normal;font-size:10.5px;color:var(--tx3)}
+/* misc */
+.photopick{width:84px;height:84px;border-radius:50%;border:1.5px dashed var(--tx3);display:flex;align-items:center;justify-content:center;color:var(--tx3);overflow:hidden;cursor:pointer;transition:.15s;flex:none;position:relative}
+.photopick:hover{border-color:var(--blue)}
+.photopick img{width:100%;height:100%;object-fit:cover}
+.upspin{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(15,23,42,.5);color:#fff;font-size:11.5px;font-weight:600;z-index:3}
+.empty{padding:40px 16px;text-align:center;color:var(--tx3)}
+.empty svg{width:30px;height:30px;margin-bottom:8px;opacity:.5}
+.empty p{font-size:12.5px}
+.setrow{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.setrow:last-child{border-bottom:none}
+.setrow .in{flex:1}
+.setrow .in b{font-size:13px;display:block}
+.setrow .in small{font-size:11.5px;color:var(--tx2)}
+.ck{display:flex;gap:9px;align-items:flex-start;margin-top:14px;font-size:12px;color:var(--tx2);line-height:1.5;cursor:pointer}
+.ck input{width:auto;margin-top:2px;accent-color:var(--blue);height:14px;flex:none}
+.lg-err{color:var(--dn);font-size:12px;margin-top:10px;display:flex;gap:7px;align-items:center}
+/* login */
+#landing{min-height:100vh;display:flex;flex-direction:column}
+.lg-body{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 20px;overflow-y:auto}
+.lg-box{width:100%;max-width:440px}
+.lg-box h1{font:700 26px 'Plus Jakarta Sans',Inter,sans-serif;letter-spacing:-.02em;line-height:1.2;color:var(--tx)}
+.lg-box .lead{font-size:13px;color:var(--tx2);margin:8px 0 22px}
+.lg-brand-top{display:flex;align-items:center;gap:10px;margin-bottom:26px}
+@media(max-width:1100px){.kpis{grid-template-columns:repeat(2,1fr)}.g2,.gdash{grid-template-columns:1fr}}
+@media(max-width:768px){
+ #sidebar{display:none!important}
+ .main{margin-left:0}
+ #header{height:58px;padding:0 14px;gap:8px}
+ .hdate{display:none}
+ #hnav{display:flex}
+ .h-logo-m{display:flex;align-items:center;gap:8px;margin:0 auto}
+ #view{padding:16px 14px 40px}
+ .kpis{grid-template-columns:repeat(2,1fr);gap:10px}
+ .kpi{height:106px;padding:14px}.kpi .val{font-size:22px}
+ #newAc .bl{display:none}
+ .tblw{overflow:visible}
+ .tbl thead{display:none}
+ .tbl,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}
+ .tbl tr{border:1px solid var(--bd);border-radius:12px;padding:10px 14px;margin-bottom:10px;height:auto}
+ .tbl td{display:flex;justify-content:space-between;align-items:center;gap:12px;height:auto;padding:6px 0;border:none;white-space:normal}
+ .tbl td::before{content:attr(data-l);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--tx3)}
+ .tbl td.nolbl::before{display:none}
+ #pushStack{right:12px;top:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="landing">
+ <div class="lg-body">
+  <div class="lg-box">
+   <div class="lg-brand-top">
+    <div class="logomk"><svg class="lgmk" viewBox="0 0 52 52"><path class="lgA" d="M8 3h11v46H8z"/><path class="lgB" d="M22 3h11.5a9.7 9.7 0 0 1 0 19.4H22z"/><path class="lgA" d="M22 25.4h13.5a9.3 9.3 0 0 1 9.3 9.3v7.1l-7.2 7.2H22z"/></svg></div>
+    <span class="wordmark">BarberGo<span class="wdot"></span></span>
+    <span class="badge b-admin" style="margin-left:6px">Pusat Panel</span>
+   </div>
+   <h1>Masuk ke Pusat Panel</h1>
+   <p class="lead">Kelola akun kasir, paket langganan, dan traffic website BarberGo Kasflow.</p>
+   <label class="f">Email</label>
+   <input id="lgEmail" type="email" placeholder="admin@barbergo.id" autocomplete="email" onkeydown="if(event.key==='Enter')doLogin()">
+   <label class="f">Password</label>
+   <input id="lgPass" type="password" placeholder="Password admin" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+   <div class="lg-err hide" id="lgErr"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i><span></span></div>
+   <button class="btn pri lg" style="margin-top:20px" id="loginBtn" onclick="doLogin()"><i data-lucide="log-in"></i> Masuk</button>
+   <p style="font-size:11px;color:var(--tx3);margin-top:14px;text-align:center">Panel khusus admin pusat BarberGo. Akun pertama yang login otomatis menjadi admin.</p>
+  </div>
+ </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app" class="hide">
+ <div class="main">
+  <header id="header">
+   <div class="h-logo-m"><div class="logomk" style="width:30px;height:30px"><svg class="lgmk" viewBox="0 0 52 52"><path class="lgA" d="M8 3h11v46H8z"/><path class="lgB" d="M22 3h11.5a9.7 9.7 0 0 1 0 19.4H22z"/><path class="lgA" d="M22 25.4h13.5a9.3 9.3 0 0 1 9.3 9.3v7.1l-7.2 7.2H22z"/></svg></div><span class="wordmark" style="font-size:14px">Pusat<span class="wdot"></span></span></div>
+   <span class="hdate" id="hRange"></span>
+   <div class="hsp"></div>
+   <button class="btn pri" id="newAc" onclick="openAddAc()"><i data-lucide="user-plus" style="width:15px;height:15px"></i> <span class="bl">Tambah Akun</span></button>
+   <div class="dd" id="ddProfile">
+    <button class="havatar" id="hAvatar" onclick="ddToggle('ddProfile',event)"></button>
+    <div class="dd-menu" style="min-width:240px" id="profileMenu"></div>
+   </div>
+  </header>
+  <nav id="hnav"></nav>
+  <main id="view"></main>
+ </div>
+</div>
+
+<aside id="sidebar">
+ <div class="logo"><div class="logomk"><svg class="lgmk" viewBox="0 0 52 52"><path class="lgA" d="M8 3h11v46H8z"/><path class="lgB" d="M22 3h11.5a9.7 9.7 0 0 1 0 19.4H22z"/><path class="lgA" d="M22 25.4h13.5a9.3 9.3 0 0 1 9.3 9.3v7.1l-7.2 7.2H22z"/></svg></div><span class="wordmark">Pusat Panel<span class="wdot"></span></span></div>
+ <div id="navList"></div>
+ <div class="sfoot" id="sideTheme"></div>
+</aside>
+
+<div id="scrim" onclick="closeDrawer();closeDDs()"></div>
+<div id="drawerR"></div>
+<div id="modalRoot"></div>
+<div id="pushStack"></div>
+
+<script>
+/* ================= FIREBASE & CLOUDINARY (sama dengan Kasflow) ================= */
+const firebaseConfig={apiKey:"AIzaSyCXMkjGhSjnJzZEbZ5_hpZtSEQ-rkl2dbk",authDomain:"mattpos.firebaseapp.com",projectId:"mattpos",storageBucket:"mattpos.firebasestorage.app",messagingSenderId:"42578217144",appId:"1:42578217144:web:ce1885354d692cce284c4d",measurementId:"G-0LZ2SJ8VRJ"};
+firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth();auth.languageCode='id';
+const dbFS=firebase.firestore();
+try{firebase.analytics()}catch(e){}
+const CLOUD_NAME='o9nnrrra',CLOUD_PRESET='Barbergo';
+
+/* ================= UTIL ================= */
+const qs=s=>document.querySelector(s),qsa=s=>[...document.querySelectorAll(s)],qv=s=>{const e=qs(s);return e?e.value.trim():''};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const D=864e5;
+const dkey=t=>{const d=new Date(t);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const todayKey=()=>dkey(Date.now());
+const fdate=t=>new Date(t).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
+const fdateL=t=>new Date(t).toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+const MON=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+function ago(t){const s=(Date.now()-t)/1e3;if(s<60)return'baru saja';const m=s/60;if(m<60)return Math.floor(m)+' mnt lalu';const h=m/60;if(h<24)return Math.floor(h)+' jam lalu';const d=h/24;if(d<7)return Math.floor(d)+' hari lalu';return fdate(t)}
+const initials=n=>{const w=String(n||'?').trim().split(/\s+/);return(((w[0]||'')[0]||'?')+(w[1]||'')[0]||'').toUpperCase()};
+const hl=(s,q)=>esc(s).replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'),'<mark>$1</mark>');
+const AUTH_ERR={'auth/email-already-in-use':'Email sudah terdaftar.','auth/invalid-email':'Format email tidak valid.','auth/weak-password':'Password minimal 6 karakter.','auth/wrong-password':'Password salah.','auth/user-not-found':'Akun tidak ditemukan.','auth/too-many-requests':'Terlalu banyak percobaan. Coba lagi nanti.','auth/invalid-credential':'Email atau password salah.','auth/network-request-failed':'Koneksi bermasalah. Cek internet.'};
+const mapErr=e=>AUTH_ERR[e&&e.code]||(e&&e.message?String(e.message).replace('Firebase: ',''):'Terjadi kesalahan.');
+
+/* ================= STATE ================= */
+const PKEYS=['basic','gold','pro'];
+const DEF_SET={namaPanel:'BarberGo Pusat Panel',supportEmail:'support@barbergo.id',waPusat:'628123456789',trafficOn:true,defPaket:'gold',plans:{basic:{n:'Basic',dur:'1 Minggu',harga:'25.000',on:true},gold:{n:'Gold',dur:'1 Bulan',harga:'75.000',on:true},pro:{n:'Pro',dur:'1 Tahun',harga:'600.000',on:true}}};
+let ME=null,MEdoc=null,SET=JSON.parse(JSON.stringify(DEF_SET));
+let ACC=[],TRAFFIC={},route='dashboard';
+let acPage=1,acFilter={q:'',st:'all',pk:'all'},chartDays=7,DELID=null,CREDTMP=null;
+let unsub1=null,unsub2=null,BOOTED=false;
+let CH={rows:[],P:[]};
+
+const pakBadge=p=>p==='pro'?'b-pro':p==='gold'?'b-gold2':'b-gray';
+const pakName=p=>{const x=SET.plans[p]||SET.plans.basic;return x.n};
+const stBadge=s=>s==='suspended'?'b-can':'b-paid';
+const stName=s=>s==='suspended'?'Disuspen':'Aktif';
+
+/* ================= PUSH / MODAL / DRAWER / DD ================= */
+const PUSH_IC={ok:'check-circle-2',err:'x-circle',warn:'alert-triangle',info:'info'};
+const PUSH_BG={ok:'rgba(22,163,74,.1)',err:'rgba(239,68,68,.1)',warn:'rgba(245,158,11,.12)',info:'var(--selbg)'};
+const PUSH_C={ok:'#16A34A',err:'#EF4444',warn:'#B45309',info:'var(--blue)'};
+function push(type,title,msg){
+ const el=document.createElement('div');el.className='push';
+ el.innerHTML=`<div class="pic" style="background:${PUSH_BG[type]};color:${PUSH_C[type]}"><i data-lucide="${PUSH_IC[type]}"></i></div><div class="pt"><b>${esc(title)}</b><span>${esc(msg||'')}</span></div><button class="px" onclick="pushX(this)"><i data-lucide="x"></i></button><div class="prog"><i style="animation-duration:4.5s"></i></div>`;
+ qs('#pushStack').appendChild(el);lucide.createIcons();
+ setTimeout(()=>{el.classList.add('out');setTimeout(()=>el.remove(),260)},4500);
+}
+function pushX(b){const p=b.closest('.push');p.classList.add('out');setTimeout(()=>p.remove(),260)}
+function openModal(html,w){const r=qs('#modalRoot');r.innerHTML=`<div class="modal" ${w?`style="max-width:${w}px"`:''}>${html}</div>`;r.classList.add('on');lucide.createIcons()}
+function closeModal(){qs('#modalRoot').classList.remove('on');qs('#modalRoot').innerHTML=''}
+qs('#modalRoot').addEventListener('click',e=>{if(e.target.id==='modalRoot')closeModal()});
+function openDrawer(html){qs('#drawerR').innerHTML=html;qs('#drawerR').classList.add('on');qs('#scrim').classList.add('on');lucide.createIcons()}
+function closeDrawer(){qs('#drawerR').classList.remove('on');if(!qs('#modalRoot').classList.contains('on'))qs('#scrim').classList.remove('on')}
+function ddToggle(id,ev){if(ev)ev.stopPropagation();const el=qs('#'+id);const was=el.classList.contains('open');closeDDs();if(!was)el.classList.add('open')}
+function closeDDs(){qsa('.dd.open').forEach(d=>d.classList.remove('open'))}
+document.addEventListener('click',e=>{if(!e.target.closest('.dd'))closeDDs()});
+function confirmM(o){
+ openModal(`<h3>${esc(o.t)}</h3><p style="font-size:12.5px;color:var(--tx2);margin-top:8px;line-height:1.65">${o.m}</p><div class="mrow"><button class="btn gho" onclick="closeModal()">Batal</button><button class="btn ${o.dng?'dng':'pri'}" id="cmOk">${esc(o.ok||'Ya, Lanjut')}</button></div>`);
+ qs('#cmOk').onclick=async()=>{const b=qs('#cmOk');b.disabled=true;b.innerHTML='<span class="spin"></span>';try{await o.fn()}catch(e){push('err','Gagal',mapErr(e))}closeModal()};
+}
+
+/* ================= THEME ================= */
+if(localStorage.getItem('pp_theme')==='dark')document.body.classList.add('dark');
+function toggleTheme(){document.body.classList.toggle('dark');localStorage.setItem('pp_theme',document.body.classList.contains('dark')?'dark':'light');renderSidebar()}
+
+/* ================= SECONDARY APP (buat akun tanpa keluar sesi admin) ================= */
+function secApp(){return firebase.apps.find(x=>x.name==='secP')||firebase.initializeApp(firebaseConfig,'secP')}
+
+/* ================= AUTH ================= */
+async function checkAdmin(u){
+ const ref=dbFS.collection('akun').doc(u.uid);
+ const d=await ref.get();
+ if(d.exists){const v=d.data();if(v.role==='admin'||v.role==='owner')return v;return null}
+ const admins=await dbFS.collection('akun').where('role','==','admin').limit(1).get();
+ if(admins.empty){ // bootstrap: login pertama jadi admin
+  const v={email:u.email,nama:u.email.split('@')[0],role:'admin',status:'active',paket:'pro',toko:'',wa:'',createdAt:Date.now()};
+  await ref.set(v,{merge:true});return v;
+ }
+ return null;
+}
+function loginErr(m){const e=qs('#lgErr');e.classList.remove('hide');e.querySelector('span').textContent=m}
+async function doLogin(){
+ const b=qs('#loginBtn'),em=qv('#lgEmail'),pw=qv('#lgPass');
+ qs('#lgErr').classList.add('hide');
+ if(!em||!pw)return loginErr('Isi email dan password.');
+ b.disabled=true;b.innerHTML='<span class="spin"></span> Memeriksa...';
+ try{await auth.signInWithEmailAndPassword(em,pw)}
+ catch(e){b.disabled=false;b.innerHTML='<i data-lucide="log-in"></i> Masuk';lucide.createIcons();loginErr(mapErr(e))}
+}
+async function doLogout(){stopAll();await auth.signOut()}
+function stopAll(){if(unsub1){unsub1();unsub1=null}if(unsub2){unsub2();unsub2=null}BOOTED=false;ACC=[];TRAFFIC={};ME=null;MEdoc=null}
+
+async function loadSet(){
+ try{
+  const d=await dbFS.collection('panelSettings').doc('panel').get();
+  if(d.exists()){const v=d.data();SET=Object.assign(JSON.parse(JSON.stringify(DEF_SET)),v,{plans:Object.assign({},DEF_SET.plans,v.plans||{})})}
+  else SET=JSON.parse(JSON.stringify(DEF_SET));
+ }catch(e){SET=JSON.parse(JSON.stringify(DEF_SET))}
+}
+
+auth.onAuthStateChanged(async u=>{
+ if(u){
+  try{
+   await loadSet();
+   const prof=await checkAdmin(u);
+   if(!prof){await auth.signOut();return loginErr('Email ini tidak memiliki akses Pusat Panel.')}
+   ME=u;MEdoc=prof;bootApp();
+  }catch(e){loginErr(mapErr(e))}
+ }else{stopAll();qs('#app').classList.add('hide');qs('#landing').classList.remove('hide')}
+});
+
+/* ================= BOOT ================= */
+async function bootApp(){
+ qs('#landing').classList.add('hide');qs('#app').classList.remove('hide');
+ const lb=qs('#loginBtn');lb.disabled=false;lb.innerHTML='<i data-lucide="log-in"></i> Masuk';
+ qs('#hRange').textContent=fdateL(Date.now());
+ renderHeaderDd();renderSidebar();renderHnav();
+ if(!BOOTED){
+  BOOTED=true;
+  unsub1=dbFS.collection('akun').onSnapshot(s=>{
+   ACC=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+   renderSidebar();if(route==='akun')renderAcTable();if(route==='dashboard')renderDashboard();
+  },e=>push('warn','Gagal memuat akun',mapErr(e)));
+  unsub2=dbFS.collection('webTraffic').onSnapshot(s=>{
+   TRAFFIC={};s.forEach(d=>TRAFFIC[d.id]=d.data());
+   if(route==='dashboard')renderDashboard();
+  },()=>{});
+  trackVisit();
+ }
+ go('dashboard');
+ push('ok','Selamat datang','Login sebagai '+(MEdoc.nama||ME.email));
+}
+
+async function trackVisit(){
+ if(SET.trafficOn===false)return;
+ try{
+  const k=todayKey();
+  const uniq=!localStorage.getItem('pp_u_'+k);localStorage.setItem('pp_u_'+k,'1');
+  const up={v:firebase.firestore.FieldValue.increment(1),last:Date.now()};
+  if(uniq)up.u=firebase.firestore.FieldValue.increment(1);
+  await dbFS.collection('webTraffic').doc(k).set(up,{merge:true});
+ }catch(e){}
+}
+
+/* ================= NAV ================= */
+function navBtn(r,ic,lbl,badge){return `<button class="sitem" data-r="${r}" onclick="go('${r}')"><i data-lucide="${ic}"></i><span class="lbl">${lbl}</span>${badge?`<span class="sbadge">${badge}</span>`:''}</button>`}
+function renderSidebar(){
+ const dark=document.body.classList.contains('dark');
+ qs('#navList').innerHTML=`
+  <div class="ssec">Utama</div>
+  ${navBtn('dashboard','layout-dashboard','Dashboard')}
+  ${navBtn('akun','users','Akun Kasir',ACC.length||'')}
+  <div class="ssec">Lainnya</div>
+  ${navBtn('setting','settings','Pengaturan')}
+  ${navBtn('profil','user','Profil')}`;
+ qsa('#navList .sitem').forEach(b=>b.classList.toggle('active',b.dataset.r===route));
+ qs('#sideTheme').innerHTML=`
+  <button class="themeRow" onclick="toggleTheme()"><div class="tic"><i data-lucide="${dark?'moon':'sun'}"></i></div><div style="flex:1"><b>${dark?'Mode Gelap':'Mode Terang'}</b><small>Ketuk untuk ganti tema</small></div><span class="sw ${dark?'on':''}"></span></button>
+  <div class="planFoot"><div class="pf-l">BarberGo</div><div class="pf-n">Admin Console</div><div class="pf-f">Kelola akun kasir, paket langganan, dan traffic website Kasflow.</div></div>`;
+ lucide.createIcons();
+}
+function renderHnav(){
+ qs('#hnav').innerHTML=[['dashboard','layout-dashboard','Dashboard'],['akun','users','Akun'],['setting','settings','Setting'],['profil','user','Profil']]
+  .map(x=>`<button class="hchip ${route===x[0]?'on':''}" data-r="${x[0]}" onclick="go('${x[0]}')"><i data-lucide="${x[1]}"></i>${x[2]}</button>`).join('');
+ lucide.createIcons();
+}
+function renderHeaderDd(){
+ const a=qs('#hAvatar');
+ a.innerHTML=MEdoc.foto?`<img src="${esc(MEdoc.foto)}" alt="">`:esc(initials(MEdoc.nama||ME.email));
+ qs('#profileMenu').innerHTML=`
+  <div class="dd-h" style="text-transform:none;letter-spacing:0"><span style="font-size:12.5px;font-weight:700;color:var(--tx)">${esc(MEdoc.nama||'Admin')}</span><span style="font-weight:500;color:var(--tx3);font-size:10.5px">${esc(ME.email)}</span></div>
+  <div class="dd-sep"></div>
+  <button class="dd-item" onclick="go('profil')"><i data-lucide="user"></i> Profil Saya</button>
+  <button class="dd-item" onclick="go('setting')"><i data-lucide="settings"></i> Pengaturan</button>
+  <div class="dd-sep"></div>
+  <button class="dd-item" style="color:var(--dn)" onclick="doLogout()"><i data-lucide="log-out"></i> Keluar</button>`;
+ lucide.createIcons();
+}
+function go(r){
+ route=r;closeDDs();closeDrawer();
+ qsa('#navList .sitem').forEach(b=>b.classList.toggle('active',b.dataset.r===r));
+ qsa('#hnav .hchip').forEach(b=>b.classList.toggle('on',b.dataset.r===r));
+ const v=qs('#view');v.style.animation='none';void v.offsetWidth;v.style.animation='';
+ if(r==='dashboard')renderDashboard();else if(r==='akun')renderAkun();else if(r==='setting')renderSetting();else if(r==='profil')renderProfil();
+ window.scrollTo(0,0);
+}
+
+/* ================= TRAFFIC ================= */
+function trafficRows(n){const a=[];for(let i=n-1;i>=0;i--){const t=Date.now()-i*D,d=new Date(t),k=dkey(t),tr=TRAFFIC[k]||{};a.push({k,label:d.getDate()+' '+MON[d.getMonth()],full:fdate(t),v:tr.v||0,u:tr.u||0})}return a}
+function sumRange(from,to){let s=0,u=0;for(let i=from;i<=to;i++){const t=TRAFFIC[dkey(Date.now()-i*D)]||{};s+=t.v||0;u+=t.u||0}return{s,u}}
+function niceMax(v){if(v<=5)return 5;const p=Math.pow(10,Math.floor(Math.log10(v)));const n=v/p;const m=n<=1?1:n<=2?2:n<=5?5:10;return m*p}
+function drawChart(){
+ const box=qs('#chartBox');if(!box)return;
+ const rows=trafficRows(chartDays);
+ const W=Math.max(box.clientWidth,300),H=260,pl=38,pr=12,pt=16,pb=28;
+ const max=niceMax(Math.max(1,...rows.map(r=>r.v)));
+ const iw=W-pl-pr,ih=H-pt-pb;
+ const X=i=>pl+(rows.length>1?i*(iw/(rows.length-1)):iw/2);
+ const Y=v=>pt+ih-(v/max)*ih;
+ const P=rows.map((r,i)=>({x:X(i),y:Y(r.v)}));
+ const line=P.map((p,i)=>(i?'L':'M')+p.x.toFixed(1)+','+p.y.toFixed(1)).join(' ');
+ const area=line+` L${P[P.length-1].x.toFixed(1)},${pt+ih} L${P[0].x.toFixed(1)},${pt+ih} Z`;
+ const lineU=rows.map((r,i)=>(i?'L':'M')+X(i).toFixed(1)+','+Y(r.u).toFixed(1)).join(' ');
+ let grid='',xl='';
+ for(let g=0;g<=4;g++){const gy=pt+ih-(g/4)*ih;grid+=`<line x1="${pl}" y1="${gy}" x2="${pl+iw}" y2="${gy}" stroke="var(--line)"/><text x="${pl-7}" y="${gy+3}" text-anchor="end" font-size="9" fill="var(--tx3)">${Math.round(max*g/4)}</text>`}
+ const step=Math.ceil(rows.length/7);
+ rows.forEach((r,i)=>{if(i%step===0||i===rows.length-1)xl+=`<text x="${X(i)}" y="${H-8}" text-anchor="middle" font-size="9" fill="var(--tx3)">${r.label}</text>`});
+ box.innerHTML=`<svg id="trSvg" viewBox="0 0 ${W} ${H}" width="100%" height="${H}" style="display:block">
+  <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--blue)" stop-opacity=".22"/><stop offset="100%" stop-color="var(--blue)" stop-opacity="0"/></linearGradient></defs>
+  ${grid}${xl}
+  <path d="${area}" fill="url(#ag)"/>
+  <path d="${lineU}" fill="none" stroke="var(--tx3)" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <path d="${line}" fill="none" stroke="var(--blue)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <line id="trGl" y1="${pt}" y2="${pt+ih}" stroke="var(--tx3)" stroke-dasharray="2 3" opacity="0"/>
+  <circle id="trHp" r="4.5" fill="var(--blue)" stroke="var(--card)" stroke-width="2" opacity="0"/>
+ </svg><div class="ctip" id="ctip"></div>`;
+ CH={rows,P};
+ const svg=qs('#trSvg'),tip=qs('#ctip'),gl=qs('#trGl'),hp=qs('#trHp');
+ svg.addEventListener('mousemove',e=>{
+  const r=svg.getBoundingClientRect(),mx=(e.clientX-r.left)*(W/r.width);
+  let bi=0,bd=1e9;P.forEach((p,i)=>{const d=Math.abs(p.x-mx);if(d<bd){bd=d;bi=i}});
+  const p=P[bi],row=rows[bi];
+  gl.setAttribute('x1',p.x);gl.setAttribute('x2',p.x);gl.setAttribute('opacity','1');
+  hp.setAttribute('cx',p.x);hp.setAttribute('cy',p.y);hp.setAttribute('opacity','1');
+  tip.style.display='block';
+  tip.innerHTML=`<b>${row.full}</b>${row.v} kunjungan · ${row.u} unik`;
+  let lx=Math.max(14,Math.min(86,p.x/box.clientWidth*100));
+  tip.style.left=lx+'%';tip.style.top=(p.y/H*100)+'%';
+ });
+ svg.addEventListener('mouseleave',()=>{tip.style.display='none';gl.setAttribute('opacity','0');hp.setAttribute('opacity','0')});
+}
+
+/* ================= DASHBOARD ================= */
+function renderDashboard(){
+ const t=TRAFFIC[todayKey()]||{};
+ const cur=sumRange(0,29),prev=sumRange(30,59);
+ const dlt=prev.s>0?Math.round((cur.s-prev.s)/prev.s*100):null;
+ const act=ACC.filter(a=>a.status!=='suspended').length,sus=ACC.length-act;
+ const adms=ACC.filter(a=>a.role==='admin'||a.role==='owner').length;
+ const tot=ACC.length||1;
+ qs('#view').innerHTML=`
+ <div class="phead"><div><h1>Dashboard</h1><p>Ringkasan traffic website dan akun terdaftar.</p></div>
+  <div class="tabs"><button class="${chartDays===7?'on':''}" onclick="chartDays=7;renderDashboard()">7 Hari</button><button class="${chartDays===30?'on':''}" onclick="chartDays=30;renderDashboard()">30 Hari</button></div></div>
+ <div class="kpis" style="margin-bottom:16px">
+  <div class="card kpi"><span class="lab">Kunjungan Hari Ini</span><span class="val">${(t.v||0).toLocaleString('id-ID')}</span><span class="sub">${t.u||0} pengunjung unik</span></div>
+  <div class="card kpi"><span class="lab">Kunjungan 30 Hari</span><span class="val">${cur.s.toLocaleString('id-ID')}</span><span class="sub">${dlt===null?'—':`<span class="${dlt>=0?'up':'down'}">${dlt>=0?'▲':'▼'} ${Math.abs(dlt)}%</span>`} vs periode sblm</span></div>
+  <div class="card kpi"><span class="lab">Akun Terdaftar</span><span class="val">${ACC.length}</span><span class="sub">${act} aktif · ${adms} admin</span></div>
+  <div class="card kpi"><span class="lab">Akun Disuspen</span><span class="val" ${sus?'style="color:var(--dn)"':''}>${sus}</span><span class="sub">${sus?'perlu tindakan':'semua aman'}</span></div>
+ </div>
+ <div class="gdash">
+  <div class="card pad">
+   <div class="chead"><h3>Traffic Kunjungan</h3>
+    <div style="display:flex;gap:14px"><span class="lg-row"><span class="lg-dot" style="background:var(--blue)"></span>Kunjungan</span><span class="lg-row"><span class="lg-dot" style="background:var(--tx3)"></span>Unik</span></div></div>
+   <div class="chartBox" id="chartBox"></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+   <div class="card pad"><div class="chead"><h3>Paket Aktif</h3></div>
+    ${PKEYS.map(k=>{const c=ACC.filter(a=>(a.paket||'basic')===k).length;const pc=Math.round(c/tot*100);
+     return `<div class="svcrow"><div class="nm"><b>${esc(SET.plans[k].n)} <span style="color:var(--tx2);font-weight:500;font-size:11.5px">· ${c} akun</span></b><div class="bar"><i style="width:${pc}%"></i></div></div><span class="pc">${pc}%</span></div>`}).join('')}
+   </div>
+   <div class="card pad"><div class="chead"><h3>Pendaftar Terbaru</h3><button class="btn sm gho" onclick="go('akun')">Lihat semua</button></div>
+    ${ACC.length?ACC.slice(0,5).map(a=>`<div class="rrow" style="cursor:pointer" onclick="openDrawerAc('${a.id}')">
+      <div class="havatar" style="width:34px;height:34px;font-size:12px">${a.foto?`<img src="${esc(a.foto)}">`:esc(initials(a.nama))}</div>
+      <div class="in"><b>${esc(a.nama)}</b><small>${esc(a.toko||a.email)} · ${a.createdAt?ago(a.createdAt):'—'}</small></div>
+      <span class="badge ${pakBadge(a.paket)}">${pakName(a.paket)}</span></div>`).join('')
+    :`<div class="empty"><i data-lucide="user-plus"></i><p>Belum ada akun terdaftar.</p></div>`}
+   </div>
+  </div>
+ </div>`;
+ lucide.createIcons();drawChart();
+}
+
+/* ================= AKUN ================= */
+function renderAkun(){
+ qs('#view').innerHTML=`
+ <div class="phead"><div><h1>Akun Kasir</h1><p>Kelola akun, paket langganan, dan akses login kasir.</p></div>
+  <button class="btn pri" onclick="openAddAc()"><i data-lucide="user-plus"></i> Tambah Akun</button></div>
+ <div class="card pad">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px">
+   <div class="dd dd-left" style="flex:1;min-width:220px;max-width:340px">
+    <div class="srch"><i data-lucide="search"></i><input id="acIn" placeholder="Cari nama, email, atau barbershop..." autocomplete="off" oninput="acRun(this.value)" onfocus="acRun(this.value)" onblur="setTimeout(acHide,180)" onkeydown="acKey(event)"></div>
+    <div class="dd-menu" id="acMenu" style="width:340px"></div>
+   </div>
+   <div id="acChips" style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;flex:1">
+    <button class="chip ${acFilter.st==='all'?'on':''}" data-v="all" onclick="acSet('st','all')">Semua</button>
+    <button class="chip ${acFilter.st==='active'?'on':''}" data-v="active" onclick="acSet('st','active')">Aktif</button>
+    <button class="chip ${acFilter.st==='suspended'?'on':''}" data-v="suspended" onclick="acSet('st','suspended')">Disuspen</button>
+    <select id="acPk" style="width:auto;height:33px" onchange="acSet('pk',this.value)">
+     <option value="all">Semua Paket</option>
+     ${PKEYS.map(k=>`<option value="${k}" ${acFilter.pk===k?'selected':''}>${esc(SET.plans[k].n)}</option>`).join('')}
+    </select>
+    <span id="acCnt" style="font-size:11px;color:var(--tx3);font-weight:600;margin-left:auto"></span>
+   </div>
+  </div>
+  <div class="tblw"><table class="tbl">
+   <thead><tr><th>Nama</th><th>Email</th><th>Paket</th><th>Status</th><th>Dibuat</th><th></th></tr></thead>
+   <tbody id="acTb"></tbody></table></div>
+  <div id="acPg"></div>
+ </div>`;
+ lucide.createIcons();renderAcTable();
+}
+function acSet(k,v){acFilter[k]=v;acPage=1;
+ qsa('#acChips .chip').forEach(c=>c.classList.toggle('on',c.dataset.v===acFilter.st));
+ const s=qs('#acPk');if(s)s.value=acFilter.pk;
+ renderAcTable();
+}
+function acFiltered(){
+ let l=ACC;const q=acFilter.q.toLowerCase();
+ if(q)l=l.filter(a=>(a.nama||'').toLowerCase().includes(q)||(a.email||'').toLowerCase().includes(q)||(a.toko||'').toLowerCase().includes(q)||(a.wa||'').includes(q));
+ if(acFilter.st!=='all')l=l.filter(a=>(a.status||'active')===acFilter.st);
+ if(acFilter.pk!=='all')l=l.filter(a=>(a.paket||'basic')===acFilter.pk);
+ return l;
+}
+function renderAcTable(){
+ const tb=qs('#acTb');if(!tb)return;
+ const l=acFiltered(),per=8,tp=Math.max(1,Math.ceil(l.length/per));
+ if(acPage>tp)acPage=tp;
+ const page=l.slice((acPage-1)*per,acPage*per);
+ qs('#acCnt').textContent=l.length+' akun';
+ if(!l.length){tb.innerHTML=`<tr><td colspan="6" class="nolbl" style="cursor:default"><div class="empty"><i data-lucide="users"></i><p>${acFilter.q?'Tidak ada akun yang cocok dengan pencarian.':'Belum ada akun. Klik "Tambah Akun" untuk membuat akun kasir pertama.'}</p></div></td></tr>`;qs('#acPg').innerHTML='';lucide.createIcons();return}
+ tb.innerHTML=page.map(a=>{
+  const own=ME&&a.id===ME.uid;
+  return `<tr onclick="openDrawerAc('${a.id}')">
+   <td data-l="Nama"><div style="display:flex;align-items:center;gap:11px">
+    <div class="havatar" ${a.foto?'style="background:transparent;border-color:var(--bd)"':''}>${a.foto?`<img src="${esc(a.foto)}">`:esc(initials(a.nama))}</div>
+    <div style="min-width:0"><b style="display:block">${esc(a.nama)}${own?' <span class="badge b-admin" style="margin-left:4px">Kamu</span>':''}${a.role==='admin'||a.role==='owner'?' <span class="badge b-admin" style="margin-left:4px">Admin</span>':''}</b><small style="color:var(--tx2);font-size:11px">${esc(a.toko||'—')}</small></div>
+   </div></td>
+   <td data-l="Email">${esc(a.email)}</td>
+   <td data-l="Paket"><span class="badge ${pakBadge(a.paket)}">${pakName(a.paket)}</span></td>
+   <td data-l="Status"><span class="badge ${stBadge(a.status)}">${stName(a.status)}</span></td>
+   <td data-l="Dibuat">${a.createdAt?fdate(a.createdAt):'—'}</td>
+   <td data-l="" class="nolbl" style="text-align:right"><button class="ibtn" onclick="event.stopPropagation();openDrawerAc('${a.id}')"><i data-lucide="more-horizontal"></i></button></td>
+  </tr>`}).join('');
+ let h='';
+ if(tp>1){h='<div class="pager">';
+  h+=`<button ${acPage===1?'disabled':''} onclick="acPage--;renderAcTable()"><i data-lucide="chevron-left" style="width:13px;height:13px"></i></button>`;
+  let last=0;
+  for(let i=1;i<=tp;i++){
+   if(i===1||i===tp||Math.abs(i-acPage)<=1){if(i-last>1)h+='<button disabled style="border:none;background:none">…</button>';h+=`<button class="${i===acPage?'on':''}" onclick="acPage=${i};renderAcTable()">${i}</button>`;last=i}
+  }
+  h+=`<button ${acPage===tp?'disabled':''} onclick="acPage++;renderAcTable()"><i data-lucide="chevron-right" style="width:13px;height:13px"></i></button></div>`;
+ }
+ qs('#acPg').innerHTML=h;lucide.createIcons();
+}
+/* autocomplete */
+function acRun(v){
+ acFilter.q=v.trim();acPage=1;renderAcTable();
+ const inp=qs('#acIn'),dd=inp.closest('.dd'),m=qs('#acMenu'),q=acFilter.q.toLowerCase();
+ if(!q)return acHide();
+ dd.classList.add('open');
+ const l=ACC.filter(a=>(a.nama||'').toLowerCase().includes(q)||(a.email||'').toLowerCase().includes(q)||(a.toko||'').toLowerCase().includes(q)).slice(0,6);
+ m.innerHTML=l.length?
+  `<div class="dd-h">Akun <span>${l.length} hasil</span></div>`+
+  l.map((a,i)=>`<button class="gs-item" data-id="${a.id}" onmousedown="acPick('${a.id}')">
+   <div class="havatar" style="width:30px;height:30px;font-size:10.5px">${a.foto?`<img src="${esc(a.foto)}">`:esc(initials(a.nama))}</div>
+   <div class="gt"><b>${hl(a.nama,q)}</b><small>${hl(a.email,q)}${a.toko?' · '+esc(a.toko):''}</small></div>
+   <span class="badge ${pakBadge(a.paket)}" style="flex:none">${pakName(a.paket)}</span></button>`).join('')+
+  `<div class="gs-foot">Klik untuk membuka detail akun · Esc untuk tutup</div>`
+ :`<div class="gs-foot" style="padding:14px">Tidak ada hasil untuk "${esc(q)}"</div>`;
+ lucide.createIcons();
+}
+function acHide(){const d=qs('#acIn')&&qs('#acIn').closest('.dd');if(d)d.classList.remove('open')}
+function acKey(e){
+ if(e.key==='Escape')acHide();
+ if(e.key==='Enter'){const f=qs('#acMenu .gs-item');if(f){acPick(f.dataset.id)}}
+}
+function acPick(id){
+ const a=ACC.find(x=>x.id===id);
+ if(a){qs('#acIn').value=a.nama;acFilter.q=a.nama}
+ acHide();openDrawerAc(id);renderAcTable();
+}
+/* plan rows (shared) */
+function planRowsHTML(sel){
+ return PKEYS.filter(k=>SET.plans[k].on!==false).map(k=>{const p=SET.plans[k];return `
+  <button type="button" class="planRow ${k===sel?'sel':''}" data-p="${k}">
+   <span class="planRadio"></span>
+   <span style="flex:1;min-width:0"><span class="planName">${esc(p.n)}</span><span class="planDur">Durasi ${esc(p.dur)}</span></span>
+   <span class="planPrice"><b>Rp ${esc(String(p.harga||'0').replace(/^rp\s*/i,''))}</b><i>/ ${esc(p.dur)}</i></span>
+  </button>`}).join('');
+}
+function bindPlanRows(sel){
+ qsa(sel+' .planRow').forEach(r=>r.addEventListener('click',()=>{qsa(sel+' .planRow').forEach(x=>x.classList.remove('sel'));r.classList.add('sel')}));
+}
+/* tambah akun */
+function openAddAc(){
+ openModal(`
+ <h3>Tambah Akun Kasir</h3><p style="font-size:12px;color:var(--tx2);margin-top:5px">Akun langsung aktif dan bisa langsung login di Kasflow.</p>
+ <label class="f">Nama Lengkap *</label><input id="np_nama" placeholder="Nama kasir">
+ <label class="f">Email *</label><input id="np_email" type="email" placeholder="nama@email.com" autocomplete="off">
+ <label class="f">Password *</label><input id="np_pass" placeholder="Minimal 6 karakter">
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+  <div><label class="f">Nama Barbershop</label><input id="np_toko" placeholder="BarberGo ..."></div>
+  <div><label class="f">No. WhatsApp</label><input id="np_wa" placeholder="62812..."></div>
+ </div>
+ <label class="f">Role</label><select id="np_role"><option value="kasir">Kasir</option><option value="admin">Admin Pusat</option></select>
+ <label class="f">Paket Langganan</label>
+ <div id="np_plans">${planRowsHTML(SET.defPaket||'gold')}</div>
+ <div class="lg-err hide" id="npErr"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i><span></span></div>
+ <div class="mrow"><button class="btn gho" onclick="closeModal()">Batal</button><button class="btn pri" id="npSave" onclick="saveAddAc()"><i data-lucide="user-plus"></i> Buat Akun</button></div>`,520);
+ bindPlanRows('#np_plans');
+}
+async function saveAddAc(){
+ const err=qs('#npErr');err.classList.add('hide');
+ const nama=qv('#np_nama'),email=qv('#np_email').toLowerCase(),pass=qv('#np_pass'),toko=qv('#np_toko'),wa=qv('#np_wa'),role=qs('#np_role').value;
+ const sel=qs('#np_plans .planRow.sel');const pk=sel?sel.dataset.p:'basic';
+ const bad=m=>{err.classList.remove('hide');err.querySelector('span').textContent=m};
+ if(!nama)return bad('Nama wajib diisi.');
+ if(!/^\S+@\S+\.\S+$/.test(email))return bad('Format email tidak valid.');
+ if(pass.length<6)return bad('Password minimal 6 karakter.');
+ const b=qs('#npSave');b.disabled=true;b.innerHTML='<span class="spin"></span> Membuat...';
+ try{
+  const app=secApp(); // app kedua: sesi admin tidak terganggu
+  const cred=await app.auth().createUserWithEmailAndPassword(email,pass);
+  await dbFS.collection('akun').doc(cred.user.uid).set({nama,email,toko,wa,paket:pk,status:'active',role,createdAt:Date.now(),createdBy:ME.email});
+  try{await app.auth().signOut()}catch(_){}
+  closeModal();renderAcTable();
+  CREDTMP={nama,email,pass};
+  credModal({nama,email,pass,pk,wa});
+ }catch(e){bad(mapErr(e));b.disabled=false;b.innerHTML='<i data-lucide="user-plus"></i> Buat Akun';lucide.createIcons()}
+}
+function copyCred(){
+ if(!CREDTMP)return;
+ const t=CREDTMP.email+' / '+CREDTMP.pass;
+ (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject())
+  .then(()=>push('ok','Disalin','Kredensial akun disalin ke clipboard.'))
+  .catch(()=>push('info','Kredensial',t));
+}
+function credModal(a){
+ const p=SET.plans[a.paket]||SET.plans.basic;
+ const waN=a.wa?String(a.wa).replace(/\D/g,'').replace(/^0/,'62'):'';
+ const txt=encodeURIComponent(`Halo ${a.nama}! Akun BarberGo Kasflow kamu sudah dibuat:\n\nEmail: ${a.email}\nPassword: ${a.pass}\nPaket: ${p.n} (${p.dur})\n\nLogin di: https://kasflow.barbergo.id/\n\nJangan bagikan data ini ke siapa pun.`);
+ openModal(`
+ <div style="text-align:center;padding:4px 0 0">
+  <div style="width:52px;height:52px;border-radius:16px;background:rgba(22,163,74,.1);color:#16A34A;display:inline-flex;align-items:center;justify-content:center"><i data-lucide="check-circle-2" style="width:26px;height:26px"></i></div>
+  <h3 style="margin-top:12px">Akun Berhasil Dibuat</h3>
+  <p style="font-size:12.5px;color:var(--tx2);margin-top:5px">Simpan detail login berikut &amp; kirim ke kasir.</p>
+ </div>
+ <div style="background:var(--soft3);border-radius:12px;padding:6px 14px;margin-top:14px">
+  <div class="dtl" style="border:none"><div class="dl">Nama</div><div class="dv">${esc(a.nama)}</div></div>
+  <div class="dtl" style="border:none"><div class="dl">Email</div><div class="dv">${esc(a.email)}</div></div>
+  <div class="dtl" style="border:none"><div class="dl">Password</div><div class="dv mono">${esc(a.pass)}</div></div>
+  <div class="dtl" style="border:none"><div class="dl">Paket</div><div class="dv">${esc(p.n)} · ${esc(p.dur)}</div></div>
+ </div>
+ <div class="mrow">
+  <button class="btn gho" onclick="copyCred()"><i data-lucide="copy"></i> Salin</button>
+  <a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/${waN}?text=${txt}"><i data-lucide="message-circle"></i> Kirim via WhatsApp</a>
+ </div>`,470);
+}
+/* drawer detail akun */
+function openDrawerAc(id){
+ const a=ACC.find(x=>x.id===id);if(!a)return;
+ const own=ME&&a.id===ME.uid,adm=a.role==='admin'||a.role==='owner';
+ openDrawer(`
+ <div class="dr-head">
+  <div class="havatar" style="width:40px;height:40px;font-size:14px">${a.foto?`<img src="${esc(a.foto)}">`:esc(initials(a.nama))}</div>
+  <div style="flex:1;min-width:0"><b style="display:block;font-size:14px">${esc(a.nama)}</b><small style="color:var(--tx2);font-size:11.5px">${esc(a.email)}</small></div>
+  <button class="ibtn" onclick="closeDrawer()"><i data-lucide="x"></i></button>
+ </div>
+ <div class="dr-body">
+  <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+   <span class="badge ${pakBadge(a.paket)}">${pakName(a.paket)}</span>
+   <span class="badge ${stBadge(a.status)}">${stName(a.status)}</span>
+   ${adm?'<span class="badge b-admin">Admin</span>':''}
+  </div>
+  <div class="dtl"><div class="dl">Barbershop</div><div class="dv">${esc(a.toko||'—')}</div></div>
+  <div class="dtl"><div class="dl">WhatsApp</div><div class="dv">${esc(a.wa||'—')}</div></div>
+  <div class="dtl"><div class="dl">Dibuat</div><div class="dv">${a.createdAt?fdate(a.createdAt)+' · '+ago(a.createdAt):'—'}</div></div>
+  <div class="dtl"><div class="dl">UID</div><div class="dv mono" style="font-size:10.5px;word-break:break-all">${esc(a.id)}</div></div>
+
+  <div class="blk-label" style="margin-top:20px">Ubah Paket</div>
+  <div id="dp_plans">${planRowsHTML(a.paket)}</div>
+  <button class="btn pri" style="width:100%;margin-top:8px" onclick="savePlan('${a.id}')"><i data-lucide="check"></i> Simpan Paket</button>
+
+  <div class="blk-label" style="margin-top:22px">Tindakan</div>
+  <div style="display:grid;gap:8px">
+   <button class="btn gho" style="justify-content:flex-start" onclick="openChgPass('${a.id}')"><i data-lucide="key-round"></i> Ubah Password</button>
+   ${own?'<p style="font-size:11px;color:var(--tx3)">Ini akunmu sendiri — suspen &amp; hapus dinonaktifkan.</p>':`
+   <button class="btn ${a.status==='suspended'?'wa':'gho'}" style="justify-content:flex-start" onclick="toggleSusp('${a.id}')"><i data-lucide="${a.status==='suspended'?'play':'pause'}"></i> ${a.status==='suspended'?'Aktifkan Kembali':'Suspen Akun'}</button>
+   <button class="btn dng" style="justify-content:flex-start" onclick="openDelAc('${a.id}')"><i data-lucide="trash-2"></i> Hapus Akun</button>`}
+  </div>
+ </div>`);
+ bindPlanRows('#dp_plans');
+}
+async function savePlan(id){
+ const a=ACC.find(x=>x.id===id);if(!a)return;
+ const sel=qs('#dp_plans .planRow.sel');const pk=sel?sel.dataset.p:a.paket;
+ try{
+  await dbFS.collection('akun').doc(id).update({paket:pk,paketAt:Date.now()});
+  a.paket=pk;push('ok','Paket diperbarui',a.nama+' sekarang paket '+pakName(pk)+'.');
+  renderAcTable();openDrawerAc(id);
+ }catch(e){push('err','Gagal',mapErr(e))}
+}
+function toggleSusp(id){
+ const a=ACC.find(x=>x.id===id);if(!a)return;
+ if(a.status==='suspended'){
+  dbFS.collection('akun').doc(id).update({status:'active',suspAt:firebase.firestore.FieldValue.delete()})
+   .then(()=>{a.status='active';push('ok','Akun diaktifkan',a.nama+' bisa login kembali.');renderAcTable();openDrawerAc(id)})
+   .catch(e=>push('err','Gagal',mapErr(e)));
+ }else{
+  confirmM({t:'Suspen Akun?',m:`Akun <b>${esc(a.nama)}</b> (${esc(a.email)}) akan <b>tidak bisa login</b> ke Kasflow sampai diaktifkan kembali.`,ok:'Ya, Suspen',dng:true,fn:async()=>{
+   await dbFS.collection('akun').doc(id).update({status:'suspended',suspAt:Date.now()});
+   a.status='suspended';push('warn','Akun disuspen',a.nama+' telah dinonaktifkan.');
+   renderAcTable();openDrawerAc(id);
+  }});
+ }
+}
+/* ubah password akun lain */
+function openChgPass(id){
+ const a=ACC.find(x=>x.id===id);if(!a)return;
+ openModal(`<h3>Ubah Password Akun</h3><p style="font-size:12.5px;color:var(--tx2);margin-top:5px">${esc(a.nama)} · ${esc(a.email)}</p>
+ <label class="f">Password Saat Ini *</label><input id="cp_cur" placeholder="Password lama akun">
+ <label class="f">Password Baru *</label><input id="cp_new" placeholder="Minimal 6 karakter">
+ <label class="f">Konfirmasi Password Baru *</label><input id="cp_con">
+ <div class="lg-err hide" id="cpErr"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i><span></span></div>
+ <p style="font-size:10.5px;color:var(--tx3);margin-top:10px;line-height:1.5">Verifikasi keamanan Firebase: untuk mengubah password dari panel, password lama akun diperlukan.</p>
+ <div class="mrow"><button class="btn gho" onclick="closeModal()">Batal</button><button class="btn pri" id="cpSave" onclick="saveChgPass('${id}')"><i data-lucide="key-round"></i> Simpan</button></div>`,470);
+}
+async function saveChgPass(id){
+ const a=ACC.find(x=>x.id===id);if(!a)return;
+ const err=qs('#cpErr');err.classList.add('hide');
+ const c=qv('#cp_cur'),n=qv('#cp_new'),k=qv('#cp_con');
+ const bad=m=>{err.classList.remove('hide');err.querySelector('span').textContent=m};
+ if(!c)return bad('Password saat ini wajib diisi.');
+ if(n.length<6)return bad('Password baru minimal 6 karakter.');
+ if(n!==k)return bad('Konfirmasi password tidak sama.');
+ const b=qs('#cpSave');b.disabled=true;b.innerHTML='<span class="spin"></span> Menyimpan...';
+ try{
+  const app=secApp();
+  await app.auth().signInWithEmailAndPassword(a.email,c);
+  await app.auth().currentUser.updatePassword(n);
+  await app.auth().signOut();
+  closeModal();push('ok','Password diubah','Password akun '+a.nama+' berhasil diperbarui.');
+ }catch(e){bad(mapErr(e));b.disabled=false;b.innerHTML='<i data-lucide="key-round"></i> Simpan';lucide.createIcons()}
+}
+/* hapus akun */
+function openDelAc(id){
+ const a=ACC.find(x=>x.id===id);if(!a)return;DELID=id;
+ openModal(`<h3 style="color:var(--dn)">Hapus Akun?</h3>
+ <p style="font-size:12.5px;color:var(--tx2);margin-top:6px;line-height:1.65">Akun <b>${esc(a.nama)}</b> (${esc(a.email)}) akan dihapus dari panel beserta data profilnya. Tindakan ini <b>permanen</b>.</p>
+ <label class="f">Password Akun <span style="text-transform:none;letter-spacing:0">(opsional)</span></label>
+ <input id="dl_pass" placeholder="Isi untuk ikut menghapus login di Firebase Auth">
+ <label class="ck"><input type="checkbox" id="dl_ack" onchange="qs('#dl_go').disabled=!this.checked"><span>Saya mengerti akun ini dihapus permanen dan tidak bisa dikembalikan.</span></label>
+ <div class="mrow"><button class="btn gho" onclick="closeModal()">Batal</button><button class="btn dng" id="dl_go" disabled onclick="doDelAc()"><i data-lucide="trash-2"></i> Hapus Permanen</button></div>`,470);
+}
+async function doDelAc(){
+ const a=ACC.find(x=>x.id===DELID);if(!a)return;
+ const pass=qv('#dl_pass');
+ const b=qs('#dl_go');b.disabled=true;b.innerHTML='<span class="spin"></span> Menghapus...';
+ let note='';
+ try{
+  if(pass){
+   try{
+    const app=secApp();
+    await app.auth().signInWithEmailAndPassword(a.email,pass);
+    await app.auth().currentUser.delete();
+   }catch(e){note=' Login akun tidak terhapus ('+(AUTH_ERR[e.code]||'password salah / dibatasi')+')'}
+  }else note=' Login di Firebase Auth masih ada — hapus lewat Firebase Console bila perlu.';
+  await dbFS.collection('akun').doc(DELID).delete();
+  ACC=ACC.filter(x=>x.id!==DELID);
+  closeModal();closeDrawer();
+  push('ok','Akun dihapus',a.nama+'.'+note);
+ }catch(e){push('err','Gagal menghapus',mapErr(e));b.disabled=false;b.innerHTML='<i data-lucide="trash-2"></i> Hapus Permanen';lucide.createIcons()}
+}
+
+/* ================= PENGATURAN ================= */
+function renderSetting(){
+ qs('#view').innerHTML=`
+ <div class="phead"><div><h1>Pengaturan</h1><p>Konfigurasi pusat panel, paket langganan, dan traffic.</p></div>
+  <button class="btn pri" onclick="saveSetting(this)"><i data-lucide="save"></i> Simpan Perubahan</button></div>
+ <div class="g2">
+  <div class="card pad">
+   <div class="chead"><h3>Umum</h3></div>
+   <label class="f">Nama Panel</label><input id="st_nama" value="${esc(SET.namaPanel)}">
+   <label class="f">Email Dukungan</label><input id="st_email" value="${esc(SET.supportEmail)}">
+   <label class="f">No. WhatsApp Pusat</label><input id="st_wa" value="${esc(SET.waPusat)}" placeholder="62812...">
+   <label class="f">Paket Default Akun Baru</label>
+   <select id="st_def">${PKEYS.map(k=>`<option value="${k}" ${SET.defPaket===k?'selected':''}>${esc(SET.plans[k].n)}</option>`).join('')}</select>
+   <div class="setrow" style="margin-top:16px;border:none;padding-top:4px">
+    <div class="in"><b>Rekam Traffic Website</b><small>Catat setiap kunjungan ke koleksi <span class="mono">webTraffic</span> untuk dashboard.</small></div>
+    <div class="sw ${SET.trafficOn!==false?'on':''}" id="sw_traffic"></div>
+   </div>
+  </div>
+  <div class="card pad">
+   <div class="chead"><h3>Paket Langganan</h3><small style="font-size:11px;color:var(--tx3)">Ditampilkan saat menambah akun</small></div>
+   ${PKEYS.map(k=>{const p=SET.plans[k];return `
+   <div style="border:1px solid var(--bd);border-radius:10px;padding:12px 14px;margin-bottom:10px">
+    <div style="display:flex;align-items:center;gap:10px">
+     <b style="flex:1;text-transform:uppercase;font-size:11px;letter-spacing:.06em;color:var(--tx2)">${k}</b>
+     <div class="sw ${p.on!==false?'on':''}" id="sw_${k}"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px">
+     <input id="pl_${k}_n" value="${esc(p.n)}" placeholder="Nama">
+     <input id="pl_${k}_dur" value="${esc(p.dur)}" placeholder="Durasi">
+     <input id="pl_${k}_harga" value="${esc(p.harga)}" placeholder="Harga">
+    </div>
+   </div>`}).join('')}
+   <p style="font-size:11px;color:var(--tx3);line-height:1.5">Switch di kanan atas = paket tersedia untuk dipilih saat membuat akun baru.</p>
+  </div>
+ </div>`;
+ qsa('#view .sw').forEach(s=>s.addEventListener('click',()=>s.classList.toggle('on')));
+ lucide.createIcons();
+}
+async function saveSetting(btn){
+ btn.disabled=true;btn.innerHTML='<span class="spin"></span> Menyimpan...';
+ const plans={};
+ PKEYS.forEach(k=>{plans[k]={n:qv('#pl_'+k+'_n')||DEF_SET.plans[k].n,dur:qv('#pl_'+k+'_dur')||DEF_SET.plans[k].dur,harga:qv('#pl_'+k+'_harga').replace(/^rp\s*/i,''),on:qs('#sw_'+k).classList.contains('on')}});
+ const obj={namaPanel:qv('#st_nama')||'Pusat Panel',supportEmail:qv('#st_email'),waPusat:qv('#st_wa'),defPaket:qs('#st_def').value,trafficOn:qs('#sw_traffic').classList.contains('on'),plans,updatedAt:Date.now()};
+ try{
+  await dbFS.collection('panelSettings').doc('panel').set(obj,{merge:true});
+  SET=Object.assign(SET,obj);
+  push('ok','Tersimpan','Pengaturan berhasil diperbarui.');
+ }catch(e){push('err','Gagal menyimpan',mapErr(e))}
+ btn.disabled=false;btn.innerHTML='<i data-lucide="save"></i> Simpan Perubahan';lucide.createIcons();
+}
+
+/* ================= PROFIL ================= */
+function renderProfil(){
+ qs('#view').innerHTML=`
+ <div class="phead"><div><h1>Profil</h1><p>Kelola informasi akun admin pusat.</p></div></div>
+ <div class="g2">
+  <div class="card pad">
+   <div class="chead"><h3>Informasi Admin</h3></div>
+   <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px;flex-wrap:wrap">
+    <div class="photopick" id="ppBox" onclick="qs('#ppFile').click()">${MEdoc.foto?`<img src="${esc(MEdoc.foto)}">`:'<i data-lucide="camera"></i>'}</div>
+    <div><b style="font-size:14px">${esc(MEdoc.nama||'Admin')}</b><div style="font-size:11.5px;color:var(--tx2)">${esc(ME.email)}</div>
+     <button class="btn sm gho" style="margin-top:8px" onclick="qs('#ppFile').click()"><i data-lucide="upload" style="width:12px;height:12px"></i> Ganti Foto</button></div>
+   </div>
+   <input type="file" id="ppFile" class="hide" accept="image/*" onchange="upFoto(this)">
+   <label class="f">Nama Lengkap</label><input id="pf_nama" value="${esc(MEdoc.nama||'')}">
+   <label class="f">No. WhatsApp</label><input id="pf_wa" value="${esc(MEdoc.wa||'')}" placeholder="62812...">
+   <label class="f">Email (tidak bisa diubah)</label><input value="${esc(ME.email)}" disabled>
+   <button class="btn pri" style="margin-top:18px" onclick="saveProfil(this)"><i data-lucide="check"></i> Simpan Profil</button>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:16px">
+   <div class="card pad">
+    <div class="chead"><h3>Keamanan</h3></div>
+    <label class="f">Password Saat Ini</label><input id="my_cur" type="password" autocomplete="current-password">
+    <label class="f">Password Baru</label><input id="my_new" type="password" autocomplete="new-password" placeholder="Minimal 6 karakter">
+    <label class="f">Konfirmasi Password Baru</label><input id="my_con" type="password">
+    <div class="lg-err hide" id="pfErr"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i><span></span></div>
+    <button class="btn pri" style="margin-top:18px" onclick="chgMyPass(this)"><i data-lucide="key-round"></i> Ubah Password</button>
+   </div>
+   <div class="card pad">
+    <div class="chead"><h3>Sesi</h3></div>
+    <div class="setrow"><div class="in"><b>Role</b><small>Admin Pusat — akses penuh panel</small></div><span class="badge b-admin">Admin</span></div>
+    <div class="setrow"><div class="in"><b>UID</b><small class="mono" style="font-size:10.5px;word-break:break-all">${esc(ME.uid)}</small></div></div>
+    <div class="setrow"><div class="in"><b>Keluar</b><small>Akhiri sesi di perangkat ini.</small></div><button class="btn dng sm" onclick="doLogout()">Keluar</button></div>
+   </div>
+  </div>
+ </div>`;
+ lucide.createIcons();
+}
+function upCloud(file){
+ const fd=new FormData();fd.append('file',file);fd.append('upload_preset',CLOUD_PRESET);
+ return fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,{method:'POST',body:fd})
+  .then(r=>r.json()).then(j=>{if(!j.secure_url)throw new Error((j.error&&j.error.message)||'upload gagal');return j.secure_url});
+}
+async function upFoto(inp){
+ const f=inp.files[0];if(!f)return;
+ const box=qs('#ppBox');
+ box.insertAdjacentHTML('beforeend','<div class="upspin"><span class="spin"></span> Mengunggah...</div>');
+ try{
+  const url=await upCloud(f);
+  await dbFS.collection('akun').doc(ME.uid).update({foto:url});
+  MEdoc.foto=url;renderHeaderDd();renderProfil();
+  push('ok','Foto diperbarui','Foto profil berhasil diunggah ke Cloudinary.');
+ }catch(e){box.querySelector('.upspin')&&box.querySelector('.upspin').remove();push('err','Gagal unggah','Coba gambar lain / periksa koneksi.')}
+}
+async function saveProfil(b){
+ b.disabled=true;b.innerHTML='<span class="spin"></span> Menyimpan...';
+ try{
+  const nama=qv('#pf_nama'),wa=qv('#pf_wa');
+  await dbFS.collection('akun').doc(ME.uid).update({nama,wa});
+  MEdoc.nama=nama;MEdoc.wa=wa;renderHeaderDd();
+  push('ok','Tersimpan','Profil berhasil diperbarui.');
+ }catch(e){push('err','Gagal',mapErr(e))}
+ b.disabled=false;b.innerHTML='<i data-lucide="check"></i> Simpan Profil';lucide.createIcons();
+}
+async function chgMyPass(b){
+ const err=qs('#pfErr');err.classList.add('hide');
+ const c=qv('#my_cur'),n=qv('#my_new'),k=qv('#my_con');
+ const bad=m=>{err.classList.remove('hide');err.querySelector('span').textContent=m};
+ if(!c||!n)return bad('Lengkapi semua kolom.');
+ if(n.length<6)return bad('Password baru minimal 6 karakter.');
+ if(n!==k)return bad('Konfirmasi password tidak sama.');
+ b.disabled=true;b.innerHTML='<span class="spin"></span> Memeriksa...';
+ try{
+  const cred=firebase.auth.EmailAuthProvider.credential(ME.email,c);
+  await ME.reauthenticateWithCredential(cred);
+  await ME.updatePassword(n);
+  qs('#my_cur').value=qs('#my_new').value=qs('#my_con').value='';
+  push('ok','Password diubah','Password akunmu berhasil diperbarui.');
+ }catch(e){bad(mapErr(e))}
+ b.disabled=false;b.innerHTML='<i data-lucide="key-round"></i> Ubah Password';lucide.createIcons();
+}
+
+/* ================= RESIZE ================= */
+let rzT=null;
+window.addEventListener('resize',()=>{clearTimeout(rzT);rzT=setTimeout(()=>{if(route==='dashboard'&&qs('#chartBox'))drawChart()},150)});
+lucide.createIcons();
+</script>
+</body>
+</html>
