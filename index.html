@@ -1,20 +1,208 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<title>Pusat Panel — BarberGo Kasflow</title>
-<meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#0B2FD1">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
+  <meta charset="UTF-8"><meta
+name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover, interactive-widget=resizes-content"
+
+«»
+
+  <!-- =========================
+       BASIC SEO
+  ========================= -->  <title>BarberGo Admin Panel — Central Management</title><meta
+name="description"
+content="BarberGo Admin Panel adalah pusat kontrol dan manajemen platform BarberGo untuk mengelola partner, barbershop, reservasi, pengguna, layanan, sistem, dan operasional platform."
+
+«»
+
+<meta
+name="keywords"
+content="BarberGo Admin Panel, admin BarberGo, central admin BarberGo, BarberGo management, admin pusat BarberGo, platform management, barbershop management, partner management"
+
+«»
+
+  <meta name="author" content="BarberGo">  <!-- Admin panel tidak untuk pencarian publik --><meta
+name="robots"
+content="noindex, nofollow, noarchive, nosnippet"
+
+«»
+
+  <meta name="theme-color" content="#0B2FD1">
+  <meta name="color-scheme" content="light">  <!-- =========================
+       CANONICAL
+  ========================= -->  <link
+    rel="canonical"
+    href="https://adminpanel.barbergo.world/"
+  >  <!-- =========================
+       FAVICON
+  ========================= -->  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/favicon.png"
+  >  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/favicon.png"
+  >  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/favicon.png"
+  >  <!-- =========================
+       PWA
+  ========================= -->  <link rel="manifest" href="/site.webmanifest"><meta
+name="mobile-web-app-capable"
+content="yes"
+
+«»
+
+<meta
+name="apple-mobile-web-app-capable"
+content="yes"
+
+«»
+
+<meta
+name="apple-mobile-web-app-status-bar-style"
+content="default"
+
+«»
+
+<meta
+name="apple-mobile-web-app-title"
+content="BarberGo Admin Panel"
+
+«»
+
+  <!-- =========================
+       OPEN GRAPH
+  ========================= --><meta
+property="og:type"
+content="website"
+
+«»
+
+<meta
+property="og:site_name"
+content="BarberGo Admin Panel"
+
+«»
+
+<meta
+property="og:title"
+content="BarberGo Admin Panel — Central Management"
+
+«»
+
+<meta
+property="og:description"
+content="Central management panel BarberGo untuk mengelola partner, barbershop, reservasi, pengguna, layanan, sistem, dan operasional platform."
+
+«»
+
+<meta
+property="og:url"
+content="https://adminpanel.barbergo.world/"
+
+«»
+
+<meta
+property="og:image"
+content="https://adminpanel.barbergo.world/og-image.png"
+
+«»
+
+<meta
+property="og:image:alt"
+content="BarberGo Admin Panel — Central Management"
+
+«»
+
+<meta
+property="og:locale"
+content="id_ID"
+
+«»
+
+  <!-- =========================
+       TWITTER / X
+  ========================= --><meta
+name="twitter:card"
+content="summary_large_image"
+
+«»
+
+<meta
+name="twitter:title"
+content="BarberGo Admin Panel — Central Management"
+
+«»
+
+<meta
+name="twitter:description"
+content="Central management panel BarberGo untuk mengelola seluruh operasional platform."
+
+«»
+
+<meta
+name="twitter:image"
+content="https://adminpanel.barbergo.world/og-image.png"
+
+«»
+
+  <!-- =========================
+       FONTS
+  ========================= -->  <link rel="preconnect" href="https://fonts.googleapis.com">  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  >  <!-- =========================
+       ICONS
+  ========================= -->  <script src="https://unpkg.com/lucide@latest"></script>  <!-- =========================
+       QR CODE
+  ========================= -->  <script
+    src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"
+  ></script>  <!-- =========================
+       FIREBASE
+  ========================= -->  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>  <!-- =========================
+       STRUCTURED DATA
+  ========================= -->  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+
+    "name": "BarberGo Admin Panel",
+
+    "alternateName": "BarberGo Central Management",
+
+    "applicationCategory": "BusinessApplication",
+
+    "applicationSubCategory": "Business Management",
+
+    "operatingSystem": "Web",
+
+    "description": "Central management panel BarberGo untuk mengelola partner, barbershop, reservasi, pengguna, layanan, sistem, dan operasional platform.",
+
+    "url": "https://adminpanel.barbergo.world/",
+
+    "image": "https://adminpanel.barbergo.world/og-image.png",
+
+    "brand": {
+      "@type": "Brand",
+      "name": "BarberGo"
+    },
+
+    "publisher": {
+      "@type": "Organization",
+      "name": "BarberGo",
+      "url": "https://adminpanel.barbergo.world/"
+    }
+  }
+  </script>
 <style>
 :root{--blue:#0B2FD1;--blue2:#2563EB;--bluesoft:#E8F0FF;--bk:#0F172A;--bg:#F8FAFC;--card:#FFFFFF;--tx:#0F172A;--tx2:#64748B;--tx3:#94A3B8;--bd:#E2E8F0;--line:#EDF2F7;--hov:#F1F5F9;--hov2:#F8FAFC;--soft:#F1F5F9;--soft2:#F1F5F9;--soft3:#F1F5F9;--input:#FFFFFF;--selbg:#E8F0FF;--gr:#16A34A;--wn:#F59E0B;--dn:#EF4444;--r:14px;--sh:0 1px 3px rgba(15,23,42,.05)}
 body.dark{--bg:#0A1020;--card:#0F172A;--tx:#F1F5F9;--tx2:#94A3B8;--tx3:#64748B;--bd:#1E293B;--line:#182338;--hov:#16213A;--hov2:#111A30;--soft:#16213A;--soft2:#1E293B;--soft3:#111A30;--input:#0B1322;--selbg:rgba(37,99,235,.2);--sh:0 1px 3px rgba(0,0,0,.5)}
@@ -25,7 +213,7 @@ body{font-family:Inter,sans-serif;background:var(--bg);color:var(--tx);font-size
 .hide{display:none!important}
 button{font-family:inherit;border:none;background:none;cursor:pointer;color:inherit}
 input,select,textarea{font-family:inherit;font-size:13px;color:var(--tx);background:var(--input);border:1px solid var(--bd);border-radius:8px;padding:9px 12px;width:100%;outline:none;transition:border-color .15s,box-shadow .15s}
-input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,47,209,.15)}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,47,209,.15)}
 input:disabled{opacity:.6;cursor:not-allowed}
 label.f{display:block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--tx3);margin:14px 0 6px}
 ::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:#CBD5E1;border-radius:8px}::-webkit-scrollbar-track{background:transparent}
@@ -40,34 +228,27 @@ a{color:inherit;text-decoration:none}
 .wordmark .wdot{width:6px;height:6px;background:var(--blue);border-radius:2px;margin-left:3px;flex:none}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:12.5px;border-radius:8px;height:36px;padding:0 14px;transition:.15s}
 .btn.pri{background:var(--blue);color:#fff}.btn.pri:hover{background:var(--blue2);color:#fff}
-.btn.pri:disabled,.btn.dng:disabled{opacity:.5;cursor:not-allowed}
-.btn.wa{background:var(--gr);color:#fff}.btn.wa:hover{filter:brightness(1.08)}
+.btn.pri:disabled{opacity:.55;cursor:wait}
 .btn.gho{border:1px solid var(--bd);background:var(--card);color:var(--tx)}.btn.gho:hover{border-color:var(--blue);color:var(--blue)}
 .btn.dng{background:rgba(239,68,68,.08);color:var(--dn)}.btn.dng:hover{background:rgba(239,68,68,.16)}
+.btn.lg{height:48px;font-size:14px;border-radius:10px;width:100%}
 .btn.sm{height:30px;padding:0 10px;font-size:11.5px}
 .ibtn{width:30px;height:30px;border-radius:8px;border:1px solid var(--bd);display:inline-flex;align-items:center;justify-content:center;color:var(--tx2);transition:.15s;flex:none;background:var(--card)}
 .ibtn:hover{color:var(--blue);border-color:var(--blue)}
+.ibtn.red:hover{color:var(--dn);border-color:var(--dn)}
 .ibtn svg{width:14px;height:14px}
 .badge{display:inline-flex;align-items:center;padding:4px 8px;border-radius:99px;font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
 .b-paid{background:rgba(22,163,74,.1);color:#16A34A}
+.b-pend{background:rgba(245,158,11,.12);color:#B45309}
 .b-can{background:rgba(239,68,68,.1);color:var(--dn)}
-.b-warn{background:rgba(245,158,11,.12);color:#B45309}
+.b-gold{background:var(--selbg);color:var(--blue)}
+body.dark .b-gold{color:#93B4FF}
 .b-gray{background:var(--soft2);color:var(--tx2)}
-.b-gold2{background:rgba(245,158,11,.14);color:#B45309}
-.b-pro{background:rgba(124,58,237,.1);color:#7C3AED}
-.b-admin{background:var(--selbg);color:var(--blue)}
-body.dark .b-admin{color:#93B4FF}
 .chip{border:1px solid var(--bd);background:var(--card);border-radius:99px;padding:7px 14px;font-size:12px;font-weight:600;color:var(--tx2);transition:.15s}
 .chip:hover{color:var(--tx)}
 .chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
-.tabs{display:inline-flex;background:var(--soft);border-radius:8px;padding:3px;gap:2px}
-.tabs button{padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;color:var(--tx2)}
-.tabs button.on{background:var(--card);color:var(--tx);box-shadow:var(--sh)}
-.sw{width:40px;height:23px;border-radius:99px;background:var(--bd);position:relative;transition:.2s;flex:none;cursor:pointer;margin-left:auto}
-.sw::after{content:'';position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 2px rgba(15,23,42,.2)}
-.sw.on{background:var(--blue)}.sw.on::after{left:20px}
-/* sidebar */
-#sidebar{position:fixed;left:0;top:0;bottom:0;width:238px;background:var(--card);display:flex;flex-direction:column;z-index:70;border-right:1px solid var(--line)}
+.code{font-family:'JetBrains Mono';font-size:11px;color:var(--tx3);letter-spacing:.03em}
+#sidebar{position:fixed;left:0;top:0;bottom:0;width:238px;background:var(--card);display:flex;flex-direction:column;z-index:70}
 .logo{height:56px;display:flex;align-items:center;gap:9px;padding:0 16px;flex:none}
 #navList{flex:1;overflow-y:auto;padding:6px 12px 12px}
 .ssec{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:var(--tx3);margin:16px 10px 6px}
@@ -78,103 +259,62 @@ body.dark .b-admin{color:#93B4FF}
 .sitem.active{background:var(--selbg);opacity:1;font-weight:600;color:var(--blue)}
 .sitem.active svg{color:var(--blue)}
 .sitem.active::before{content:'';position:absolute;left:0;top:10px;width:3px;height:18px;border-radius:2px;background:var(--blue)}
-.sbadge{min-width:18px;height:18px;border-radius:99px;background:var(--blue);color:#fff;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;padding:0 5px;flex:none}
 .sfoot{padding:12px;flex:none}
 .themeRow{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:10px;width:100%;text-align:left;transition:.12s}
 .themeRow:hover{background:var(--hov)}
 .themeRow .tic{width:32px;height:32px;border-radius:9px;background:var(--soft2);display:flex;align-items:center;justify-content:center;color:var(--tx2);flex:none}
 .themeRow b{font-size:12.5px;display:block;line-height:1.2}
 .themeRow small{font-size:10.5px;color:var(--tx2)}
-.planFoot{margin-top:10px;border:1px solid var(--bd);border-radius:12px;padding:12px 13px;background:var(--hov2)}
-.planFoot .pf-l{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3)}
-.planFoot .pf-n{font-size:13.5px;font-weight:800;margin-top:3px}
-.planFoot .pf-f{font-size:10.5px;color:var(--tx2);margin-top:3px;line-height:1.45}
-/* header & main */
+.sw{width:40px;height:23px;border-radius:99px;background:var(--bd);position:relative;transition:.2s;flex:none;cursor:pointer;margin-left:auto}
+.sw::after{content:'';position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 2px rgba(15,23,42,.2)}
+.sw.on{background:var(--blue)}
+.sw.on::after{left:20px}
 .main{margin-left:238px;min-height:100vh;display:flex;flex-direction:column}
-#header{height:64px;background:var(--card);display:flex;align-items:center;gap:12px;padding:0 24px;flex:none;border-bottom:1px solid var(--line)}
+#header{height:64px;background:var(--card);display:flex;align-items:center;gap:12px;padding:0 24px;flex:none}
 .hdate{font-size:12px;color:var(--tx2);white-space:nowrap}
 .hsp{flex:1}
 .havatar{width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--bd);flex:none}
 .havatar img{width:100%;height:100%;object-fit:cover}
-.h-logo-m{display:none}
-#hnav{display:none;background:var(--card);padding:10px 14px;gap:8px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;border-bottom:1px solid var(--line)}
-#hnav::-webkit-scrollbar{display:none}
-.hchip{flex:none;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px;border-radius:99px;border:1px solid var(--bd);background:var(--card);font-size:12px;font-weight:600;color:var(--tx2);transition:.15s}
-.hchip svg{width:14px;height:14px}
-.hchip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
-#view{padding:24px;max-width:1380px;width:100%;margin:0 auto;flex:1;animation:vin .25s ease}
+#view{padding:24px;max-width:1480px;width:100%;margin:0 auto;flex:1;animation:vin .25s ease}
 @keyframes vin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.phead{margin-bottom:20px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.phead{margin-bottom:20px}
+.phead .ph-row{display:flex;align-items:center;gap:12px}
+.phead .bkbtn{width:36px;height:36px;flex:none}
 .phead h1{font:700 24px 'Plus Jakarta Sans',Inter,sans-serif;letter-spacing:-.02em;color:var(--tx)}
 .phead p{font-size:12.5px;color:var(--tx2);margin-top:3px}
-/* cards */
 .card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--sh)}
 .pad{padding:20px}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
-.gdash{display:grid;grid-template-columns:1fr 340px;gap:16px;align-items:start}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.grid{display:grid;gap:16px}
+.kpis{grid-template-columns:repeat(4,1fr)}
 .kpi{height:118px;padding:18px;display:flex;flex-direction:column;justify-content:space-between}
 .kpi .lab{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--tx3)}
 .kpi .val{font:700 28px 'Plus Jakarta Sans',Inter,sans-serif;letter-spacing:-.02em;line-height:1;color:var(--tx)}
 .kpi .sub{font-size:11px;color:var(--tx2)}
-.up{color:var(--gr);font-weight:700}.down{color:var(--dn);font-weight:700}
+.revcard{padding:20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.revcard .big{font:700 32px 'Plus Jakarta Sans',Inter,sans-serif;letter-spacing:-.02em;line-height:1.1;color:var(--blue)}
+.revcard .l{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--tx3)}
+.revcard .right{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+.blk-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:10px}
 .chead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;flex-wrap:wrap}
 .chead h3{font-size:15px;font-weight:600}
-.blk-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:10px}
-.lg-row{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--tx2)}
-.lg-dot{width:9px;height:9px;border-radius:3px;flex:none}
-/* chart */
-.chartBox{position:relative}
-.ctip{position:absolute;transform:translate(-50%,-115%);background:var(--bk);color:#fff;border-radius:8px;padding:7px 11px;font-size:11px;pointer-events:none;display:none;white-space:nowrap;z-index:5}
-body.dark .ctip{background:#1E293B;border:1px solid var(--bd)}
-.ctip b{display:block;font-size:12px}
-/* svc bars & recent */
-.svcrow{display:flex;align-items:center;gap:12px;padding:10px 0}
-.svcrow .nm{flex:1;min-width:0}
-.svcrow .nm b{font-size:13px;font-weight:600;display:block}
-.svcrow .bar{height:6px;border-radius:99px;background:var(--soft2);margin-top:6px;overflow:hidden}
-.svcrow .bar i{display:block;height:100%;border-radius:99px;background:var(--tx2)}
-.svcrow:first-of-type .bar i{background:var(--blue)}
-.svcrow .pc{font-size:12px;font-weight:700;width:38px;text-align:right}
-.rrow{display:flex;align-items:center;gap:13px;padding:12px 2px;border-bottom:1px solid var(--line)}
-.rrow:last-child{border-bottom:none}
-.rrow .in{flex:1;min-width:0}
-.rrow .in b{font-size:13px;font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rrow .in small{font-size:11.5px;color:var(--tx2)}
-/* table */
 .tblw{overflow-x:auto}
 .tbl{width:100%;border-collapse:collapse;font-size:12.5px}
 .tbl th{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--tx2);text-align:left;padding:8px 12px;border-bottom:1px solid var(--bd);white-space:nowrap}
-.tbl td{padding:0 12px;height:54px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:middle}
+.tbl td{padding:0 12px;height:52px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:middle}
 .tbl tr:last-child td{border-bottom:none}
 .tbl tbody tr{transition:background .12s;cursor:pointer}
 .tbl tbody tr:hover{background:var(--hov2)}
-.pager{display:flex;gap:6px;justify-content:flex-end;align-items:center;padding:14px 4px 2px}
-.pager button{min-width:30px;height:30px;border-radius:8px;border:1px solid var(--bd);background:var(--card);font-size:12px;font-weight:600;color:var(--tx2);padding:0 8px}
-.pager button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
-.pager button:disabled{opacity:.4;cursor:default}
-/* dropdown */
 .dd{position:relative}
-.dd-menu{position:absolute;top:calc(100% + 6px);right:0;background:var(--card);border:1px solid var(--bd);border-radius:10px;box-shadow:0 8px 24px rgba(15,23,42,.12);min-width:210px;z-index:80;display:none;overflow:hidden;animation:ddIn .15s ease}
+.dd-menu{position:absolute;top:calc(100% + 6px);right:0;background:var(--card);border:1px solid var(--bd);border-radius:10px;box-shadow:0 8px 24px rgba(15,23,42,.12);min-width:230px;z-index:80;display:none;overflow:hidden;animation:ddIn .15s ease}
 .dd.open .dd-menu{display:block}
-.dd-left .dd-menu{left:0;right:auto}
 @keyframes ddIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-.dd-item{display:flex;gap:10px;align-items:center;padding:10px 13px;font-size:12.5px;width:100%;text-align:left;transition:.12s}
+.dd-item{display:flex;gap:10px;align-items:center;padding:11px 13px;font-size:12.5px;font-weight:600;width:100%;text-align:left;transition:.12s}
 .dd-item:hover{background:var(--hov)}
-.dd-h{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);padding:10px 13px 4px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.dd-item.dng{color:var(--dn)}
+.dd-h{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);padding:10px 13px 4px;display:flex;flex-direction:column;gap:2px}
+.dd-h b{color:var(--tx);font-size:12.5px;letter-spacing:0;text-transform:none}
+.dd-h small{color:var(--tx3);font-weight:500;text-transform:none;letter-spacing:0}
 .dd-sep{height:1px;background:var(--bd);margin:4px 0}
-.gs-item{display:flex;align-items:center;gap:10px;padding:9px 13px;font-size:12.5px;width:100%;text-align:left;transition:.1s}
-.gs-item:hover{background:var(--hov)}
-.gs-item .gt{flex:1;min-width:0}
-.gs-item .gt b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gs-item .gt small{color:var(--tx2);font-size:11px}
-.gs-foot{font-size:10px;color:var(--tx3);padding:7px 13px;border-top:1px solid var(--bd)}
-mark{background:var(--selbg);color:var(--blue);font-weight:700;border-radius:2px;padding:0 1px}
-/* search */
-.srch{position:relative}
-.srch>svg,.srch>i{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--tx3);pointer-events:none}
-.srch input{padding-left:33px}
-/* scrim modal drawer push */
 #scrim{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:90;opacity:0;pointer-events:none;transition:opacity .2s}
 #scrim.on{opacity:1;pointer-events:auto}
 #modalRoot{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px}
@@ -183,46 +323,82 @@ mark{background:var(--selbg);color:var(--blue);font-weight:700;border-radius:2px
 @keyframes mIn{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
 .modal h3{font-size:16px;font-weight:700}
 .mrow{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;flex-wrap:wrap}
-#drawerR{position:fixed;top:0;right:0;bottom:0;width:380px;max-width:94vw;background:var(--card);border-left:1px solid var(--bd);z-index:95;transform:translateX(105%);transition:transform .25s ease;display:flex;flex-direction:column}
-#drawerR.on{transform:none}
-.dr-head{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--bd)}
-.dr-body{flex:1;overflow-y:auto;padding:18px}
-.dtl{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--line)}
-.dtl:last-of-type{border-bottom:none}
-.dtl .dl{width:110px;flex:none;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--tx3);padding-top:2px}
-.dtl .dv{flex:1;min-width:0;font-size:13px}
 #pushStack{position:fixed;top:16px;right:16px;z-index:300;display:flex;flex-direction:column;gap:10px;width:350px;max-width:calc(100vw - 24px)}
-.push{display:flex;gap:12px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:13px 14px 15px;box-shadow:0 12px 32px rgba(15,23,42,.18);animation:pIn .3s cubic-bezier(.2,.8,.3,1);position:relative;overflow:hidden;text-align:left;width:100%}
+.push{display:flex;gap:12px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:13px 14px 15px;box-shadow:0 12px 32px rgba(15,23,42,.18);animation:pIn .3s cubic-bezier(.2,.8,.3,1);position:relative;overflow:hidden;cursor:pointer;text-align:left;width:100%}
 .push.out{opacity:0;transform:translateX(30px) scale(.97);transition:.25s ease}
 @keyframes pIn{from{opacity:0;transform:translateX(44px) scale(.96)}to{opacity:1;transform:none}}
-.push .pic{width:37px;height:37px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:none}
+.push .pic{width:37px;height:37px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:none;background:var(--blue);color:#fff}
 .push .pic svg{width:17px;height:17px}
 .push .pt{flex:1;min-width:0}
-.push .pt b{display:block;font-size:12.5px;font-weight:700;line-height:1.3;padding-right:4px}
+.push .pt b{display:block;font-size:12.5px;font-weight:700;line-height:1.3}
 .push .pt span{display:block;font-size:11.5px;color:var(--tx2);line-height:1.45;margin-top:2px;word-break:break-word}
 .push .px{flex:none;width:22px;height:22px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--tx3)}
 .push .px:hover{background:var(--hov);color:var(--tx)}
 .push .px svg{width:13px;height:13px}
 .push .prog{position:absolute;left:0;bottom:0;height:3px;width:100%}
-.push .prog i{display:block;height:100%;background:var(--blue);border-radius:0 3px 3px 0;animation:prog linear forwards}
+.push .prog i{display:block;height:100%;background:var(--blue);animation:prog linear forwards}
 @keyframes prog{from{width:100%}to{width:0}}
-/* plan rows */
-.planRow{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin-bottom:10px;transition:.15s;position:relative}
-.planRow:hover{border-color:var(--tx3)}
-.planRow.sel{border-color:var(--blue);background:var(--selbg)}
-.planRadio{width:20px;height:20px;border-radius:50%;border:2px solid var(--tx3);flex:none;display:flex;align-items:center;justify-content:center}
-.planRow.sel .planRadio{border-color:var(--blue)}
-.planRow.sel .planRadio::after{content:'';width:9px;height:9px;border-radius:50%;background:var(--blue)}
-.planName{font-size:14.5px;font-weight:700;display:block}
-.planDur{font-size:11px;color:var(--tx2);display:block;margin-top:1px}
-.planPrice{margin-left:auto;text-align:right;flex:none}
-.planPrice b{font:700 15px 'Plus Jakarta Sans',Inter,sans-serif;color:var(--tx);display:block}
-.planPrice i{display:block;font-style:normal;font-size:10.5px;color:var(--tx3)}
-/* misc */
-.photopick{width:84px;height:84px;border-radius:50%;border:1.5px dashed var(--tx3);display:flex;align-items:center;justify-content:center;color:var(--tx3);overflow:hidden;cursor:pointer;transition:.15s;flex:none;position:relative}
-.photopick:hover{border-color:var(--blue)}
-.photopick img{width:100%;height:100%;object-fit:cover}
-.upspin{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(15,23,42,.5);color:#fff;font-size:11.5px;font-weight:600;z-index:3}
+.push:hover .prog i{animation-play-state:paused}
+#login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(600px 300px at 15% 0%,rgba(11,47,209,.08),transparent 60%),radial-gradient(500px 300px at 90% 100%,rgba(37,99,235,.07),transparent 60%),var(--bg)}
+.lg-box{width:100%;max-width:400px;background:var(--card);border:1px solid var(--bd);border-radius:18px;box-shadow:0 10px 40px rgba(15,23,42,.08);padding:34px 30px;text-align:center;animation:vin .3s ease}
+.lg-box .lgmk{width:52px;height:52px;margin:0 auto 14px}
+.lg-box h1{font:700 22px 'Plus Jakarta Sans',Inter,sans-serif;letter-spacing:-.02em;margin-bottom:6px}
+.lg-box p{font-size:12.5px;color:var(--tx2);margin-bottom:24px;line-height:1.6}
+.lg-err{color:var(--dn);font-size:12px;margin-top:10px;display:flex;gap:7px;align-items:center}
+.lg-foot{font-size:10.5px;color:var(--tx3);margin-top:20px;line-height:1.7}
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;width:100%}
+.lg-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--tx2)}
+.lg-dot{width:9px;height:9px;border-radius:3px;flex:none}
+.lg-row b{margin-left:auto;color:var(--tx)}
+.donutWrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+.donutC{position:relative}
+.donutC .ctr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.donutC .ctr b{font:700 22px 'Plus Jakarta Sans',Inter,sans-serif;color:var(--tx)}
+.donutC .ctr span{font-size:10.5px;color:var(--tx2)}
+.chartBox{position:relative}
+.ctip{position:absolute;transform:translate(-50%,-115%);background:var(--bk);color:#fff;border-radius:8px;padding:7px 11px;font-size:11px;pointer-events:none;display:none;white-space:nowrap;z-index:5}
+body.dark .ctip{background:#1E293B;border:1px solid var(--bd)}
+.ctip b{display:block;font-size:12px}
+.srch{position:relative}
+.srch>svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--tx3)}
+.srch input{padding-left:33px}
+.pav{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:var(--soft2);font-weight:700;color:var(--tx2);flex:none;line-height:1}
+.pav img{width:100%;height:100%;object-fit:cover;display:block}
+.brgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.bcard{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px;cursor:pointer;transition:transform .18s,box-shadow .18s;box-shadow:var(--sh);display:flex;flex-direction:column}
+.bcard:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(15,23,42,.1)}
+.bhead2{display:flex;align-items:center;gap:12px}
+.bhead2>div{min-width:0}
+.bstats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.bstat{background:var(--soft3);border-radius:9px;padding:10px 12px;min-width:0}
+.bstat .l{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3)}
+.bstat b{font-size:13px;display:block;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.lhead h3{font:700 15px 'Plus Jakarta Sans',Inter,sans-serif}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-dow{font-size:10px;text-align:center;color:var(--tx3);font-weight:700;padding:4px 0}
+.cal-cell{aspect-ratio:1;border-radius:8px;font-size:12px;font-weight:600;color:var(--tx2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:1px solid transparent;transition:.12s;font-family:'JetBrains Mono'}
+.cal-cell:hover{background:var(--soft);color:var(--tx)}
+.cal-cell.blank{pointer-events:none}
+.cal-cell.today{border-color:var(--tx3)}
+.cal-cell.sel{background:var(--blue);color:#fff}
+.cal-cell em{width:5px;height:5px;border-radius:50%;background:var(--blue)}
+.cal-cell.sel em{background:#fff}
+.rrow{display:flex;align-items:center;gap:13px;padding:12px 2px;border-bottom:1px solid var(--line)}
+.rrow:last-child{border-bottom:none}
+.rrow .in{flex:1;min-width:0}
+.rrow .in b{font-size:13px;font-weight:600;display:block}
+.rrow .in small{font-size:11.5px;color:var(--tx2)}
+.rrow .amt{font-family:'JetBrains Mono';font-size:13px;font-weight:700;flex:none}
+.rrow .qno{font-family:'JetBrains Mono';font-size:20px;font-weight:700;color:var(--blue);width:44px;text-align:center;flex:none;line-height:1}
+.totalstrip{display:flex;justify-content:space-between;align-items:baseline;background:var(--soft3);border-radius:10px;padding:13px 16px;margin-top:14px}
+.totalstrip span{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3)}
+.totalstrip b{font:700 17px 'Plus Jakarta Sans',Inter,sans-serif;color:var(--tx)}
+.caprow{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid var(--line)}
+.caprow:last-child{border-bottom:none}
+.caprow .cdot{width:8px;height:8px;border-radius:50%;margin-left:auto;flex:none}
+.caprow b{font-size:12.5px;display:block}
+.caprow small{font-size:11px;color:var(--tx2)}
 .empty{padding:40px 16px;text-align:center;color:var(--tx3)}
 .empty svg{width:30px;height:30px;margin-bottom:8px;opacity:.5}
 .empty p{font-size:12.5px}
@@ -231,793 +407,995 @@ mark{background:var(--selbg);color:var(--blue);font-weight:700;border-radius:2px
 .setrow .in{flex:1}
 .setrow .in b{font-size:13px;display:block}
 .setrow .in small{font-size:11.5px;color:var(--tx2)}
-.ck{display:flex;gap:9px;align-items:flex-start;margin-top:14px;font-size:12px;color:var(--tx2);line-height:1.5;cursor:pointer}
-.ck input{width:auto;margin-top:2px;accent-color:var(--blue);height:14px;flex:none}
-.lg-err{color:var(--dn);font-size:12px;margin-top:10px;display:flex;gap:7px;align-items:center}
-/* login */
-#landing{min-height:100vh;display:flex;flex-direction:column}
-.lg-body{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 20px;overflow-y:auto}
-.lg-box{width:100%;max-width:440px}
-.lg-box h1{font:700 26px 'Plus Jakarta Sans',Inter,sans-serif;letter-spacing:-.02em;line-height:1.2;color:var(--tx)}
-.lg-box .lead{font-size:13px;color:var(--tx2);margin:8px 0 22px}
-.lg-brand-top{display:flex;align-items:center;gap:10px;margin-bottom:26px}
-@media(max-width:1100px){.kpis{grid-template-columns:repeat(2,1fr)}.g2,.gdash{grid-template-columns:1fr}}
+.settabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:16px;scrollbar-width:none}
+.settabs::-webkit-scrollbar{display:none}
+.photopick{width:78px;height:78px;border-radius:50%;border:1.5px dashed var(--tx3);display:flex;align-items:center;justify-content:center;color:var(--tx3);overflow:hidden;cursor:pointer;transition:.15s;flex:none;position:relative}
+.photopick:hover{border-color:var(--blue)}
+.photopick img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photopick.has-img{border-style:solid;border-color:var(--bd)}
+.upspin{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(15,23,42,.5);color:#fff;font-size:11.5px;font-weight:600;z-index:3;border-radius:inherit}
+.pfHero{border-radius:var(--r);border:1px solid var(--bd);overflow:hidden;margin-bottom:16px}
+.pfBg{height:140px;background:linear-gradient(120deg,#0B2FD1,#2563EB)}
+.pfHead{display:flex;align-items:flex-end;gap:14px;padding:0 20px 16px;margin-top:-32px;position:relative;flex-wrap:wrap}
+.pfAva{width:72px;height:72px;border-radius:50%;border:4px solid var(--bg);background:var(--blue);color:#fff;font:800 24px 'Plus Jakarta Sans';display:flex;align-items:center;justify-content:center;overflow:hidden;flex:none}
+.pfAva img{width:100%;height:100%;object-fit:cover}
+#hnav{display:none;background:var(--card);padding:10px 14px;gap:8px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;border-bottom:1px solid var(--bd)}
+#hnav::-webkit-scrollbar{display:none}
+.hchip{flex:none;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px;border-radius:99px;border:1px solid var(--bd);background:var(--card);font-size:12px;font-weight:600;color:var(--tx2);transition:.15s}
+.hchip svg{width:14px;height:14px}
+.hchip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.pwwrap{position:relative}
+.pwwrap input{padding-right:44px}
+.pweye{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--tx3);transition:.12s}
+.pweye:hover{color:var(--blue);background:var(--hov)}
+.pweye svg{width:16px;height:16px}
+/* Kotak list scrollable saat data banyak */
+.scr-box{max-height:320px;overflow-y:auto;overscroll-behavior:contain;border:1px solid var(--bd);border-radius:10px;padding:4px 14px;background:var(--hov2)}
+.scr-box .rrow:last-child{border-bottom:none}
+.scr-box .caprow:last-child{border-bottom:none}
+/* Gallery barbershop */
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.gal{aspect-ratio:1;border-radius:10px;overflow:hidden;position:relative;border:1px solid var(--bd)}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.gal button{position:absolute;top:6px;right:6px;background:rgba(15,23,42,.7);color:#fff;width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;opacity:0;transition:.15s}
+.gal:hover button{opacity:1}
+.gal-add{aspect-ratio:1;border-radius:10px;border:1.5px dashed var(--tx3);display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;color:var(--tx3);font-size:11.5px;font-weight:600;transition:.15s;cursor:pointer;background:var(--hov2)}
+.gal-add:hover{border-color:var(--blue);color:var(--blue)}
 @media(max-width:768px){
  #sidebar{display:none!important}
  .main{margin-left:0}
  #header{height:58px;padding:0 14px;gap:8px}
  .hdate{display:none}
  #hnav{display:flex}
- .h-logo-m{display:flex;align-items:center;gap:8px;margin:0 auto}
  #view{padding:16px 14px 40px}
- .kpis{grid-template-columns:repeat(2,1fr);gap:10px}
+ .kpis{grid-template-columns:repeat(2,1fr)!important;gap:10px}
  .kpi{height:106px;padding:14px}.kpi .val{font-size:22px}
- #newAc .bl{display:none}
- .tblw{overflow:visible}
- .tbl thead{display:none}
- .tbl,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}
- .tbl tr{border:1px solid var(--bd);border-radius:12px;padding:10px 14px;margin-bottom:10px;height:auto}
- .tbl td{display:flex;justify-content:space-between;align-items:center;gap:12px;height:auto;padding:6px 0;border:none;white-space:normal}
- .tbl td::before{content:attr(data-l);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--tx3)}
- .tbl td.nolbl::before{display:none}
+ .revcard{flex-direction:column;align-items:flex-start;gap:10px}
+ .revcard .right{margin-left:0;width:100%;justify-content:flex-start}
+ .grid.g2{grid-template-columns:1fr!important}
+ .brgrid{grid-template-columns:1fr!important}
+ .gal-grid{grid-template-columns:repeat(3,1fr)}
+ .scr-box{max-height:260px}
  #pushStack{right:12px;top:12px}
 }
 </style>
 </head>
 <body>
 
+<!-- ============================================================
+     ★ FIX "ReferenceError: qs is not defined":
+     handler inline (onclick="qs('#...')") berjalan di scope GLOBAL,
+     sedangkan qs lama hanya const di dalam IIFE. Solusi: shim global.
+============================================================ -->
+<script>
+window.qs=function(s){return document.querySelector(s)};
+window.qsa=function(s){return [...document.querySelectorAll(s)]};
+window.AD={};
+['doLogin','doLogout','ddToggle','ddClose','closePanels','go','goBack','toggleTheme','calSel','calMove','clearCalSel','setTab','brSearchRun','createBranchModal','createBranch','removeBranch','exportAllCSV','exportBranchCSV','changePass','sendCS','pickAdminPhoto','saveProfile','pwToggle','galPick','galDel','brQueueTab']
+.forEach(function(k){ if(typeof window.AD[k]!=='function') window.AD[k]=function(){ try{alert('Aplikasi masih memuat — coba lagi sebentar.')}catch(e){} }; });
+</script>
+
 <!-- ============ LOGIN ============ -->
-<div id="landing">
- <div class="lg-body">
+<div id="login">
   <div class="lg-box">
-   <div class="lg-brand-top">
-    <div class="logomk"><svg class="lgmk" viewBox="0 0 52 52"><path class="lgA" d="M8 3h11v46H8z"/><path class="lgB" d="M22 3h11.5a9.7 9.7 0 0 1 0 19.4H22z"/><path class="lgA" d="M22 25.4h13.5a9.3 9.3 0 0 1 9.3 9.3v7.1l-7.2 7.2H22z"/></svg></div>
-    <span class="wordmark">BarberGo<span class="wdot"></span></span>
-    <span class="badge b-admin" style="margin-left:6px">Pusat Panel</span>
-   </div>
-   <h1>Masuk ke Pusat Panel</h1>
-   <p class="lead">Kelola akun kasir, paket langganan, dan traffic website BarberGo Kasflow.</p>
-   <label class="f">Email</label>
-   <input id="lgEmail" type="email" placeholder="admin@barbergo.id" autocomplete="email" onkeydown="if(event.key==='Enter')doLogin()">
-   <label class="f">Password</label>
-   <input id="lgPass" type="password" placeholder="Password admin" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
-   <div class="lg-err hide" id="lgErr"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i><span></span></div>
-   <button class="btn pri lg" style="margin-top:20px" id="loginBtn" onclick="doLogin()"><i data-lucide="log-in"></i> Masuk</button>
-   <p style="font-size:11px;color:var(--tx3);margin-top:14px;text-align:center">Panel khusus admin pusat BarberGo. Akun pertama yang login otomatis menjadi admin.</p>
+    <svg class="lgmk" viewBox="0 0 52 52"><path class="lgA" d="M8 3h11v46H8z"/><path class="lgB" d="M22 3h11.5a9.7 9.7 0 0 1 0 19.4H22z"/><path class="lgA" d="M22 25.4h13.5a9.3 9.3 0 0 1 9.3 9.3v7.1l-7.2 7.2H22z"/></svg>
+    <h1>BarberGo Admin</h1>
+    <p>Panel pemantau cabang &amp; keuangan.<br>Masuk dengan akun email kasir BarberGo kamu.</p>
+    <label class="f" style="text-align:left">Email</label>
+    <input id="lgEmail" type="email" placeholder="nama@barbershop.id" autocomplete="email">
+    <label class="f" style="text-align:left">Password</label>
+    <div class="pwwrap"><input id="lgPass" type="password" placeholder="Minimal 6 karakter" autocomplete="current-password"><button type="button" class="pweye" onclick="AD.pwToggle('lgPass',this)"><i data-lucide="eye"></i></button></div>
+    <div class="lg-err hide" id="lgErr"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i><span></span></div>
+    <button class="btn pri lg" style="margin-top:20px" id="loginBtn" onclick="AD.doLogin()"><i data-lucide="log-in"></i> Masuk</button>
+    <div class="lg-foot">Autentikasi via Firebase — akun yang sama dengan kasir.</div>
   </div>
- </div>
 </div>
 
 <!-- ============ APP ============ -->
 <div id="app" class="hide">
- <div class="main">
+<div class="main" id="mainCol">
   <header id="header">
-   <div class="h-logo-m"><div class="logomk" style="width:30px;height:30px"><svg class="lgmk" viewBox="0 0 52 52"><path class="lgA" d="M8 3h11v46H8z"/><path class="lgB" d="M22 3h11.5a9.7 9.7 0 0 1 0 19.4H22z"/><path class="lgA" d="M22 25.4h13.5a9.3 9.3 0 0 1 9.3 9.3v7.1l-7.2 7.2H22z"/></svg></div><span class="wordmark" style="font-size:14px">Pusat<span class="wdot"></span></span></div>
-   <span class="hdate" id="hRange"></span>
-   <div class="hsp"></div>
-   <button class="btn pri" id="newAc" onclick="openAddAc()"><i data-lucide="user-plus" style="width:15px;height:15px"></i> <span class="bl">Tambah Akun</span></button>
-   <div class="dd" id="ddProfile">
-    <button class="havatar" id="hAvatar" onclick="ddToggle('ddProfile',event)"></button>
-    <div class="dd-menu" style="min-width:240px" id="profileMenu"></div>
-   </div>
+    <span style="font-size:14px;font-weight:700;color:var(--tx)" id="hTitle">Dashboard</span>
+    <span class="hdate" id="hDate"></span>
+    <div class="hsp"></div>
+    <div class="dd" id="ddProf">
+      <button class="havatar" id="hAvatar" onclick="AD.ddToggle('ddProf',event)"></button>
+      <div class="dd-menu" style="min-width:230px" id="profileMenu"></div>
+    </div>
   </header>
   <nav id="hnav"></nav>
   <main id="view"></main>
- </div>
+</div>
 </div>
 
 <aside id="sidebar">
- <div class="logo"><div class="logomk"><svg class="lgmk" viewBox="0 0 52 52"><path class="lgA" d="M8 3h11v46H8z"/><path class="lgB" d="M22 3h11.5a9.7 9.7 0 0 1 0 19.4H22z"/><path class="lgA" d="M22 25.4h13.5a9.3 9.3 0 0 1 9.3 9.3v7.1l-7.2 7.2H22z"/></svg></div><span class="wordmark">Pusat Panel<span class="wdot"></span></span></div>
- <div id="navList"></div>
- <div class="sfoot" id="sideTheme"></div>
+  <div class="logo"><div class="logomk"><svg class="lgmk" viewBox="0 0 52 52"><path class="lgA" d="M8 3h11v46H8z"/><path class="lgB" d="M22 3h11.5a9.7 9.7 0 0 1 0 19.4H22z"/><path class="lgA" d="M22 25.4h13.5a9.3 9.3 0 0 1 9.3 9.3v7.1l-7.2 7.2H22z"/></svg></div><span class="wordmark">BarberGo<span class="wdot"></span></span></div>
+  <div id="navList"></div>
+  <div class="sfoot" id="sideTheme"></div>
 </aside>
 
-<div id="scrim" onclick="closeDrawer();closeDDs()"></div>
-<div id="drawerR"></div>
+<div id="scrim" onclick="AD.closePanels()"></div>
 <div id="modalRoot"></div>
 <div id="pushStack"></div>
 
 <script>
-/* ================= FIREBASE & CLOUDINARY (sama dengan Kasflow) ================= */
-const firebaseConfig={apiKey:"AIzaSyCXMkjGhSjnJzZEbZ5_hpZtSEQ-rkl2dbk",authDomain:"mattpos.firebaseapp.com",projectId:"mattpos",storageBucket:"mattpos.firebasestorage.app",messagingSenderId:"42578217144",appId:"1:42578217144:web:ce1885354d692cce284c4d",measurementId:"G-0LZ2SJ8VRJ"};
-firebase.initializeApp(firebaseConfig);
-const auth=firebase.auth();auth.languageCode='id';
-const dbFS=firebase.firestore();
-try{firebase.analytics()}catch(e){}
-const CLOUD_NAME='o9nnrrra',CLOUD_PRESET='Barbergo';
+(function(){
+'use strict';
+
+/* ---------- Firebase ---------- */
+let fbAuth=null,fdb=null,FB_CFG=null;
+try{
+ FB_CFG={apiKey:"AIzaSyCXMkjGhSjnJzZEbZ5_hpZtSEQ-rkl2dbk",authDomain:"mattpos.firebaseapp.com",projectId:"mattpos",storageBucket:"mattpos.firebasestorage.app",messagingSenderId:"42578217144",appId:"1:42578217144:web:ce1885354d692cce284c4d",measurementId:"G-0LZ2SJ8VRJ"};
+ if(!firebase.apps.length)firebase.initializeApp(FB_CFG);
+ fbAuth=firebase.auth();
+ fdb=firebase.firestore();
+}catch(e){console.error('Firebase init gagal:',e)}
 
 /* ================= UTIL ================= */
 const qs=s=>document.querySelector(s),qsa=s=>[...document.querySelectorAll(s)],qv=s=>{const e=qs(s);return e?e.value.trim():''};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const D=864e5;
+const fmt=n=>'Rp '+Number(n||0).toLocaleString('id-ID');
+const sRp=v=>'Rp '+(v>=1e9?(Math.round(v/1e8)/10)+'M':v>=1e6?(Math.round(v/1e5)/10)+'jt':v>=1e3?Math.round(v/1e3)+'rb':''+Math.round(v));
+const DAY_MS=864e5;
 const dkey=t=>{const d=new Date(t);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
 const todayKey=()=>dkey(Date.now());
 const fdate=t=>new Date(t).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
 const fdateL=t=>new Date(t).toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+const ftime=t=>new Date(t).toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'});
 const MON=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
-function ago(t){const s=(Date.now()-t)/1e3;if(s<60)return'baru saja';const m=s/60;if(m<60)return Math.floor(m)+' mnt lalu';const h=m/60;if(h<24)return Math.floor(h)+' jam lalu';const d=h/24;if(d<7)return Math.floor(d)+' hari lalu';return fdate(t)}
-const initials=n=>{const w=String(n||'?').trim().split(/\s+/);return(((w[0]||'')[0]||'?')+(w[1]||'')[0]||'').toUpperCase()};
-const hl=(s,q)=>esc(s).replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'),'<mark>$1</mark>');
-const AUTH_ERR={'auth/email-already-in-use':'Email sudah terdaftar.','auth/invalid-email':'Format email tidak valid.','auth/weak-password':'Password minimal 6 karakter.','auth/wrong-password':'Password salah.','auth/user-not-found':'Akun tidak ditemukan.','auth/too-many-requests':'Terlalu banyak percobaan. Coba lagi nanti.','auth/invalid-credential':'Email atau password salah.','auth/network-request-failed':'Koneksi bermasalah. Cek internet.'};
-const mapErr=e=>AUTH_ERR[e&&e.code]||(e&&e.message?String(e.message).replace('Firebase: ',''):'Terjadi kesalahan.');
+const MONL=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+function refreshIcons(){try{lucide.createIcons()}catch(e){}}
+function fileToDataURL(f){return new Promise((res,rej)=>{const r=new FileReader();r.onload=e=>res(e.target.result);r.onerror=rej;r.readAsDataURL(f)})}
+function avaHTML(src,name,size){const st=`width:${size}px;height:${size}px;font-size:${Math.round(size*.4)}px`;
+ if(src)return `<span class="pav" style="${st}"><img src="${esc(src)}" alt=""></span>`;
+ return `<span class="pav" style="${st}">${esc((name||'?')[0].toUpperCase())}</span>`}
+async function cloudUpload(file){
+ const fd=new FormData();
+ fd.append('file',file);fd.append('upload_preset','Barbergo');fd.append('folder','barbergo-admins');
+ const res=await fetch(`https://api.cloudinary.com/v1_1/o9nnrrra/image/upload`,{method:'POST',body:fd});
+ if(!res.ok)throw new Error('HTTP '+res.status);
+ const j=await res.json();
+ if(!j.secure_url)throw new Error((j.error&&j.error.message)||'respons tidak valid');
+ return j.secure_url;
+}
+function pwToggle(id,btn){const i=qs('#'+id);if(!i)return;const show=i.type==='password';i.type=show?'text':'password';btn.innerHTML=`<i data-lucide="${show?'eye-off':'eye'}"></i>`;refreshIcons()}
+
+/* ================= PUSH / MODAL / DROPDOWN ================= */
+function push(o){
+ o=Object.assign({icon:'bell',title:'',sub:'',action:'',dur:4800,onClick:null},o);
+ const stack=qs('#pushStack');if(!stack)return;
+ while(stack.children.length>=3)stack.firstElementChild.remove();
+ const el=document.createElement('div');el.className='push';
+ el.innerHTML=`<span class="pic"><i data-lucide="${o.icon}"></i></span>
+  <span class="pt"><b>${esc(o.title)}</b>${o.sub?`<span>${esc(o.sub)}</span>`:''}${o.action?`<span style="display:block;font-size:11px;font-weight:700;color:var(--blue);margin-top:5px">${esc(o.action)} →</span>`:''}</span>
+  <button class="px"><i data-lucide="x"></i></button>
+  <span class="prog"><i style="animation-duration:${o.dur}ms"></i></span>`;
+ function kill(){el.classList.add('out');setTimeout(()=>el.remove(),260)}
+ el.querySelector('.px').addEventListener('click',e=>{e.stopPropagation();kill()});
+ el.addEventListener('click',()=>{o.onClick&&o.onClick();kill()});
+ el.querySelector('.prog i').addEventListener('animationend',kill);
+ stack.appendChild(el);refreshIcons();
+}
+function toast(msg,icon='check-circle-2',err=false){
+ const el=push({icon:err?'alert-triangle':icon,title:msg,dur:3000});
+ if(err){const p=el.querySelector('.pic');if(p)p.style.background='var(--dn)'}
+}
+function openModal(html){qs('#modalRoot').innerHTML=`<div class="modal">${html}</div>`;qs('#modalRoot').classList.add('on');qs('#scrim').classList.add('on');refreshIcons()}
+function closeModal(){qs('#modalRoot').classList.remove('on');qs('#modalRoot').innerHTML='';qs('#scrim').classList.remove('on')}
+function ddToggle(id,e){e&&e.stopPropagation();const d=qs('#'+id);const was=d.classList.contains('open');qsa('.dd.open').forEach(x=>x.classList.remove('open'));if(!was)d.classList.add('open')}
+function ddClose(){qsa('.dd.open').forEach(x=>x.classList.remove('open'))}
+function closePanels(){closeModal()}
+document.addEventListener('click',e=>{qsa('.dd.open').forEach(d=>{if(!d.contains(e.target))d.classList.remove('open')})});
 
 /* ================= STATE ================= */
-const PKEYS=['basic','gold','pro'];
-const DEF_SET={namaPanel:'BarberGo Pusat Panel',supportEmail:'support@barbergo.id',waPusat:'628123456789',trafficOn:true,defPaket:'gold',plans:{basic:{n:'Basic',dur:'1 Minggu',harga:'25.000',on:true},gold:{n:'Gold',dur:'1 Bulan',harga:'75.000',on:true},pro:{n:'Pro',dur:'1 Tahun',harga:'600.000',on:true}}};
-let ME=null,MEdoc=null,SET=JSON.parse(JSON.stringify(DEF_SET));
-let ACC=[],TRAFFIC={},route='dashboard';
-let acPage=1,acFilter={q:'',st:'all',pk:'all'},chartDays=7,DELID=null,CREDTMP=null;
-let unsub1=null,unsub2=null,BOOTED=false;
-let CH={rows:[],P:[]};
+let ME={name:'Admin',email:'',photo:'',createdAt:0,role:'Super Admin',gallery:[]};
+let ALL=[],TRACKED=[];
+let S={page:'dashboard',branchId:null,calView:null,calSel:null,setTab:'keamanan',brSearch:'',brQueueTab:'menunggu'};
+let HIST=[];
+let adminRef=null;
 
-const pakBadge=p=>p==='pro'?'b-pro':p==='gold'?'b-gold2':'b-gray';
-const pakName=p=>{const x=SET.plans[p]||SET.plans.basic;return x.n};
-const stBadge=s=>s==='suspended'?'b-can':'b-paid';
-const stName=s=>s==='suspended'?'Disuspen':'Aktif';
-
-/* ================= PUSH / MODAL / DRAWER / DD ================= */
-const PUSH_IC={ok:'check-circle-2',err:'x-circle',warn:'alert-triangle',info:'info'};
-const PUSH_BG={ok:'rgba(22,163,74,.1)',err:'rgba(239,68,68,.1)',warn:'rgba(245,158,11,.12)',info:'var(--selbg)'};
-const PUSH_C={ok:'#16A34A',err:'#EF4444',warn:'#B45309',info:'var(--blue)'};
-function push(type,title,msg){
- const el=document.createElement('div');el.className='push';
- el.innerHTML=`<div class="pic" style="background:${PUSH_BG[type]};color:${PUSH_C[type]}"><i data-lucide="${PUSH_IC[type]}"></i></div><div class="pt"><b>${esc(title)}</b><span>${esc(msg||'')}</span></div><button class="px" onclick="pushX(this)"><i data-lucide="x"></i></button><div class="prog"><i style="animation-duration:4.5s"></i></div>`;
- qs('#pushStack').appendChild(el);lucide.createIcons();
- setTimeout(()=>{el.classList.add('out');setTimeout(()=>el.remove(),260)},4500);
+/* ================= METRIK ================= */
+function shopMetrics(d){
+ const done=(d.queue||[]).filter(q=>q.status==='selesai');
+ const rev=done.reduce((a,q)=>a+(q.total||0),0);
+ const exp=(d.expenses||[]).reduce((a,e)=>a+(e.amount||0),0);
+ const kas=(d.kasbon||[]).reduce((a,k)=>a+(k.amount||0),0);
+ const paid=done.filter(q=>q.paidAt>=Date.now()-30*DAY_MS);
+ const rev30=paid.reduce((a,q)=>a+(q.total||0),0);
+ return{rev,exp,kas,gross:rev-exp,net:rev-exp-kas,cust:(d.customers||[]).length,
+  trx:done.length,trx30:paid.length,rev30,avg:done.length?Math.round(rev/done.length):0};
 }
-function pushX(b){const p=b.closest('.push');p.classList.add('out');setTimeout(()=>p.remove(),260)}
-function openModal(html,w){const r=qs('#modalRoot');r.innerHTML=`<div class="modal" ${w?`style="max-width:${w}px"`:''}>${html}</div>`;r.classList.add('on');lucide.createIcons()}
-function closeModal(){qs('#modalRoot').classList.remove('on');qs('#modalRoot').innerHTML=''}
-qs('#modalRoot').addEventListener('click',e=>{if(e.target.id==='modalRoot')closeModal()});
-function openDrawer(html){qs('#drawerR').innerHTML=html;qs('#drawerR').classList.add('on');qs('#scrim').classList.add('on');lucide.createIcons()}
-function closeDrawer(){qs('#drawerR').classList.remove('on');if(!qs('#modalRoot').classList.contains('on'))qs('#scrim').classList.remove('on')}
-function ddToggle(id,ev){if(ev)ev.stopPropagation();const el=qs('#'+id);const was=el.classList.contains('open');closeDDs();if(!was)el.classList.add('open')}
-function closeDDs(){qsa('.dd.open').forEach(d=>d.classList.remove('open'))}
-document.addEventListener('click',e=>{if(!e.target.closest('.dd'))closeDDs()});
-function confirmM(o){
- openModal(`<h3>${esc(o.t)}</h3><p style="font-size:12.5px;color:var(--tx2);margin-top:8px;line-height:1.65">${o.m}</p><div class="mrow"><button class="btn gho" onclick="closeModal()">Batal</button><button class="btn ${o.dng?'dng':'pri'}" id="cmOk">${esc(o.ok||'Ya, Lanjut')}</button></div>`);
- qs('#cmOk').onclick=async()=>{const b=qs('#cmOk');b.disabled=true;b.innerHTML='<span class="spin"></span>';try{await o.fn()}catch(e){push('err','Gagal',mapErr(e))}closeModal()};
+function shopSeries(d,days){
+ const out=[];const now=new Date();
+ for(let i=days-1;i>=0;i--){const dt=new Date(now);dt.setDate(now.getDate()-i);out.push({key:dkey(dt),lab:dt.getDate()+' '+MON[dt.getMonth()],rev:0,trx:0})}
+ (d.queue||[]).forEach(q=>{if(q.status!=='selesai')return;const f=out.find(x=>x.key===dkey(q.paidAt));if(f){f.rev+=q.total||0;f.trx++}});
+ return out;
+}
+
+/* ================= AUTH ================= */
+function setLoginLoading(on){
+ const b=qs('#loginBtn');if(!b)return;
+ b.disabled=on;
+ b.innerHTML=on?'<span class="spin"></span> Memproses...':'<i data-lucide="log-in"></i> Masuk';
+ refreshIcons();
+}
+function friendlyAuthError(e){
+ const c=(e&&e.code)||'';
+ if(c.includes('invalid-email'))return 'Format email tidak valid.';
+ if(c.includes('wrong-password')||c.includes('invalid-credential'))return 'Email atau password salah.';
+ if(c.includes('user-not-found'))return 'Akun tidak ditemukan.';
+ if(c.includes('email-already-in-use'))return 'Email sudah terdaftar — gunakan email lain.';
+ if(c.includes('weak-password'))return 'Password terlalu lemah (minimal 6 karakter).';
+ if(c.includes('too-many-requests'))return 'Terlalu banyak percobaan. Coba lagi nanti.';
+ if(c.includes('network-request-failed'))return 'Koneksi bermasalah. Periksa internetmu.';
+ return (e&&e.message)||'Terjadi kesalahan.';
+}
+async function doLogin(){
+ if(!fbAuth)return toast('Firebase belum siap — muat ulang halaman.','alert-triangle',true);
+ const email=qv('#lgEmail').toLowerCase(),pass=qv('#lgPass');
+ qs('#lgErr').classList.add('hide');
+ if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return authFail('Format email tidak valid.');
+ if(pass.length<6)return authFail('Password minimal 6 karakter.');
+ setLoginLoading(true);
+ try{
+  try{await fbAuth.signInWithEmailAndPassword(email,pass)}
+  catch(e){
+   if(e.code==='auth/user-not-found'){await fbAuth.createUserWithEmailAndPassword(email,pass);toast('Akun admin baru dibuat.')}
+   else throw e;
+  }
+ }catch(e){
+  authFail(friendlyAuthError(e));
+ }
+}
+function authFail(m){const e=qs('#lgErr');e.classList.remove('hide');e.querySelector('span').textContent=m;refreshIcons();setLoginLoading(false)}
+async function doLogout(){
+ try{await fbAuth.signOut()}catch(e){}
+ location.reload();
+}
+
+/* ================= PROFIL ADMIN (admins/{uid}) ================= */
+async function ensureAdmin(u){
+ adminRef=fdb.collection('admins').doc(u.uid);
+ const snap=await adminRef.get().catch(()=>null);
+ if(snap&&snap.exists){
+  const d=snap.data()||{};
+  ME={name:d.name||u.displayName||'Admin',email:d.email||u.email,photo:d.photo||u.photoURL||'',
+   createdAt:d.createdAt||Date.now(),role:d.role||'Super Admin',
+   gallery:Array.isArray(d.gallery)?d.gallery:[]};
+  await adminRef.set({name:ME.name,email:ME.email,photo:ME.photo,gallery:ME.gallery},{merge:true});
+ }else{
+  ME={name:u.displayName||'Admin',email:u.email||'',photo:u.photoURL||'',createdAt:Date.now(),role:'Super Admin',gallery:[]};
+  await adminRef.set({name:ME.name,email:ME.email,photo:ME.photo,createdAt:ME.createdAt,role:ME.role,branches:[],gallery:[]});
+  const own=await fdb.collection('shops').doc(u.uid).get().catch(()=>null);
+  if(own&&own.exists){await adminRef.set({branches:[u.uid]},{merge:true});TRACKED=[u.uid]}
+ }
+}
+function saveAdmin(fields){if(adminRef)adminRef.set(fields,{merge:true}).catch(e=>console.warn(e))}
+async function loadTracked(){
+ try{
+  const snap=await adminRef.get();
+  TRACKED=(snap.exists&&snap.data().branches)||[];
+ }catch(e){TRACKED=[]}
+}
+async function removeBranch(uid2){
+ TRACKED=TRACKED.filter(x=>x!==uid2);
+ saveAdmin({branches:TRACKED});
+ if(S.page==='branchDetail'&&S.branchId===uid2){S.branchId=null;S.page='branches'}
+ render();
+ toast('Cabang dihapus dari pantauan.','trash-2');
+}
+
+/* ================= MUAT SEMUA CABANG ================= */
+async function loadAllShops(){
+ try{
+  const snap=await fdb.collection('shops').get();
+  ALL=[];
+  snap.forEach(doc=>{
+   const d=doc.data()||{};
+   const p=d.profile||{},s=d.shop||{};
+   ALL.push({uid:doc.id,email:d.email||'',
+    name:(s.name||p.name||'Barbershop'),address:p.address||'',
+    photo:p.photo||'',plan:d.plan||'',raw:d});
+  });
+ }catch(e){
+  toast('Gagal memuat cabang: '+(e.message||e),'alert-triangle',true);
+ }
+}
+const branchByUid=id=>ALL.find(s=>s.uid===id);
+const trackedShops=()=>TRACKED.map(id=>branchByUid(id)).filter(Boolean);
+
+/* ================= TAMBAH CABANG = BUAT AKUN BARU ================= */
+function createBranchModal(){
+ openModal(`<h3>Tambah Cabang — Akun Baru</h3>
+  <p style="font-size:12px;color:var(--tx2);margin-top:6px;line-height:1.6">Cabang baru akan mendapat <b>akun kasir sendiri</b>. Email &amp; password ini dipakai cabang untuk login di aplikasi Kasir BarberGo.</p>
+  <label class="f">Nama Barbershop</label><input id="nbName" placeholder="Contoh: BarberGo Kemang">
+  <label class="f">Email Akun</label><input id="nbEmail" type="email" placeholder="cabang@barbershop.id" autocomplete="off">
+  <label class="f">Password</label>
+  <div class="pwwrap"><input id="nbPass" type="password" placeholder="Minimal 6 karakter"><button type="button" class="pweye" onclick="AD.pwToggle('nbPass',this)"><i data-lucide="eye"></i></button></div>
+  <label class="f">Alamat (opsional)</label><input id="nbAddr" placeholder="Jl. ...">
+  <label class="f">Paket</label><select id="nbPlan"><option value="basic">Basic — 1 Minggu</option><option value="gold" selected>Gold — 1 Bulan</option><option value="pro">Pro — 1 Tahun</option></select>
+  <div class="mrow"><button class="btn gho" onclick="AD.closePanels()">Batal</button><button class="btn pri" id="nbGo" onclick="AD.createBranch()"><i data-lucide="store" style="width:14px;height:14px"></i> Buat Akun Cabang</button></div>`);
+ setTimeout(()=>{const e=qs('#nbName');e&&e.focus()},80);
+}
+async function createBranch(){
+ const name=qv('#nbName'),email=qv('#nbEmail').toLowerCase(),pass=qv('#nbPass'),addr=qv('#nbAddr'),plan=qs('#nbPlan')?qs('#nbPlan').value:'gold';
+ if(name.length<2)return toast('Isi nama barbershop.','alert-triangle',true);
+ if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return toast('Format email tidak valid.','alert-triangle',true);
+ if(pass.length<6)return toast('Password minimal 6 karakter.','alert-triangle',true);
+ if(TRACKED.length>=50)return toast('Maksimal 50 cabang dipantau.','alert-triangle',true);
+ const btn=qs('#nbGo');if(btn){btn.disabled=true;btn.innerHTML='<span class="spin"></span> Membuat akun...'}
+ try{
+  let secApp;
+  try{secApp=firebase.apps.find(a=>a.name==='branchCreator')||firebase.initializeApp(FB_CFG,'branchCreator')}
+  catch(e){secApp=firebase.app('branchCreator')}
+  const secAuth=secApp.auth();
+  const cred=await secAuth.createUserWithEmailAndPassword(email,pass);
+  const newUid=cred.user.uid;
+  await secAuth.signOut();
+  const shopDoc={email,plan,seq:1001,notifSeen:0,planRequests:[],
+   payments:{qris:{on:true,img:''},debit:{on:true,note:''},transfer:{on:true,accounts:[]}},
+   shop:{name,title:'',logo:'',address:addr,footer:'Terima kasih telah berkunjung di '+name+'!',printer:false},
+   profile:{name:'Admin',photo:'',bg:'',maps:'',address:addr,gallery:[]},
+   customers:[],capsters:[],staff:[],services:[],products:[],queue:[],bookings:[],expenses:[],kasbon:[],chats:[],
+   createdAt:Date.now(),updatedAt:Date.now()};
+  await fdb.collection('shops').doc(newUid).set(shopDoc);
+  if(!TRACKED.includes(newUid)){TRACKED.push(newUid);saveAdmin({branches:TRACKED})}
+  ALL.push({uid:newUid,email,name,address:addr,photo:'',plan,raw:shopDoc});
+  closeModal();
+  S.brSearch='';
+  toast('Cabang "'+name+'" dibuat!','store');
+  push({icon:'store',title:'Akun cabang siap',sub:email+' bisa langsung login di aplikasi Kasir BarberGo.',dur:6000});
+  render();
+ }catch(e){
+  toast(friendlyAuthError(e),'alert-triangle',true);
+  if(btn){btn.disabled=false;btn.innerHTML='<i data-lucide="store" style="width:14px;height:14px"></i> Buat Akun Cabang';refreshIcons()}
+ }
+}
+
+/* ================= ROUTER ================= */
+const NAVI=[['dashboard','Dashboard','layout-dashboard'],['branches','Cabang','store'],['reports','Laporan Keuangan','bar-chart-3'],['profile','Profile','user-round'],['settings','Settings','settings']];
+function snapState(){return{page:S.page,branchId:S.branchId}}
+function setAva(id,src,name,size){
+ const el=qs('#'+id);if(!el)return;
+ el.style.width=size+'px';el.style.height=size+'px';el.style.fontSize=Math.round(size*.4)+'px';
+ el.innerHTML=src?`<img src="${esc(src)}" alt="">`:esc((name||'?')[0].toUpperCase());
+}
+function renderNav(){
+ qs('#navList').innerHTML=`<div class="ssec">MENU</div>`+NAVI.map(([id,lab,ic])=>
+  `<button class="sitem ${S.page===id?'active':''}" onclick="AD.go('${id}')"><i data-lucide="${ic}"></i><span class="lbl">${lab}</span></button>`).join('');
+ const dark=document.body.classList.contains('dark');
+ qs('#sideTheme').innerHTML=`<button class="themeRow" onclick="AD.toggleTheme()">
+  <span class="tic"><i data-lucide="${dark?'sun':'moon'}"></i></span>
+  <span><b>Mode ${dark?'Terang':'Gelap'}</b><small>Ketuk untuk beralih</small></span>
+  <span class="sw ${dark?'on':''}"></span></button>`;
+ qs('#hnav').innerHTML=NAVI.map(([id,lab,ic])=>
+  `<button class="hchip ${S.page===id?'on':''}" onclick="AD.go('${id}')"><i data-lucide="${ic}"></i>${lab}</button>`).join('');
+ qs('#profileMenu').innerHTML=`
+  <div class="dd-h"><b>${esc(ME.name||'Admin')}</b><small>${esc(ME.email)}</small></div>
+  <button class="dd-item" onclick="ddClose();AD.go('profile')"><i data-lucide="user-round"></i> Profile Saya</button>
+  <button class="dd-item" onclick="ddClose();AD.go('profileEdit')"><i data-lucide="pencil"></i> Edit Profile</button>
+  <button class="dd-item" onclick="ddClose();AD.go('settings')"><i data-lucide="settings"></i> Pengaturan</button>
+  <button class="dd-item" onclick="AD.toggleTheme()"><i data-lucide="${dark?'sun':'moon'}"></i> Mode ${dark?'Terang':'Gelap'}</button>
+  <div class="dd-sep"></div>
+  <button class="dd-item dng" onclick="AD.doLogout()"><i data-lucide="log-out"></i> Keluar</button>`;
+ setAva('hAvatar',ME.photo,ME.name,32);
+ refreshIcons();
+}
+function go(page,opts){
+ opts=opts||{};
+ HIST.push(snapState());if(HIST.length>50)HIST.shift();
+ try{history.pushState({ad:true},'')}catch(e){}
+ S.page=page;S.branchId=opts.branchId||null;
+ closePanels();render();window.scrollTo(0,0);
+}
+function goBack(){
+ if(HIST.length){
+  const prev=HIST.pop();
+  S.page=prev.page;S.branchId=prev.branchId||null;
+ }else if(S.page!=='dashboard'){
+  S.page='dashboard';S.branchId=null;
+ }
+ closePanels();render();window.scrollTo(0,0);
+}
+window.addEventListener('popstate',()=>{
+ if(qs('#app').classList.contains('hide'))return;
+ goBack();
+});
+function backBtn(){
+ return HIST.length?`<button class="ibtn bkbtn" onclick="AD.goBack()" title="Kembali"><i data-lucide="arrow-left"></i></button>`:'';
+}
+function pageHead(t,sub,right=''){
+ return `<div class="phead"><div class="ph-row">${backBtn()}<div><h1>${t}</h1><p>${sub}</p></div></div>${right}</div>`;
+}
+function render(){
+ renderNav();
+ const titles={dashboard:'Dashboard',branches:'Cabang',branchDetail:'Detail Cabang',reports:'Laporan Keuangan',settings:'Settings',profile:'Profile Saya',profileEdit:'Edit Profile'};
+ qs('#hTitle').textContent=titles[S.page]||'Dashboard';
+ const V=VIEWS[S.page]||VIEWS.dashboard;
+ qs('#view').innerHTML=V();
+ if(BIND[S.page])BIND[S.page]();
+ refreshIcons();window.scrollTo(0,0);
+}
+
+/* ================= VIEWS ================= */
+const VIEWS={},BIND={};
+
+/* ---------- DASHBOARD ---------- */
+VIEWS.dashboard=()=>{
+ const tracked=trackedShops();
+ let rev=0,rev30=0,cust=0,trx30=0,exp=0,net=0;
+ tracked.forEach(s=>{const m=shopMetrics(s.raw);rev+=m.rev;rev30+=m.rev30;cust+=m.cust;trx30+=m.trx30;exp+=m.exp;net+=m.net});
+ const out=[];const now=new Date();
+ for(let i=29;i>=0;i--){const dt=new Date(now);dt.setDate(now.getDate()-i);out.push({key:dkey(dt),lab:dt.getDate()+' '+MON[dt.getMonth()],rev:0,trx:0})}
+ tracked.forEach(s=>(s.raw.queue||[]).forEach(q=>{
+  if(q.status!=='selesai')return;
+  const f=out.find(x=>x.key===dkey(q.paidAt));if(f){f.rev+=q.total||0;f.trx++}
+ }));
+ const ranked=tracked.map(s=>({s,m:shopMetrics(s.raw)})).sort((a,b)=>b.m.rev30-a.m.rev30).slice(0,5);
+ const maxR=ranked.length?ranked[0].m.rev30:1;
+ const methodTot={qris:0,cash:0,debit:0,transfer:0};
+ tracked.forEach(s=>(s.raw.queue||[]).forEach(q=>{if(q.status==='selesai'&&q.method)methodTot[q.method]=(methodTot[q.method]||0)+(q.total||0)}));
+ const mTot=methodTot.qris+methodTot.cash+methodTot.debit+methodTot.transfer||1;
+ const pmCols=[['qris','QRIS','#0B2FD1'],['cash','Cash','#2563EB'],['debit','Debit','#0F172A'],['transfer','Transfer','#16A34A']];
+ const cd=2*Math.PI*54;let off=0;
+ const donut=pmCols.map(([k,,col])=>{const frac=methodTot[k]/mTot;const seg=`<circle r="54" cx="70" cy="70" fill="none" stroke="${col}" stroke-width="16" stroke-dasharray="${(frac*cd-2).toFixed(1)} ${cd}" stroke-dashoffset="${(-off*cd+cd/4).toFixed(1)}"/>`;off+=frac;return seg}).join('');
+ return `
+ ${pageHead('Dashboard Admin',`Pantau ${tracked.length} cabang terdaftar — ringkasan 30 hari terakhir.`)}
+ <div class="card revcard" style="margin-bottom:16px">
+  <div><div class="l">Total Revenue (30 hari)</div><div class="big" style="margin:6px 0">${fmt(rev30)}</div>
+  <div style="font-size:12px;color:var(--tx2)">Total keseluruhan: <b class="mono">${fmt(rev)}</b> · Laba bersih: <b style="color:var(--gr)" class="mono">${fmt(net)}</b></div></div>
+  <div class="right"><button class="btn gho" onclick="AD.exportAllCSV()"><i data-lucide="file-down" style="width:15px;height:15px"></i> Export Semua</button></div>
+ </div>
+ <div class="grid kpis" style="margin-bottom:16px">
+  <div class="card kpi"><span class="lab">Total Cabang</span><span class="val">${tracked.length}</span><span class="sub">${ALL.length} toko terdaftar di platform</span></div>
+  <div class="card kpi"><span class="lab">Total Customer</span><span class="val">${cust}</span><span class="sub">semua cabang terpantau</span></div>
+  <div class="card kpi"><span class="lab">Transaksi (30d)</span><span class="val">${trx30}</span><span class="sub">${fmt(Math.round(rev30/(trx30||1)))} / transaksi</span></div>
+  <div class="card kpi"><span class="lab">Pengeluaran (total)</span><span class="val">${sRp(exp)}</span><span class="sub">termasuk kasbon</span></div>
+ </div>
+ <div class="card pad" style="margin-bottom:16px">
+  <div class="chead"><h3>Traffic Chart — Semua Cabang</h3><span class="code">30 hari · arahkan kursor</span></div>
+  ${adLineChart(out,'dash')}
+  <div style="display:flex;gap:18px;padding:4px 4px 0">
+   <span class="lg-row"><span class="lg-dot" style="background:#2563EB"></span>Revenue</span>
+   <span class="lg-row"><span class="lg-dot" style="background:#94A3B8"></span>Transaksi</span></div>
+ </div>
+ <div class="grid g2" style="grid-template-columns:1.4fr 1fr;margin-bottom:16px">
+  <div class="card pad">
+   <div class="chead"><h3>Top Cabang</h3><span class="code">Berdasarkan omzet 30 hari</span></div>
+   ${ranked.length?ranked.map(({s,m},i)=>`
+    <div class="rrow" style="cursor:pointer" onclick="AD.go('branchDetail',{branchId:'${s.uid}'})">
+     <span style="width:24px;height:24px;border-radius:7px;background:var(--soft);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--tx2);flex:none">${i+1}</span>
+     ${avaHTML(s.photo,s.name,38)}
+     <div class="in"><b>${esc(s.name)}</b><small>${esc(s.address||'-')}</small>
+      <div style="height:5px;background:var(--soft2);border-radius:99px;margin-top:5px;overflow:hidden;max-width:220px"><i style="display:block;height:100%;width:${Math.max(3,Math.round(m.rev30/maxR*100))}%;background:var(--blue);border-radius:99px"></i></div></div>
+     <span class="amt" style="color:var(--blue)">${fmt(m.rev30)}</span>
+    </div>`).join('')
+   :`<div class="empty"><i data-lucide="store"></i><p>Belum ada cabang dipantau.<br>Tambahkan cabang baru dari menu Cabang.</p></div>`}
+   <div style="margin-top:12px"><button class="btn gho sm" onclick="AD.go('branches')"><i data-lucide="plus" style="width:13px;height:13px"></i> Kelola Cabang</button></div>
+  </div>
+  <div class="card pad">
+   <div class="chead"><h3>Metode Pembayaran</h3><span class="code">Semua cabang</span></div>
+   <div class="donutWrap"><div class="donutC"><svg width="140" height="140" viewBox="0 0 140 140">${donut}</svg>
+    <div class="ctr"><b>${trx30}</b><span>Transaksi 30d</span></div></div>
+    <div class="legend">${pmCols.map(([k,l,c])=>`<div class="lg-row"><span class="lg-dot" style="background:${c}"></span>${l}<b>${Math.round(methodTot[k]/mTot*100)}%</b></div>`).join('')}</div></div>
+  </div>
+ </div>`;
+};
+BIND.dashboard=()=>adBindChart('dash');
+
+/* ---------- CABANG ---------- */
+VIEWS.branches=()=>{
+ return `
+ ${pageHead('Cabang',`${TRACKED.length} cabang dipantau — buat akun baru atau cari cabang yang sudah ada.`)}
+ <div class="card pad" style="margin-bottom:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+  <span class="pav" style="width:42px;height:42px;font-size:16px;background:var(--selbg);color:var(--blue)"><i data-lucide="store"></i></span>
+  <div style="flex:1;min-width:180px"><b style="font-size:13.5px">Tambah Cabang Baru</b>
+   <div style="font-size:11.5px;color:var(--tx2)">Buat akun kasir (nama, email, password) — cabang langsung bisa login di aplikasi Kasir.</div></div>
+  <button class="btn pri" onclick="AD.createBranchModal()"><i data-lucide="user-plus" style="width:14px;height:14px"></i> Tambah Cabang</button>
+ </div>
+ <div class="srch" style="max-width:420px;margin-bottom:18px"><i data-lucide="search"></i>
+  <input placeholder="Cari cabang yang sudah ditambahkan — nama / alamat / email..." value="${esc(S.brSearch||'')}" oninput="AD.brSearchRun(this.value)"></div>
+ <div class="lhead"><h3>Cabang Dipantau</h3><span class="code" id="brCount"></span></div>
+ <div id="brCards">${brCardsHTML()}</div>`;
+};
+BIND.branches=()=>{
+ const c=qs('#brCount');
+ if(c){const n=brFiltered().length;c.textContent=n+' cabang'+(S.brSearch?' (hasil pencarian)':'')}
+};
+function brFiltered(){
+ const q=(S.brSearch||'').trim().toLowerCase();
+ return trackedShops().filter(s=>!q||s.name.toLowerCase().includes(q)||(s.address||'').toLowerCase().includes(q)||(s.email||'').toLowerCase().includes(q));
+}
+function brCardsHTML(){
+ const list=brFiltered();
+ if(!list.length){
+  const q=(S.brSearch||'').trim();
+  return `<div class="card" style="padding:8px"><div class="empty"><i data-lucide="store"></i><p>${q?'Tidak ada cabang yang cocok dengan "<b>'+esc(q)+'</b>".':'Belum ada cabang. Klik <b>Tambah Cabang</b> untuk membuat akun baru.'}</p></div></div>`;
+ }
+ return `<div class="brgrid">`+list.map(s=>{
+  const m=shopMetrics(s.raw);
+  const wait=(s.raw.queue||[]).filter(q=>q.status==='menunggu').length;
+  return `<article class="bcard" onclick="AD.go('branchDetail',{branchId:'${s.uid}'})">
+   <div class="bhead2">${avaHTML(s.photo,s.name,46)}
+    <div style="flex:1"><b style="font-size:14.5px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(s.name)}</b>
+     <div style="font-size:11px;color:var(--tx2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(s.address||s.email)}</div></div>
+    <span class="badge ${s.plan==='pro'?'b-gold':s.plan==='gold'?'b-gold':'b-gray'}">${esc((s.plan||'basic').toUpperCase())}</span>
+   </div>
+   <div class="bstats">
+    <div class="bstat"><div class="l">Omzet 30d</div><b class="mono" style="color:var(--blue)">${fmt(m.rev30)}</b></div>
+    <div class="bstat"><div class="l">Transaksi 30d</div><b class="mono">${m.trx30}</b></div>
+    <div class="bstat"><div class="l">Antrian Menunggu</div><b class="mono" style="color:${wait?'var(--wn)':'var(--tx)'}">${wait}</b></div>
+    <div class="bstat"><div class="l">Kapster</div><b class="mono">${(s.raw.capsters||[]).length}</b></div>
+   </div>
+   <div style="display:flex;gap:8px;margin-top:14px">
+    <button class="btn gho sm" style="flex:1" onclick="event.stopPropagation();AD.go('branchDetail',{branchId:'${s.uid}'})"><i data-lucide="eye" style="width:13px;height:13px"></i> Lihat Detail</button>
+    <button class="ibtn red" title="Hapus dari pantauan" onclick="event.stopPropagation();AD.removeBranch('${s.uid}')"><i data-lucide="trash-2"></i></button>
+   </div>
+  </article>`;
+ }).join('')+'</div>';
+}
+function brSearchRun(v){
+ S.brSearch=v;
+ const el=qs('#brCards');if(el)el.innerHTML=brCardsHTML();
+ const c=qs('#brCount');
+ if(c){const n=brFiltered().length;c.textContent=n+' cabang'+(S.brSearch?' (hasil pencarian)':'')}
+ refreshIcons();
+}
+
+/* ---------- DETAIL CABANG ---------- */
+VIEWS.branchDetail=()=>{
+ const s=branchByUid(S.branchId);
+ if(!s)return `<div class="empty"><i data-lucide="store"></i><p>Cabang tidak ditemukan.</p><button class="btn gho sm" style="margin-top:10px" onclick="AD.goBack()">Kembali ke Cabang</button></div>`;
+ if(!S.calView){S.calView=new Date();S.calView.setDate(1);S.calSel=todayKey()}
+ if(!S.brQueueTab)S.brQueueTab='menunggu';
+ const v=S.calView,y=v.getFullYear(),m=v.getMonth(),dim=new Date(y,m+1,0).getDate();
+ const paidCount={};(s.raw.queue||[]).forEach(q=>{if(q.status==='selesai'){const k=dkey(q.paidAt);paidCount[k]=(paidCount[k]||0)+1}});
+ const lead=(new Date(y,m,1).getDay()+6)%7;
+ let cells='';for(let i=0;i<lead;i++)cells+='<span class="cal-cell blank"></span>';
+ for(let d2=1;d2<=dim;d2++){const key=`${y}-${String(m+1).padStart(2,'0')}-${String(d2).padStart(2,'0')}`;
+  cells+=`<button class="cal-cell ${S.calSel===key?'sel':''} ${key===todayKey()?'today':''}" onclick="AD.calSel('${key}')">${d2}${paidCount[key]?'<em></em>':''}</button>`}
+ const keys=S.calSel?[S.calSel]:Array.from({length:dim},(_,i)=>`${y}-${String(m+1).padStart(2,'0')}-${String(i+1).padStart(2,'0')}`);
+ const ks=new Set(keys);
+ const tx=(s.raw.queue||[]).filter(q=>q.status==='selesai'&&ks.has(dkey(q.paidAt))).sort((a,b)=>(b.paidAt||0)-(a.paidAt||0));
+ const inc=tx.reduce((a,q)=>a+(q.total||0),0);
+ const exList=(s.raw.expenses||[]).filter(e=>ks.has(dkey(e.at))).sort((a,b)=>b.at-a.at);
+ const exp=exList.reduce((a,e)=>a+(e.amount||0),0);
+ const kbList=(s.raw.kasbon||[]).filter(k=>ks.has(dkey(k.at))).sort((a,b)=>b.at-a.at);
+ const kas=kbList.reduce((a,k)=>a+(k.amount||0),0);
+ const series=shopSeries(s.raw,dim);
+ const mAll=shopMetrics(s.raw);
+ const t0=new Date();t0.setHours(0,0,0,0);
+ const todayTx=(s.raw.queue||[]).filter(q=>q.status==='selesai'&&(q.paidAt||0)>=t0.getTime()).sort((a,b)=>(b.paidAt||0)-(a.paidAt||0));
+ const todaySum=todayTx.reduce((a,q)=>a+(q.total||0),0);
+ const caps=(s.raw.capsters||[]);
+ const waitN=(s.raw.queue||[]).filter(q=>q.status==='menunggu').length;
+ const doneN=(s.raw.queue||[]).filter(q=>q.status==='selesai').length;
+ return `
+ ${pageHead(esc(s.name),`${esc(s.address||s.email)} · ${esc((s.plan||'basic').toUpperCase())}`,`<button class="btn gho" onclick="AD.exportBranchCSV('${s.uid}')"><i data-lucide="file-down" style="width:14px;height:14px"></i> Export</button>`)}
+ <div class="card pad" style="margin-bottom:16px">
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+   ${avaHTML(s.photo,s.name,52)}
+   <div style="flex:1;min-width:180px"><b style="font-size:16px">${esc(s.name)}</b>
+    <div class="mono" style="font-size:11.5px;color:var(--tx2)">${esc(s.email)}</div></div>
+   <button class="btn dng sm" onclick="if(confirm('Hapus cabang ini dari pantauan?'))AD.removeBranch('${s.uid}')"><i data-lucide="trash-2" style="width:13px;height:13px"></i> Hapus dari Pantauan</button>
+  </div>
+ </div>
+ <div class="grid kpis" style="margin-bottom:16px">
+  <div class="card kpi"><span class="lab">Omzet (periode)</span><span class="val" style="color:var(--blue)">${sRp(inc)}</span><span class="sub">${tx.length} transaksi</span></div>
+  <div class="card kpi"><span class="lab">Laba Kotor</span><span class="val">${sRp(inc-exp)}</span><span class="sub">− pengeluaran ${sRp(exp)}</span></div>
+  <div class="card kpi"><span class="lab">Laba Bersih</span><span class="val">${sRp(inc-exp-kas)}</span><span class="sub">− kasbon ${sRp(kas)}</span></div>
+  <div class="card kpi"><span class="lab">Total Omzet (all-time)</span><span class="val">${sRp(mAll.rev)}</span><span class="sub">${mAll.trx} transaksi · ${mAll.cust} customer</span></div>
+ </div>
+ <div class="grid g2" style="grid-template-columns:300px 1fr;margin-bottom:16px">
+  <div class="card pad">
+   <div class="chead"><button class="ibtn" onclick="AD.calMove(-1)"><i data-lucide="chevron-left"></i></button><b style="font-size:13.5px">${MONL[m]} ${y}</b><button class="ibtn" onclick="AD.calMove(1)"><i data-lucide="chevron-right"></i></button></div>
+   <div class="cal-grid">${['S','S','R','K','J','S','M'].map(d=>`<span class="cal-dow">${d}</span>`).join('')}${cells}</div>
+   <div style="height:1px;background:var(--bd);margin:14px 0 12px"></div>
+   <div style="display:flex;justify-content:space-between;align-items:center">
+    <span style="font-size:11px;color:var(--tx2)">${S.calSel?'Periode: <b style="color:var(--tx)">'+fdate(new Date(S.calSel))+'</b>':'Periode: <b style="color:var(--tx)">Sebulan penuh</b>'}</span>
+    <button class="chip ${S.calSel?'':'on'}" style="padding:5px 12px" onclick="AD.clearCalSel()">Sebulan</button>
+   </div>
+  </div>
+  <div class="card pad">
+   <div class="chead"><h3>Traffic Chart</h3><span class="code">Omzet harian · ${MONL[m]}</span></div>
+   ${adLineChart(series,'bd')}
+  </div>
+ </div>
+ <!-- ★ v2.2: ANTRIAN — tab Menunggu / Selesai, list scrollable -->
+ <div class="card pad" style="margin-bottom:16px">
+  <div class="chead">
+   <h3>Antrian</h3>
+   <div style="display:flex;gap:8px">
+    <button class="chip ${S.brQueueTab==='menunggu'?'on':''}" id="bqChipW" onclick="AD.brQueueTab('menunggu')">Menunggu (${waitN})</button>
+    <button class="chip ${S.brQueueTab==='selesai'?'on':''}" id="bqChipD" onclick="AD.brQueueTab('selesai')">Selesai (${doneN})</button>
+   </div>
+  </div>
+  <div id="brQueueList">${brQueueListHTML(s)}</div>
+ </div>
+ <div class="card pad" style="margin-bottom:16px">
+  <div class="chead"><h3>Transaksi Hari Ini</h3><span class="code">${todayTx.length} transaksi · ${fmt(todaySum)}</span></div>
+  ${todayTx.length?`<div class="scr-box">${todayTx.map(q=>`<div class="rrow">
+   <span class="code" style="width:84px;flex:none">TRX-${String(q.no||0).padStart(5,'0')}</span>
+   <div class="in"><b>${esc(q.name||'-')}</b><small>${(q.items||[]).map(i=>esc(i.name)).join(', ')}</small></div>
+   <span class="badge b-gray">${esc((q.method||'cash').toUpperCase())}</span>
+   <span class="mono" style="font-size:11px;color:var(--tx2);flex:none">${ftime(q.paidAt)}</span>
+   <span class="amt" style="color:var(--blue)">${fmt(q.total)}</span></div>`).join('')}</div>`
+  :'<div class="empty" style="padding:16px 8px"><i data-lucide="clock"></i><p>Belum ada transaksi hari ini.</p></div>'}
+ </div>
+ <div class="grid g2" style="grid-template-columns:1fr 1fr;margin-bottom:16px">
+  <div class="card pad">
+   <div class="chead"><h3>Pengeluaran <span style="font-weight:400;font-size:11px;color:var(--tx3)">· ${S.calSel?fdate(new Date(S.calSel)):'Bulan '+MONL[m]}</span></h3><span class="code">${exList.length} catatan · ${fmt(exp)}</span></div>
+   ${exList.length?`<div class="scr-box">${exList.map(e=>`<div class="rrow">
+    <div class="in"><b>${esc(e.name)}</b><small>${fdate(e.at)} · ${ftime(e.at)}</small></div>
+    <span class="amt" style="color:var(--dn)">− ${fmt(e.amount)}</span></div>`).join('')}</div>`
+   :'<div class="empty" style="padding:16px 8px"><i data-lucide="wallet"></i><p>Belum ada pengeluaran pada periode ini.</p></div>'}
+   <div class="totalstrip" style="margin-top:12px"><span>Total Pengeluaran</span><b class="mono" style="color:var(--dn)">${fmt(exp)}</b></div>
+  </div>
+  <div class="card pad">
+   <div class="chead"><h3>Kasbon <span style="font-weight:400;font-size:11px;color:var(--tx3)">· ${S.calSel?fdate(new Date(S.calSel)):'Bulan '+MONL[m]}</span></h3><span class="code">${kbList.length} catatan · ${fmt(kas)}</span></div>
+   ${kbList.length?`<div class="scr-box">${kbList.map(k=>{
+    const st=(s.raw.staff||[]).find(x=>x.id===k.staffId)||{name:'—',role:''};
+    return `<div class="rrow">
+    <div class="in"><b>${esc(st.name)}</b><small>${esc(st.role)} · ${fdate(k.at)}</small></div>
+    <span class="amt" style="color:var(--wn)">− ${fmt(k.amount)}</span></div>`}).join('')}</div>`
+   :'<div class="empty" style="padding:16px 8px"><i data-lucide="hand-coins"></i><p>Belum ada kasbon pada periode ini.</p></div>'}
+   <div class="totalstrip" style="margin-top:12px"><span>Total Kasbon</span><b class="mono" style="color:var(--wn)">${fmt(kas)}</b></div>
+  </div>
+ </div>
+ <div class="card pad" style="margin-bottom:16px">
+  <div class="chead"><h3>Semua Transaksi Periode <span style="font-weight:400;font-size:11px;color:var(--tx3)">· ${S.calSel?fdate(new Date(S.calSel)):'Bulan '+MONL[m]}</span></h3><span class="code">${tx.length} transaksi</span></div>
+  ${tx.length?`<div class="scr-box">${tx.map(q=>`<div class="rrow">
+   <span class="code" style="width:84px;flex:none">TRX-${String(q.no||0).padStart(5,'0')}</span>
+   <div class="in"><b>${esc(q.name||'-')}</b><small>${(q.items||[]).map(i=>esc(i.name)).join(', ')}</small></div>
+   <span class="badge b-gray">${esc((q.method||'cash').toUpperCase())}</span>
+   <span class="mono" style="font-size:11px;color:var(--tx2);flex:none">${ftime(q.paidAt)}</span>
+   <span class="amt" style="color:var(--blue)">${fmt(q.total)}</span></div>`).join('')}</div>`
+  :'<div class="empty" style="padding:16px 8px"><i data-lucide="receipt-text"></i><p>Belum ada transaksi pada periode ini.</p></div>'}
+ </div>
+ <div class="card pad">
+  <div class="chead"><h3>Kapster</h3><span class="code">${caps.length} kapster</span></div>
+  ${caps.length?caps.map(c=>`<div class="caprow">${avaHTML(c.photo,c.name,38)}
+   <div style="flex:1;min-width:0"><b>${esc(c.name)}</b><small>${esc(c.desc||'-')}</small></div>
+   <span class="cdot" style="background:${c.status==='avail'?'var(--gr)':c.status==='serv'?'var(--wn)':'var(--tx3)'}"></span></div>`).join('')
+  :'<div class="empty" style="padding:18px 8px"><i data-lucide="scissors"></i><p>Belum ada kapster terdaftar di cabang ini.</p></div>'}
+ </div>`;
+};
+BIND.branchDetail=()=>adBindChart('bd');
+function calSel(k){S.calSel=S.calSel===k?null:k;render()}
+function calMove(d){const v=S.calView;S.calView=new Date(v.getFullYear(),v.getMonth()+d,1);S.calSel=null;render()}
+function clearCalSel(){S.calSel=null;render()}
+
+/* ★ v2.2: Antrian menunggu/selesai — tab + list */
+function brQueueTab(t){
+ S.brQueueTab=t;
+ const w=qs('#bqChipW'),d=qs('#bqChipD');
+ if(w)w.classList.toggle('on',t==='menunggu');
+ if(d)d.classList.toggle('on',t==='selesai');
+ const s=branchByUid(S.branchId);
+ const el=qs('#brQueueList');
+ if(el&&s){el.innerHTML=brQueueListHTML(s);refreshIcons()}
+}
+function brQueueListHTML(s){
+ const t=S.brQueueTab||'menunggu';
+ const list=(s.raw.queue||[]).filter(q=>q.status===t).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+ if(!list.length)return `<div class="empty" style="padding:18px 8px"><i data-lucide="${t==='menunggu'?'clock':'check-circle-2'}"></i><p>Tidak ada antrian ${t}.</p></div>`;
+ return `<div class="scr-box">${list.map(q=>{
+  const items=(q.items||[]).map(i=>esc(i.name)+(i.qty>1?' ×'+i.qty:'')).join(', ');
+  const isWait=q.status==='menunggu';
+  const tm=isWait?ftime(q.createdAt||Date.now()):ftime(q.paidAt||q.createdAt||Date.now());
+  return `<div class="rrow">
+   <span class="qno">${String(q.no||0).slice(-2).padStart(2,'0')}</span>
+   <div class="in"><b>${esc(q.name||'-')}</b><small>${items||'-'} · <span class="mono">${esc(q.phone||'')}</span></small></div>
+   ${isWait?'<span class="badge b-pend">Menunggu</span>':`<span class="badge b-paid">${esc((q.method||'cash').toUpperCase())}</span>`}
+   <span class="mono" style="font-size:11px;color:var(--tx2);flex:none">${tm}</span>
+   <span class="amt" style="color:${isWait?'var(--tx2)':'var(--blue)'}">${fmt(q.total)}</span>
+  </div>`}).join('')}</div>`;
+}
+
+/* ---------- LAPORAN KEUANGAN ---------- */
+VIEWS.reports=()=>{
+ const rows=trackedShops().map(s=>({s,m:shopMetrics(s.raw)}));
+ const tot=rows.reduce((a,{m})=>({rev:a.rev+m.rev,exp:a.exp+m.exp,kas:a.kas+m.kas,trx:a.trx+m.trx}),{rev:0,exp:0,kas:0,trx:0});
+ return `
+ ${pageHead('Laporan Keuangan',`Konsolidasi ${rows.length} cabang — klik baris untuk detail.`,'<button class="btn gho" onclick="AD.exportAllCSV()"><i data-lucide="file-down" style="width:14px;height:14px"></i> Export Semua</button>')}
+ <div class="grid kpis" style="margin-bottom:16px">
+  <div class="card kpi"><span class="lab">Total Omzet</span><span class="val" style="color:var(--blue)">${sRp(tot.rev)}</span><span class="sub">${tot.trx} transaksi</span></div>
+  <div class="card kpi"><span class="lab">Total Pengeluaran</span><span class="val">${sRp(tot.exp)}</span><span class="sub">semua cabang</span></div>
+  <div class="card kpi"><span class="lab">Total Kasbon</span><span class="val">${sRp(tot.kas)}</span><span class="sub">semua cabang</span></div>
+  <div class="card kpi"><span class="lab">Laba Bersih</span><span class="val" style="color:var(--gr)">${sRp(tot.rev-tot.exp-tot.kas)}</span><span class="sub">konsolidasi</span></div>
+ </div>
+ <div class="card pad">
+  <div class="tblw"><table class="tbl"><thead><tr><th>Cabang</th><th>Paket</th><th>Omzet</th><th>Transaksi</th><th>Pengeluaran</th><th>Laba Bersih</th><th></th></tr></thead><tbody>
+  ${rows.length?rows.map(({s,m})=>`<tr onclick="AD.go('branchDetail',{branchId:'${s.uid}'})">
+   <td><div style="display:flex;align-items:center;gap:10px">${avaHTML(s.photo,s.name,32)}<b>${esc(s.name)}</b></div></td>
+   <td><span class="badge ${s.plan==='pro'||s.plan==='gold'?'b-gold':'b-gray'}">${esc((s.plan||'basic').toUpperCase())}</span></td>
+   <td class="mono" style="font-weight:700;color:var(--blue)">${fmt(m.rev)}</td>
+   <td class="mono">${m.trx}</td>
+   <td class="mono" style="color:var(--dn)">${fmt(m.exp+m.kas)}</td>
+   <td class="mono" style="font-weight:700;color:var(--gr)">${fmt(m.net)}</td>
+   <td><button class="ibtn" onclick="event.stopPropagation();AD.exportBranchCSV('${s.uid}')" title="Export cabang"><i data-lucide="file-down"></i></button></td></tr>`).join('')
+  :'<tr><td colspan="7"><div class="empty"><p>Belum ada cabang dipantau.</p></div></td></tr>'}
+  </tbody></table></div>
+ </div>`;
+};
+
+/* ---------- PROFILE ---------- */
+VIEWS.profile=()=>{
+ return `
+ ${pageHead('Profile Saya','Identitas akun admin & gallery barbershop.')}
+ <div class="pfHero">
+  <div class="pfBg"></div>
+  <div class="pfHead">
+   <div class="photopick" style="width:72px;height:72px;border:4px solid var(--bg)" onclick="AD.go('profileEdit')" title="Ganti foto di halaman Edit Profile">
+    ${ME.photo?`<img src="${esc(ME.photo)}">`:`<span style="font:800 24px 'Plus Jakarta Sans';color:#fff">${esc((ME.name||'A')[0].toUpperCase())}</span>`}
+   </div>
+   <div style="padding-bottom:6px;flex:1;min-width:180px"><b style="font-size:18px">${esc(ME.name||'Admin')}</b>
+    <div class="mono" style="font-size:11px;color:var(--tx2)">${esc(ME.email)} · ${esc(ME.role)}</div>
+    <div style="font-size:11px;color:var(--tx3);margin-top:2px">Bergabung ${ME.createdAt?fdate(ME.createdAt):'—'} · ${TRACKED.length} cabang dipantau · ${(ME.gallery||[]).length} foto gallery</div></div>
+   <button class="btn pri sm" onclick="AD.go('profileEdit')"><i data-lucide="pencil" style="width:13px;height:13px"></i> Edit Profile</button>
+  </div>
+ </div>
+ <div class="grid g2" style="grid-template-columns:1fr 1.4fr;align-items:start">
+  <div class="card pad">
+   <div class="blk-label">Info Akun</div>
+   <div class="setrow"><div class="in"><b>Email</b><small>${esc(ME.email)}</small></div><i data-lucide="mail" style="color:var(--blue)"></i></div>
+   <div class="setrow"><div class="in"><b>Role</b><small>${esc(ME.role)}</small></div><i data-lucide="shield-check" style="color:var(--blue)"></i></div>
+   <div class="setrow"><div class="in"><b>Cabang Dipantau</b><small>${TRACKED.length} cabang</small></div><i data-lucide="store" style="color:var(--blue)"></i></div>
+   <button class="btn gho" style="margin-top:14px;width:100%" onclick="AD.go('profileEdit')"><i data-lucide="pencil" style="width:13px;height:13px"></i> Buka Halaman Edit Profile</button>
+  </div>
+  <div class="card pad">
+   <div class="chead"><h3>Gallery Barbershop</h3><span class="code">${(ME.gallery||[]).length} foto</span></div>
+   ${(ME.gallery||[]).length?`<div class="gal-grid">${(ME.gallery||[]).map(src=>`<div class="gal"><img src="${esc(src)}" alt=""></div>`).join('')}</div>`
+   :`<div class="empty" style="padding:24px 8px"><i data-lucide="images"></i><p>Belum ada foto gallery.<br>Tambahkan lewat halaman Edit Profile.</p></div>
+     <button class="btn gho sm" style="margin-top:12px" onclick="AD.go('profileEdit')"><i data-lucide="image-plus" style="width:13px;height:13px"></i> Upload Sekarang</button>`}
+  </div>
+ </div>`;
+};
+
+/* ---------- EDIT PROFILE (halaman khusus + gallery) ---------- */
+VIEWS.profileEdit=()=>{
+ return `
+ ${pageHead('Edit Profile','Perbarui identitas admin & kelola gallery barbershop.')}
+ <div class="grid g2" style="grid-template-columns:340px 1fr;align-items:start">
+  <div class="card pad">
+   <div class="blk-label">Foto Profil</div>
+   <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+    <div class="photopick ${ME.photo?'has-img':''}" style="width:110px;height:110px" id="epPhotoBox" onclick="AD.epPickPhoto()" title="Ketuk untuk ganti foto">
+     ${ME.photo?`<img src="${esc(ME.photo)}">`:'<i data-lucide="image-plus" style="width:22px;height:22px"></i>'}
+    </div>
+    <input id="epPhotoIn" type="file" accept="image/*" class="hide" onchange="AD.pickAdminPhoto(this)">
+    <button class="btn gho sm" onclick="AD.epPickPhoto()"><i data-lucide="camera" style="width:13px;height:13px"></i> Ganti Foto</button>
+   </div>
+   <label class="f">Nama Admin</label><input id="epName" value="${esc(ME.name||'')}" placeholder="Nama kamu">
+   <label class="f">Email (terkunci)</label><input value="${esc(ME.email)}" disabled>
+   <label class="f">Role</label><input value="${esc(ME.role)}" disabled>
+   <button class="btn pri lg" style="margin-top:18px" onclick="AD.saveProfile()"><i data-lucide="check" style="width:14px;height:14px"></i> Simpan Profil</button>
+  </div>
+  <div class="card pad">
+   <div class="chead"><div class="blk-label" style="margin:0">Gallery Barbershop</div><span class="code" id="galCount">${(ME.gallery||[]).length} foto</span></div>
+   <p style="font-size:11.5px;color:var(--tx2);margin-bottom:14px">Upload foto toko — interior, hasil potongan, suasana cabang. Foto tersimpan via Cloudinary &amp; bisa dihapus kapan saja.</p>
+   <div class="gal-grid" id="galGrid">${galGridHTML()}</div>
+   <input id="galIn" type="file" accept="image/*" multiple class="hide" onchange="AD.galPick(this)">
+  </div>
+ </div>`;
+};
+function epPickPhoto(){const i=qs('#epPhotoIn');if(i)i.click()}
+function galGridHTML(){
+ const g=ME.gallery||[];
+ return g.map((src,i)=>`<div class="gal"><img src="${esc(src)}" alt=""><button onclick="AD.galDel(${i})" title="Hapus foto"><i data-lucide="trash-2" style="width:13px;height:13px"></i></button></div>`).join('')+
+ `<button class="gal-add" onclick="AD.epPickGal()"><i data-lucide="image-plus"></i>Upload foto</button>`;
+}
+function epPickGal(){const i=qs('#galIn');if(i)i.click()}
+async function galPick(input){
+ const files=[...input.files];if(!files.length)return;
+ ME.gallery=ME.gallery||[];
+ let ok=0;
+ for(let i=0;i<files.length;i++){
+  toast(`Mengunggah foto ${i+1}/${files.length} ke Cloudinary...`,'upload');
+  try{
+   const url=await cloudUpload(files[i]);
+   ME.gallery.push(url);ok++;
+   saveAdmin({gallery:ME.gallery});
+  }catch(e){toast('Gagal upload foto '+(i+1)+': '+(e.message||e),'alert-triangle',true)}
+ }
+ if(ok){
+  render();
+  toast(ok+' foto ditambahkan ke gallery.','image');
+ }
+}
+function galDel(i){
+ ME.gallery.splice(i,1);
+ saveAdmin({gallery:ME.gallery});
+ const el=qs('#galGrid');if(el)el.innerHTML=galGridHTML();
+ const c=qs('#galCount');if(c)c.textContent=(ME.gallery||[]).length+' foto';
+ refreshIcons();
+ toast('Foto dihapus dari gallery.','trash-2');
+}
+async function pickAdminPhoto(input){
+ const file=input.files[0];if(!file)return;
+ const holder=qs('#epPhotoBox')||input.parentNode;
+ const local=await fileToDataURL(file);
+ const old=holder.innerHTML;
+ holder.innerHTML=`<img src="${local}">`;holder.classList.add('has-img');
+ const spin=document.createElement('div');spin.className='upspin';spin.innerHTML='<span class="spin"></span> Mengunggah...';
+ holder.appendChild(spin);
+ try{
+  const url=await cloudUpload(file);
+  ME.photo=url;saveAdmin({photo:url});
+  spin.remove();render();
+  toast('Foto profil diperbarui.','image');
+ }catch(e){holder.innerHTML=old;refreshIcons();toast('Upload gagal: '+(e.message||e),'alert-triangle',true)}
+}
+function saveProfile(){
+ const name=qs('#epName')?qv('#epName'):(ME.name||'');
+ if(name.length<2)return toast('Nama terlalu pendek.','alert-triangle',true);
+ ME.name=name;saveAdmin({name});render();toast('Profil berhasil diperbarui.','check');
+}
+
+/* ---------- SETTINGS ---------- */
+VIEWS.settings=()=>{
+ const tabs=[['keamanan','Keamanan','shield-check'],['cs','Bantuan','headphones'],['info','Informasi','info']];
+ const body={keamanan:setKeamanan,cs:setCS,info:setInfo}[S.setTab]||setKeamanan;
+ return `
+ ${pageHead('Settings','Keamanan akun, bantuan & informasi aplikasi.')}
+ <div class="settabs">
+  ${tabs.map(([k,l,ic])=>`<button class="chip ${S.setTab===k?'on':''}" onclick="AD.setTab('${k}')"><i data-lucide="${ic}" style="width:13px;height:13px"></i> ${l}</button>`).join('')}
+  <button class="chip red" onclick="AD.doLogout()"><i data-lucide="log-out" style="width:13px;height:13px"></i> Logout</button>
+ </div>
+ <div style="max-width:560px">${body()}</div>`;
+};
+function setTab(t){S.setTab=t;render()}
+function setKeamanan(){
+ return `
+ <div class="card pad">
+  <div class="blk-label">Ubah Password</div>
+  <label class="f">Password Lama</label>
+  <div class="pwwrap"><input id="oldPass" type="password" placeholder="••••••"><button type="button" class="pweye" onclick="AD.pwToggle('oldPass',this)"><i data-lucide="eye"></i></button></div>
+  <label class="f">Password Baru</label>
+  <div class="pwwrap"><input id="newPass" type="password" placeholder="Minimal 6 karakter"><button type="button" class="pweye" onclick="AD.pwToggle('newPass',this)"><i data-lucide="eye"></i></button></div>
+  <button class="btn pri" style="margin-top:16px" onclick="AD.changePass()"><i data-lucide="key-round" style="width:14px;height:14px"></i> Simpan Password Baru</button>
+ </div>`;
+}
+async function changePass(){
+ const o=qv('#oldPass'),n=qv('#newPass');
+ if(n.length<6)return toast('Password baru minimal 6 karakter.','alert-triangle',true);
+ const user=fbAuth&&fbAuth.currentUser;if(!user)return;
+ try{
+  const cred=firebase.auth.EmailAuthProvider.credential(user.email,o);
+  await user.reauthenticateWithCredential(cred);
+  await user.updatePassword(n);
+  toast('Password berhasil diubah.','key-round');
+  qs('#oldPass').value='';qs('#newPass').value='';
+ }catch(e){toast(friendlyAuthError(e),'alert-triangle',true)}
+}
+function setCS(){
+ return `
+ <div class="card pad">
+  <p style="font-size:13px;color:var(--tx2);line-height:1.7">Tim CS siap membantu setiap hari pukul <b class="mono" style="color:var(--blue)">08.00 – 21.00</b> WIB.</p>
+  <div class="setrow"><div class="in"><b>Email</b><small>cs@barbergo.id</small></div><i data-lucide="mail" style="color:var(--blue)"></i></div>
+  <label class="f">Kirim Pesan</label>
+  <textarea id="csMsg" rows="4" placeholder="Ceritakan kendala atau pertanyaanmu..."></textarea>
+  <button class="btn pri" style="width:100%;margin-top:14px" onclick="AD.sendCS()"><i data-lucide="send" style="width:14px;height:14px"></i> Kirim Pesan</button>
+ </div>`;
+}
+function sendCS(){if(qv('#csMsg').length<5)return toast('Tulis pesanmu dulu ya.','alert-triangle',true);qs('#csMsg').value='';toast('Pesan terkirim! CS kami akan membalas segera.','send')}
+function setInfo(){
+ return `
+ <div class="card pad" style="margin-bottom:16px;text-align:center">
+  <div style="width:46px;height:46px;margin:6px auto 12px"><svg class="lgmk" viewBox="0 0 52 52" style="width:100%;height:100%"><path class="lgA" d="M8 3h11v46H8z"/><path class="lgB" d="M22 3h11.5a9.7 9.7 0 0 1 0 19.4H22z"/><path class="lgA" d="M22 25.4h13.5a9.3 9.3 0 0 1 9.3 9.3v7.1l-7.2 7.2H22z"/></svg></div>
+  <b style="font-size:19px">BarberGo Admin</b>
+  <div class="mono" style="font-size:10.5px;color:var(--tx3);margin-top:4px;letter-spacing:.14em">VERSI 2.2.0 · MULTI CABANG</div>
+  <p style="font-size:12.5px;color:var(--tx2);line-height:1.7;margin-top:12px;max-width:420px;margin-left:auto;margin-right:auto">Panel admin multi cabang: tambah cabang (akun baru), antrian menunggu &amp; selesai, detail keuangan per periode, edit profile &amp; gallery — tersambung penuh ke <b>Firebase</b> &amp; <b>Cloudinary</b>.</p>
+ </div>
+ <div class="card pad">
+  <div class="setrow"><div class="in"><b>1 · Tambah Cabang</b><small>Cabang → Tambah Cabang: nama + email + password → akun kasir langsung aktif</small></div></div>
+  <div class="setrow"><div class="in"><b>2 · Detail Cabang</b><small>Antrian (menunggu/selesai), pengeluaran, kasbon &amp; transaksi per periode — list bisa discroll</small></div></div>
+  <div class="setrow"><div class="in"><b>3 · Edit Profile</b><small>Profile → Edit Profile: foto, nama, dan gallery barbershop (Cloudinary)</small></div></div>
+ </div>`;
+}
+
+/* ================= CHART (admin) ================= */
+function adLineChart(series,id){
+ const W=760,Hh=280,L=56,R=16,T=14,B=30,iw=W-L-R,ih=Hh-T-B;
+ const max=Math.max(...series.map(x=>x.rev),1);
+ const nice=v=>{if(v<=0)return 1e5;const p=Math.pow(10,Math.floor(Math.log10(v)));const n=v/p;return(n<=1?1:n<=2?2:n<=5?5:10)*p};
+ const mx=nice(max);
+ const X=i=>L+i*(iw/(series.length-1)),Y=v=>T+ih-(v/mx)*ih;
+ const maxT=Math.max(...series.map(x=>x.trx),1);
+ const Yt=v=>T+ih-(v/maxT)*ih;
+ const pts=series.map((s,i)=>({x:X(i),y:Y(s.rev),ty:Yt(s.trx)}));
+ window['ADPT_'+id]=pts;window['ADSR_'+id]=series;
+ const smooth=arr=>{let d='M'+arr[0].x+' '+arr[0].y;for(let i=0;i<arr.length-1;i++){const p0=arr[Math.max(0,i-1)],p1=arr[i],p2=arr[i+1],p3=arr[Math.min(arr.length-1,i+2)];d+=` C ${(p1.x+(p2.x-p0.x)/6).toFixed(1)} ${(p1.y+(p2.y-p0.y)/6).toFixed(1)}, ${(p2.x-(p3.x-p1.x)/6).toFixed(1)} ${(p2.y-(p3.y-p1.y)/6).toFixed(1)}, ${p2.x.toFixed(1)} ${p2.y.toFixed(1)}`}return d};
+ let grid='';for(let g=0;g<=4;g++){const gy=T+ih-(g/4)*ih;grid+=`<line x1="${L}" y1="${gy}" x2="${W-R}" y2="${gy}" stroke="var(--line)"/><text x="${L-8}" y="${gy+4}" text-anchor="end" font-size="10" fill="#94A3B8" font-family="Inter">${sRp(mx*g/4)}</text>`}
+ const step=Math.ceil(series.length/8);
+ let xl='';series.forEach((s,i)=>{if(i%step===0||i===series.length-1)xl+=`<text x="${pts[i].x}" y="${Hh-8}" text-anchor="middle" font-size="10" fill="#94A3B8" font-family="Inter">${s.lab}</text>`});
+ const line=smooth(pts),area=line+` L ${pts[pts.length-1].x} ${T+ih} L ${pts[0].x} ${T+ih} Z`;
+ const tline=smooth(pts.map(p=>({x:p.x,y:p.ty})));
+ return `<div class="chartBox"><svg id="adch_${id}" viewBox="0 0 ${W} ${Hh}" style="width:100%;display:block">${grid}${xl}
+  <path d="${area}" fill="rgba(37,99,235,.12)"/><path d="${line}" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="${tline}" fill="none" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="4 4" opacity=".7"/>
+  <circle id="addot_${id}" r="4.5" fill="#2563EB" stroke="#fff" stroke-width="2" cx="-20" cy="-20" style="opacity:0"/></svg>
+  <div class="ctip" id="adtip_${id}"></div></div>`;
+}
+function adBindChart(id){
+ const svg=qs('#adch_'+id);if(!svg)return;
+ const tip=qs('#adtip_'+id),dot=qs('#addot_'+id),pts=window['ADPT_'+id],sr=window['ADSR_'+id],W=760,Hh=280;
+ svg.addEventListener('mousemove',e=>{
+  const r=svg.getBoundingClientRect();const vx=(e.clientX-r.left)/r.width*W;
+  let best=0,bd=1e9;pts.forEach((p,i)=>{const d=Math.abs(p.x-vx);if(d<bd){bd=d;best=i}});
+  const p=pts[best],s=sr[best];
+  dot.setAttribute('cx',p.x);dot.setAttribute('cy',p.y);dot.style.opacity=1;
+  tip.style.display='block';tip.style.left=(p.x/W*100)+'%';tip.style.top=(p.y/Hh*100)+'%';
+  tip.innerHTML=`${s.lab}<b>${fmt(s.rev)}</b>${s.trx} transaksi`;
+ });
+ svg.addEventListener('mouseleave',()=>{dot.style.opacity=0;tip.style.display='none'});
+}
+
+/* ================= EXPORT CSV ================= */
+function csvDownload(rows,label){
+ const csv=rows.map(r=>r.map(c=>`"${String(c??'').replace(/"/g,'""')}"`).join(';')).join('\n');
+ const a=document.createElement('a');
+ a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));
+ a.download=`barbergo-${label}.csv`;a.click();
+}
+function exportAllCSV(){
+ const rows=[['Cabang','Email','Kode','Tanggal','Pelanggan','Metode','Total']];
+ trackedShops().forEach(s=>(s.raw.queue||[]).filter(q=>q.status==='selesai').forEach(q=>
+  rows.push([s.name,s.email,'TRX-'+String(q.no||0).padStart(5,'0'),dkey(q.paidAt),q.name,(q.method||'').toUpperCase(),q.total||0])));
+ csvDownload(rows,'laporan-semua-cabang-'+todayKey());
+ toast('Laporan semua cabang di-export.','file-down');
+}
+function exportBranchCSV(uid2){
+ const s=branchByUid(uid2);if(!s)return;
+ const rows=[['Kode','Tanggal','Jam','Pelanggan','Metode','Total']];
+ (s.raw.queue||[]).filter(q=>q.status==='selesai').sort((a,b)=>a.paidAt-b.paidAt).forEach(q=>
+  rows.push(['TRX-'+String(q.no||0).padStart(5,'0'),dkey(q.paidAt),ftime(q.paidAt),q.name,(q.method||'').toUpperCase(),q.total||0]));
+ csvDownload(rows,'cabang-'+s.name.replace(/\s+/g,'-').toLowerCase()+'-'+todayKey());
+ toast('Laporan '+s.name+' di-export.','file-down');
 }
 
 /* ================= THEME ================= */
-if(localStorage.getItem('pp_theme')==='dark')document.body.classList.add('dark');
-function toggleTheme(){document.body.classList.toggle('dark');localStorage.setItem('pp_theme',document.body.classList.contains('dark')?'dark':'light');renderSidebar()}
-
-/* ================= SECONDARY APP (buat akun tanpa keluar sesi admin) ================= */
-function secApp(){return firebase.apps.find(x=>x.name==='secP')||firebase.initializeApp(firebaseConfig,'secP')}
-
-/* ================= AUTH ================= */
-async function checkAdmin(u){
- const ref=dbFS.collection('akun').doc(u.uid);
- const d=await ref.get();
- if(d.exists){const v=d.data();if(v.role==='admin'||v.role==='owner')return v;return null}
- const admins=await dbFS.collection('akun').where('role','==','admin').limit(1).get();
- if(admins.empty){ // bootstrap: login pertama jadi admin
-  const v={email:u.email,nama:u.email.split('@')[0],role:'admin',status:'active',paket:'pro',toko:'',wa:'',createdAt:Date.now()};
-  await ref.set(v,{merge:true});return v;
- }
- return null;
-}
-function loginErr(m){const e=qs('#lgErr');e.classList.remove('hide');e.querySelector('span').textContent=m}
-async function doLogin(){
- const b=qs('#loginBtn'),em=qv('#lgEmail'),pw=qv('#lgPass');
- qs('#lgErr').classList.add('hide');
- if(!em||!pw)return loginErr('Isi email dan password.');
- b.disabled=true;b.innerHTML='<span class="spin"></span> Memeriksa...';
- try{await auth.signInWithEmailAndPassword(em,pw)}
- catch(e){b.disabled=false;b.innerHTML='<i data-lucide="log-in"></i> Masuk';lucide.createIcons();loginErr(mapErr(e))}
-}
-async function doLogout(){stopAll();await auth.signOut()}
-function stopAll(){if(unsub1){unsub1();unsub1=null}if(unsub2){unsub2();unsub2=null}BOOTED=false;ACC=[];TRAFFIC={};ME=null;MEdoc=null}
-
-async function loadSet(){
- try{
-  const d=await dbFS.collection('panelSettings').doc('panel').get();
-  if(d.exists()){const v=d.data();SET=Object.assign(JSON.parse(JSON.stringify(DEF_SET)),v,{plans:Object.assign({},DEF_SET.plans,v.plans||{})})}
-  else SET=JSON.parse(JSON.stringify(DEF_SET));
- }catch(e){SET=JSON.parse(JSON.stringify(DEF_SET))}
-}
-
-auth.onAuthStateChanged(async u=>{
- if(u){
-  try{
-   await loadSet();
-   const prof=await checkAdmin(u);
-   if(!prof){await auth.signOut();return loginErr('Email ini tidak memiliki akses Pusat Panel.')}
-   ME=u;MEdoc=prof;bootApp();
-  }catch(e){loginErr(mapErr(e))}
- }else{stopAll();qs('#app').classList.add('hide');qs('#landing').classList.remove('hide')}
-});
+function applyTheme(){const t=localStorage.getItem('ad_theme')||'light';document.body.classList.toggle('dark',t==='dark')}
+function toggleTheme(){const dark=document.body.classList.toggle('dark');localStorage.setItem('ad_theme',dark?'dark':'light');renderNav();toast('Mode '+(dark?'gelap':'terang')+' aktif.',dark?'moon':'sun')}
 
 /* ================= BOOT ================= */
-async function bootApp(){
- qs('#landing').classList.add('hide');qs('#app').classList.remove('hide');
- const lb=qs('#loginBtn');lb.disabled=false;lb.innerHTML='<i data-lucide="log-in"></i> Masuk';
- qs('#hRange').textContent=fdateL(Date.now());
- renderHeaderDd();renderSidebar();renderHnav();
- if(!BOOTED){
-  BOOTED=true;
-  unsub1=dbFS.collection('akun').onSnapshot(s=>{
-   ACC=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
-   renderSidebar();if(route==='akun')renderAcTable();if(route==='dashboard')renderDashboard();
-  },e=>push('warn','Gagal memuat akun',mapErr(e)));
-  unsub2=dbFS.collection('webTraffic').onSnapshot(s=>{
-   TRAFFIC={};s.forEach(d=>TRAFFIC[d.id]=d.data());
-   if(route==='dashboard')renderDashboard();
-  },()=>{});
-  trackVisit();
- }
- go('dashboard');
- push('ok','Selamat datang','Login sebagai '+(MEdoc.nama||ME.email));
-}
-
-async function trackVisit(){
- if(SET.trafficOn===false)return;
+(function boot(){
  try{
-  const k=todayKey();
-  const uniq=!localStorage.getItem('pp_u_'+k);localStorage.setItem('pp_u_'+k,'1');
-  const up={v:firebase.firestore.FieldValue.increment(1),last:Date.now()};
-  if(uniq)up.u=firebase.firestore.FieldValue.increment(1);
-  await dbFS.collection('webTraffic').doc(k).set(up,{merge:true});
- }catch(e){}
-}
-
-/* ================= NAV ================= */
-function navBtn(r,ic,lbl,badge){return `<button class="sitem" data-r="${r}" onclick="go('${r}')"><i data-lucide="${ic}"></i><span class="lbl">${lbl}</span>${badge?`<span class="sbadge">${badge}</span>`:''}</button>`}
-function renderSidebar(){
- const dark=document.body.classList.contains('dark');
- qs('#navList').innerHTML=`
-  <div class="ssec">Utama</div>
-  ${navBtn('dashboard','layout-dashboard','Dashboard')}
-  ${navBtn('akun','users','Akun Kasir',ACC.length||'')}
-  <div class="ssec">Lainnya</div>
-  ${navBtn('setting','settings','Pengaturan')}
-  ${navBtn('profil','user','Profil')}`;
- qsa('#navList .sitem').forEach(b=>b.classList.toggle('active',b.dataset.r===route));
- qs('#sideTheme').innerHTML=`
-  <button class="themeRow" onclick="toggleTheme()"><div class="tic"><i data-lucide="${dark?'moon':'sun'}"></i></div><div style="flex:1"><b>${dark?'Mode Gelap':'Mode Terang'}</b><small>Ketuk untuk ganti tema</small></div><span class="sw ${dark?'on':''}"></span></button>
-  <div class="planFoot"><div class="pf-l">BarberGo</div><div class="pf-n">Admin Console</div><div class="pf-f">Kelola akun kasir, paket langganan, dan traffic website Kasflow.</div></div>`;
- lucide.createIcons();
-}
-function renderHnav(){
- qs('#hnav').innerHTML=[['dashboard','layout-dashboard','Dashboard'],['akun','users','Akun'],['setting','settings','Setting'],['profil','user','Profil']]
-  .map(x=>`<button class="hchip ${route===x[0]?'on':''}" data-r="${x[0]}" onclick="go('${x[0]}')"><i data-lucide="${x[1]}"></i>${x[2]}</button>`).join('');
- lucide.createIcons();
-}
-function renderHeaderDd(){
- const a=qs('#hAvatar');
- a.innerHTML=MEdoc.foto?`<img src="${esc(MEdoc.foto)}" alt="">`:esc(initials(MEdoc.nama||ME.email));
- qs('#profileMenu').innerHTML=`
-  <div class="dd-h" style="text-transform:none;letter-spacing:0"><span style="font-size:12.5px;font-weight:700;color:var(--tx)">${esc(MEdoc.nama||'Admin')}</span><span style="font-weight:500;color:var(--tx3);font-size:10.5px">${esc(ME.email)}</span></div>
-  <div class="dd-sep"></div>
-  <button class="dd-item" onclick="go('profil')"><i data-lucide="user"></i> Profil Saya</button>
-  <button class="dd-item" onclick="go('setting')"><i data-lucide="settings"></i> Pengaturan</button>
-  <div class="dd-sep"></div>
-  <button class="dd-item" style="color:var(--dn)" onclick="doLogout()"><i data-lucide="log-out"></i> Keluar</button>`;
- lucide.createIcons();
-}
-function go(r){
- route=r;closeDDs();closeDrawer();
- qsa('#navList .sitem').forEach(b=>b.classList.toggle('active',b.dataset.r===r));
- qsa('#hnav .hchip').forEach(b=>b.classList.toggle('on',b.dataset.r===r));
- const v=qs('#view');v.style.animation='none';void v.offsetWidth;v.style.animation='';
- if(r==='dashboard')renderDashboard();else if(r==='akun')renderAkun();else if(r==='setting')renderSetting();else if(r==='profil')renderProfil();
- window.scrollTo(0,0);
-}
-
-/* ================= TRAFFIC ================= */
-function trafficRows(n){const a=[];for(let i=n-1;i>=0;i--){const t=Date.now()-i*D,d=new Date(t),k=dkey(t),tr=TRAFFIC[k]||{};a.push({k,label:d.getDate()+' '+MON[d.getMonth()],full:fdate(t),v:tr.v||0,u:tr.u||0})}return a}
-function sumRange(from,to){let s=0,u=0;for(let i=from;i<=to;i++){const t=TRAFFIC[dkey(Date.now()-i*D)]||{};s+=t.v||0;u+=t.u||0}return{s,u}}
-function niceMax(v){if(v<=5)return 5;const p=Math.pow(10,Math.floor(Math.log10(v)));const n=v/p;const m=n<=1?1:n<=2?2:n<=5?5:10;return m*p}
-function drawChart(){
- const box=qs('#chartBox');if(!box)return;
- const rows=trafficRows(chartDays);
- const W=Math.max(box.clientWidth,300),H=260,pl=38,pr=12,pt=16,pb=28;
- const max=niceMax(Math.max(1,...rows.map(r=>r.v)));
- const iw=W-pl-pr,ih=H-pt-pb;
- const X=i=>pl+(rows.length>1?i*(iw/(rows.length-1)):iw/2);
- const Y=v=>pt+ih-(v/max)*ih;
- const P=rows.map((r,i)=>({x:X(i),y:Y(r.v)}));
- const line=P.map((p,i)=>(i?'L':'M')+p.x.toFixed(1)+','+p.y.toFixed(1)).join(' ');
- const area=line+` L${P[P.length-1].x.toFixed(1)},${pt+ih} L${P[0].x.toFixed(1)},${pt+ih} Z`;
- const lineU=rows.map((r,i)=>(i?'L':'M')+X(i).toFixed(1)+','+Y(r.u).toFixed(1)).join(' ');
- let grid='',xl='';
- for(let g=0;g<=4;g++){const gy=pt+ih-(g/4)*ih;grid+=`<line x1="${pl}" y1="${gy}" x2="${pl+iw}" y2="${gy}" stroke="var(--line)"/><text x="${pl-7}" y="${gy+3}" text-anchor="end" font-size="9" fill="var(--tx3)">${Math.round(max*g/4)}</text>`}
- const step=Math.ceil(rows.length/7);
- rows.forEach((r,i)=>{if(i%step===0||i===rows.length-1)xl+=`<text x="${X(i)}" y="${H-8}" text-anchor="middle" font-size="9" fill="var(--tx3)">${r.label}</text>`});
- box.innerHTML=`<svg id="trSvg" viewBox="0 0 ${W} ${H}" width="100%" height="${H}" style="display:block">
-  <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--blue)" stop-opacity=".22"/><stop offset="100%" stop-color="var(--blue)" stop-opacity="0"/></linearGradient></defs>
-  ${grid}${xl}
-  <path d="${area}" fill="url(#ag)"/>
-  <path d="${lineU}" fill="none" stroke="var(--tx3)" stroke-width="1.5" stroke-dasharray="3 4"/>
-  <path d="${line}" fill="none" stroke="var(--blue)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-  <line id="trGl" y1="${pt}" y2="${pt+ih}" stroke="var(--tx3)" stroke-dasharray="2 3" opacity="0"/>
-  <circle id="trHp" r="4.5" fill="var(--blue)" stroke="var(--card)" stroke-width="2" opacity="0"/>
- </svg><div class="ctip" id="ctip"></div>`;
- CH={rows,P};
- const svg=qs('#trSvg'),tip=qs('#ctip'),gl=qs('#trGl'),hp=qs('#trHp');
- svg.addEventListener('mousemove',e=>{
-  const r=svg.getBoundingClientRect(),mx=(e.clientX-r.left)*(W/r.width);
-  let bi=0,bd=1e9;P.forEach((p,i)=>{const d=Math.abs(p.x-mx);if(d<bd){bd=d;bi=i}});
-  const p=P[bi],row=rows[bi];
-  gl.setAttribute('x1',p.x);gl.setAttribute('x2',p.x);gl.setAttribute('opacity','1');
-  hp.setAttribute('cx',p.x);hp.setAttribute('cy',p.y);hp.setAttribute('opacity','1');
-  tip.style.display='block';
-  tip.innerHTML=`<b>${row.full}</b>${row.v} kunjungan · ${row.u} unik`;
-  let lx=Math.max(14,Math.min(86,p.x/box.clientWidth*100));
-  tip.style.left=lx+'%';tip.style.top=(p.y/H*100)+'%';
- });
- svg.addEventListener('mouseleave',()=>{tip.style.display='none';gl.setAttribute('opacity','0');hp.setAttribute('opacity','0')});
-}
-
-/* ================= DASHBOARD ================= */
-function renderDashboard(){
- const t=TRAFFIC[todayKey()]||{};
- const cur=sumRange(0,29),prev=sumRange(30,59);
- const dlt=prev.s>0?Math.round((cur.s-prev.s)/prev.s*100):null;
- const act=ACC.filter(a=>a.status!=='suspended').length,sus=ACC.length-act;
- const adms=ACC.filter(a=>a.role==='admin'||a.role==='owner').length;
- const tot=ACC.length||1;
- qs('#view').innerHTML=`
- <div class="phead"><div><h1>Dashboard</h1><p>Ringkasan traffic website dan akun terdaftar.</p></div>
-  <div class="tabs"><button class="${chartDays===7?'on':''}" onclick="chartDays=7;renderDashboard()">7 Hari</button><button class="${chartDays===30?'on':''}" onclick="chartDays=30;renderDashboard()">30 Hari</button></div></div>
- <div class="kpis" style="margin-bottom:16px">
-  <div class="card kpi"><span class="lab">Kunjungan Hari Ini</span><span class="val">${(t.v||0).toLocaleString('id-ID')}</span><span class="sub">${t.u||0} pengunjung unik</span></div>
-  <div class="card kpi"><span class="lab">Kunjungan 30 Hari</span><span class="val">${cur.s.toLocaleString('id-ID')}</span><span class="sub">${dlt===null?'—':`<span class="${dlt>=0?'up':'down'}">${dlt>=0?'▲':'▼'} ${Math.abs(dlt)}%</span>`} vs periode sblm</span></div>
-  <div class="card kpi"><span class="lab">Akun Terdaftar</span><span class="val">${ACC.length}</span><span class="sub">${act} aktif · ${adms} admin</span></div>
-  <div class="card kpi"><span class="lab">Akun Disuspen</span><span class="val" ${sus?'style="color:var(--dn)"':''}>${sus}</span><span class="sub">${sus?'perlu tindakan':'semua aman'}</span></div>
- </div>
- <div class="gdash">
-  <div class="card pad">
-   <div class="chead"><h3>Traffic Kunjungan</h3>
-    <div style="display:flex;gap:14px"><span class="lg-row"><span class="lg-dot" style="background:var(--blue)"></span>Kunjungan</span><span class="lg-row"><span class="lg-dot" style="background:var(--tx3)"></span>Unik</span></div></div>
-   <div class="chartBox" id="chartBox"></div>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
-   <div class="card pad"><div class="chead"><h3>Paket Aktif</h3></div>
-    ${PKEYS.map(k=>{const c=ACC.filter(a=>(a.paket||'basic')===k).length;const pc=Math.round(c/tot*100);
-     return `<div class="svcrow"><div class="nm"><b>${esc(SET.plans[k].n)} <span style="color:var(--tx2);font-weight:500;font-size:11.5px">· ${c} akun</span></b><div class="bar"><i style="width:${pc}%"></i></div></div><span class="pc">${pc}%</span></div>`}).join('')}
-   </div>
-   <div class="card pad"><div class="chead"><h3>Pendaftar Terbaru</h3><button class="btn sm gho" onclick="go('akun')">Lihat semua</button></div>
-    ${ACC.length?ACC.slice(0,5).map(a=>`<div class="rrow" style="cursor:pointer" onclick="openDrawerAc('${a.id}')">
-      <div class="havatar" style="width:34px;height:34px;font-size:12px">${a.foto?`<img src="${esc(a.foto)}">`:esc(initials(a.nama))}</div>
-      <div class="in"><b>${esc(a.nama)}</b><small>${esc(a.toko||a.email)} · ${a.createdAt?ago(a.createdAt):'—'}</small></div>
-      <span class="badge ${pakBadge(a.paket)}">${pakName(a.paket)}</span></div>`).join('')
-    :`<div class="empty"><i data-lucide="user-plus"></i><p>Belum ada akun terdaftar.</p></div>`}
-   </div>
-  </div>
- </div>`;
- lucide.createIcons();drawChart();
-}
-
-/* ================= AKUN ================= */
-function renderAkun(){
- qs('#view').innerHTML=`
- <div class="phead"><div><h1>Akun Kasir</h1><p>Kelola akun, paket langganan, dan akses login kasir.</p></div>
-  <button class="btn pri" onclick="openAddAc()"><i data-lucide="user-plus"></i> Tambah Akun</button></div>
- <div class="card pad">
-  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px">
-   <div class="dd dd-left" style="flex:1;min-width:220px;max-width:340px">
-    <div class="srch"><i data-lucide="search"></i><input id="acIn" placeholder="Cari nama, email, atau barbershop..." autocomplete="off" oninput="acRun(this.value)" onfocus="acRun(this.value)" onblur="setTimeout(acHide,180)" onkeydown="acKey(event)"></div>
-    <div class="dd-menu" id="acMenu" style="width:340px"></div>
-   </div>
-   <div id="acChips" style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;flex:1">
-    <button class="chip ${acFilter.st==='all'?'on':''}" data-v="all" onclick="acSet('st','all')">Semua</button>
-    <button class="chip ${acFilter.st==='active'?'on':''}" data-v="active" onclick="acSet('st','active')">Aktif</button>
-    <button class="chip ${acFilter.st==='suspended'?'on':''}" data-v="suspended" onclick="acSet('st','suspended')">Disuspen</button>
-    <select id="acPk" style="width:auto;height:33px" onchange="acSet('pk',this.value)">
-     <option value="all">Semua Paket</option>
-     ${PKEYS.map(k=>`<option value="${k}" ${acFilter.pk===k?'selected':''}>${esc(SET.plans[k].n)}</option>`).join('')}
-    </select>
-    <span id="acCnt" style="font-size:11px;color:var(--tx3);font-weight:600;margin-left:auto"></span>
-   </div>
-  </div>
-  <div class="tblw"><table class="tbl">
-   <thead><tr><th>Nama</th><th>Email</th><th>Paket</th><th>Status</th><th>Dibuat</th><th></th></tr></thead>
-   <tbody id="acTb"></tbody></table></div>
-  <div id="acPg"></div>
- </div>`;
- lucide.createIcons();renderAcTable();
-}
-function acSet(k,v){acFilter[k]=v;acPage=1;
- qsa('#acChips .chip').forEach(c=>c.classList.toggle('on',c.dataset.v===acFilter.st));
- const s=qs('#acPk');if(s)s.value=acFilter.pk;
- renderAcTable();
-}
-function acFiltered(){
- let l=ACC;const q=acFilter.q.toLowerCase();
- if(q)l=l.filter(a=>(a.nama||'').toLowerCase().includes(q)||(a.email||'').toLowerCase().includes(q)||(a.toko||'').toLowerCase().includes(q)||(a.wa||'').includes(q));
- if(acFilter.st!=='all')l=l.filter(a=>(a.status||'active')===acFilter.st);
- if(acFilter.pk!=='all')l=l.filter(a=>(a.paket||'basic')===acFilter.pk);
- return l;
-}
-function renderAcTable(){
- const tb=qs('#acTb');if(!tb)return;
- const l=acFiltered(),per=8,tp=Math.max(1,Math.ceil(l.length/per));
- if(acPage>tp)acPage=tp;
- const page=l.slice((acPage-1)*per,acPage*per);
- qs('#acCnt').textContent=l.length+' akun';
- if(!l.length){tb.innerHTML=`<tr><td colspan="6" class="nolbl" style="cursor:default"><div class="empty"><i data-lucide="users"></i><p>${acFilter.q?'Tidak ada akun yang cocok dengan pencarian.':'Belum ada akun. Klik "Tambah Akun" untuk membuat akun kasir pertama.'}</p></div></td></tr>`;qs('#acPg').innerHTML='';lucide.createIcons();return}
- tb.innerHTML=page.map(a=>{
-  const own=ME&&a.id===ME.uid;
-  return `<tr onclick="openDrawerAc('${a.id}')">
-   <td data-l="Nama"><div style="display:flex;align-items:center;gap:11px">
-    <div class="havatar" ${a.foto?'style="background:transparent;border-color:var(--bd)"':''}>${a.foto?`<img src="${esc(a.foto)}">`:esc(initials(a.nama))}</div>
-    <div style="min-width:0"><b style="display:block">${esc(a.nama)}${own?' <span class="badge b-admin" style="margin-left:4px">Kamu</span>':''}${a.role==='admin'||a.role==='owner'?' <span class="badge b-admin" style="margin-left:4px">Admin</span>':''}</b><small style="color:var(--tx2);font-size:11px">${esc(a.toko||'—')}</small></div>
-   </div></td>
-   <td data-l="Email">${esc(a.email)}</td>
-   <td data-l="Paket"><span class="badge ${pakBadge(a.paket)}">${pakName(a.paket)}</span></td>
-   <td data-l="Status"><span class="badge ${stBadge(a.status)}">${stName(a.status)}</span></td>
-   <td data-l="Dibuat">${a.createdAt?fdate(a.createdAt):'—'}</td>
-   <td data-l="" class="nolbl" style="text-align:right"><button class="ibtn" onclick="event.stopPropagation();openDrawerAc('${a.id}')"><i data-lucide="more-horizontal"></i></button></td>
-  </tr>`}).join('');
- let h='';
- if(tp>1){h='<div class="pager">';
-  h+=`<button ${acPage===1?'disabled':''} onclick="acPage--;renderAcTable()"><i data-lucide="chevron-left" style="width:13px;height:13px"></i></button>`;
-  let last=0;
-  for(let i=1;i<=tp;i++){
-   if(i===1||i===tp||Math.abs(i-acPage)<=1){if(i-last>1)h+='<button disabled style="border:none;background:none">…</button>';h+=`<button class="${i===acPage?'on':''}" onclick="acPage=${i};renderAcTable()">${i}</button>`;last=i}
-  }
-  h+=`<button ${acPage===tp?'disabled':''} onclick="acPage++;renderAcTable()"><i data-lucide="chevron-right" style="width:13px;height:13px"></i></button></div>`;
- }
- qs('#acPg').innerHTML=h;lucide.createIcons();
-}
-/* autocomplete */
-function acRun(v){
- acFilter.q=v.trim();acPage=1;renderAcTable();
- const inp=qs('#acIn'),dd=inp.closest('.dd'),m=qs('#acMenu'),q=acFilter.q.toLowerCase();
- if(!q)return acHide();
- dd.classList.add('open');
- const l=ACC.filter(a=>(a.nama||'').toLowerCase().includes(q)||(a.email||'').toLowerCase().includes(q)||(a.toko||'').toLowerCase().includes(q)).slice(0,6);
- m.innerHTML=l.length?
-  `<div class="dd-h">Akun <span>${l.length} hasil</span></div>`+
-  l.map((a,i)=>`<button class="gs-item" data-id="${a.id}" onmousedown="acPick('${a.id}')">
-   <div class="havatar" style="width:30px;height:30px;font-size:10.5px">${a.foto?`<img src="${esc(a.foto)}">`:esc(initials(a.nama))}</div>
-   <div class="gt"><b>${hl(a.nama,q)}</b><small>${hl(a.email,q)}${a.toko?' · '+esc(a.toko):''}</small></div>
-   <span class="badge ${pakBadge(a.paket)}" style="flex:none">${pakName(a.paket)}</span></button>`).join('')+
-  `<div class="gs-foot">Klik untuk membuka detail akun · Esc untuk tutup</div>`
- :`<div class="gs-foot" style="padding:14px">Tidak ada hasil untuk "${esc(q)}"</div>`;
- lucide.createIcons();
-}
-function acHide(){const d=qs('#acIn')&&qs('#acIn').closest('.dd');if(d)d.classList.remove('open')}
-function acKey(e){
- if(e.key==='Escape')acHide();
- if(e.key==='Enter'){const f=qs('#acMenu .gs-item');if(f){acPick(f.dataset.id)}}
-}
-function acPick(id){
- const a=ACC.find(x=>x.id===id);
- if(a){qs('#acIn').value=a.nama;acFilter.q=a.nama}
- acHide();openDrawerAc(id);renderAcTable();
-}
-/* plan rows (shared) */
-function planRowsHTML(sel){
- return PKEYS.filter(k=>SET.plans[k].on!==false).map(k=>{const p=SET.plans[k];return `
-  <button type="button" class="planRow ${k===sel?'sel':''}" data-p="${k}">
-   <span class="planRadio"></span>
-   <span style="flex:1;min-width:0"><span class="planName">${esc(p.n)}</span><span class="planDur">Durasi ${esc(p.dur)}</span></span>
-   <span class="planPrice"><b>Rp ${esc(String(p.harga||'0').replace(/^rp\s*/i,''))}</b><i>/ ${esc(p.dur)}</i></span>
-  </button>`}).join('');
-}
-function bindPlanRows(sel){
- qsa(sel+' .planRow').forEach(r=>r.addEventListener('click',()=>{qsa(sel+' .planRow').forEach(x=>x.classList.remove('sel'));r.classList.add('sel')}));
-}
-/* tambah akun */
-function openAddAc(){
- openModal(`
- <h3>Tambah Akun Kasir</h3><p style="font-size:12px;color:var(--tx2);margin-top:5px">Akun langsung aktif dan bisa langsung login di Kasflow.</p>
- <label class="f">Nama Lengkap *</label><input id="np_nama" placeholder="Nama kasir">
- <label class="f">Email *</label><input id="np_email" type="email" placeholder="nama@email.com" autocomplete="off">
- <label class="f">Password *</label><input id="np_pass" placeholder="Minimal 6 karakter">
- <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-  <div><label class="f">Nama Barbershop</label><input id="np_toko" placeholder="BarberGo ..."></div>
-  <div><label class="f">No. WhatsApp</label><input id="np_wa" placeholder="62812..."></div>
- </div>
- <label class="f">Role</label><select id="np_role"><option value="kasir">Kasir</option><option value="admin">Admin Pusat</option></select>
- <label class="f">Paket Langganan</label>
- <div id="np_plans">${planRowsHTML(SET.defPaket||'gold')}</div>
- <div class="lg-err hide" id="npErr"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i><span></span></div>
- <div class="mrow"><button class="btn gho" onclick="closeModal()">Batal</button><button class="btn pri" id="npSave" onclick="saveAddAc()"><i data-lucide="user-plus"></i> Buat Akun</button></div>`,520);
- bindPlanRows('#np_plans');
-}
-async function saveAddAc(){
- const err=qs('#npErr');err.classList.add('hide');
- const nama=qv('#np_nama'),email=qv('#np_email').toLowerCase(),pass=qv('#np_pass'),toko=qv('#np_toko'),wa=qv('#np_wa'),role=qs('#np_role').value;
- const sel=qs('#np_plans .planRow.sel');const pk=sel?sel.dataset.p:'basic';
- const bad=m=>{err.classList.remove('hide');err.querySelector('span').textContent=m};
- if(!nama)return bad('Nama wajib diisi.');
- if(!/^\S+@\S+\.\S+$/.test(email))return bad('Format email tidak valid.');
- if(pass.length<6)return bad('Password minimal 6 karakter.');
- const b=qs('#npSave');b.disabled=true;b.innerHTML='<span class="spin"></span> Membuat...';
- try{
-  const app=secApp(); // app kedua: sesi admin tidak terganggu
-  const cred=await app.auth().createUserWithEmailAndPassword(email,pass);
-  await dbFS.collection('akun').doc(cred.user.uid).set({nama,email,toko,wa,paket:pk,status:'active',role,createdAt:Date.now(),createdBy:ME.email});
-  try{await app.auth().signOut()}catch(_){}
-  closeModal();renderAcTable();
-  CREDTMP={nama,email,pass};
-  credModal({nama,email,pass,pk,wa});
- }catch(e){bad(mapErr(e));b.disabled=false;b.innerHTML='<i data-lucide="user-plus"></i> Buat Akun';lucide.createIcons()}
-}
-function copyCred(){
- if(!CREDTMP)return;
- const t=CREDTMP.email+' / '+CREDTMP.pass;
- (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject())
-  .then(()=>push('ok','Disalin','Kredensial akun disalin ke clipboard.'))
-  .catch(()=>push('info','Kredensial',t));
-}
-function credModal(a){
- const p=SET.plans[a.paket]||SET.plans.basic;
- const waN=a.wa?String(a.wa).replace(/\D/g,'').replace(/^0/,'62'):'';
- const txt=encodeURIComponent(`Halo ${a.nama}! Akun BarberGo Kasflow kamu sudah dibuat:\n\nEmail: ${a.email}\nPassword: ${a.pass}\nPaket: ${p.n} (${p.dur})\n\nLogin di: https://kasflow.barbergo.id/\n\nJangan bagikan data ini ke siapa pun.`);
- openModal(`
- <div style="text-align:center;padding:4px 0 0">
-  <div style="width:52px;height:52px;border-radius:16px;background:rgba(22,163,74,.1);color:#16A34A;display:inline-flex;align-items:center;justify-content:center"><i data-lucide="check-circle-2" style="width:26px;height:26px"></i></div>
-  <h3 style="margin-top:12px">Akun Berhasil Dibuat</h3>
-  <p style="font-size:12.5px;color:var(--tx2);margin-top:5px">Simpan detail login berikut &amp; kirim ke kasir.</p>
- </div>
- <div style="background:var(--soft3);border-radius:12px;padding:6px 14px;margin-top:14px">
-  <div class="dtl" style="border:none"><div class="dl">Nama</div><div class="dv">${esc(a.nama)}</div></div>
-  <div class="dtl" style="border:none"><div class="dl">Email</div><div class="dv">${esc(a.email)}</div></div>
-  <div class="dtl" style="border:none"><div class="dl">Password</div><div class="dv mono">${esc(a.pass)}</div></div>
-  <div class="dtl" style="border:none"><div class="dl">Paket</div><div class="dv">${esc(p.n)} · ${esc(p.dur)}</div></div>
- </div>
- <div class="mrow">
-  <button class="btn gho" onclick="copyCred()"><i data-lucide="copy"></i> Salin</button>
-  <a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/${waN}?text=${txt}"><i data-lucide="message-circle"></i> Kirim via WhatsApp</a>
- </div>`,470);
-}
-/* drawer detail akun */
-function openDrawerAc(id){
- const a=ACC.find(x=>x.id===id);if(!a)return;
- const own=ME&&a.id===ME.uid,adm=a.role==='admin'||a.role==='owner';
- openDrawer(`
- <div class="dr-head">
-  <div class="havatar" style="width:40px;height:40px;font-size:14px">${a.foto?`<img src="${esc(a.foto)}">`:esc(initials(a.nama))}</div>
-  <div style="flex:1;min-width:0"><b style="display:block;font-size:14px">${esc(a.nama)}</b><small style="color:var(--tx2);font-size:11.5px">${esc(a.email)}</small></div>
-  <button class="ibtn" onclick="closeDrawer()"><i data-lucide="x"></i></button>
- </div>
- <div class="dr-body">
-  <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-   <span class="badge ${pakBadge(a.paket)}">${pakName(a.paket)}</span>
-   <span class="badge ${stBadge(a.status)}">${stName(a.status)}</span>
-   ${adm?'<span class="badge b-admin">Admin</span>':''}
-  </div>
-  <div class="dtl"><div class="dl">Barbershop</div><div class="dv">${esc(a.toko||'—')}</div></div>
-  <div class="dtl"><div class="dl">WhatsApp</div><div class="dv">${esc(a.wa||'—')}</div></div>
-  <div class="dtl"><div class="dl">Dibuat</div><div class="dv">${a.createdAt?fdate(a.createdAt)+' · '+ago(a.createdAt):'—'}</div></div>
-  <div class="dtl"><div class="dl">UID</div><div class="dv mono" style="font-size:10.5px;word-break:break-all">${esc(a.id)}</div></div>
-
-  <div class="blk-label" style="margin-top:20px">Ubah Paket</div>
-  <div id="dp_plans">${planRowsHTML(a.paket)}</div>
-  <button class="btn pri" style="width:100%;margin-top:8px" onclick="savePlan('${a.id}')"><i data-lucide="check"></i> Simpan Paket</button>
-
-  <div class="blk-label" style="margin-top:22px">Tindakan</div>
-  <div style="display:grid;gap:8px">
-   <button class="btn gho" style="justify-content:flex-start" onclick="openChgPass('${a.id}')"><i data-lucide="key-round"></i> Ubah Password</button>
-   ${own?'<p style="font-size:11px;color:var(--tx3)">Ini akunmu sendiri — suspen &amp; hapus dinonaktifkan.</p>':`
-   <button class="btn ${a.status==='suspended'?'wa':'gho'}" style="justify-content:flex-start" onclick="toggleSusp('${a.id}')"><i data-lucide="${a.status==='suspended'?'play':'pause'}"></i> ${a.status==='suspended'?'Aktifkan Kembali':'Suspen Akun'}</button>
-   <button class="btn dng" style="justify-content:flex-start" onclick="openDelAc('${a.id}')"><i data-lucide="trash-2"></i> Hapus Akun</button>`}
-  </div>
- </div>`);
- bindPlanRows('#dp_plans');
-}
-async function savePlan(id){
- const a=ACC.find(x=>x.id===id);if(!a)return;
- const sel=qs('#dp_plans .planRow.sel');const pk=sel?sel.dataset.p:a.paket;
- try{
-  await dbFS.collection('akun').doc(id).update({paket:pk,paketAt:Date.now()});
-  a.paket=pk;push('ok','Paket diperbarui',a.nama+' sekarang paket '+pakName(pk)+'.');
-  renderAcTable();openDrawerAc(id);
- }catch(e){push('err','Gagal',mapErr(e))}
-}
-function toggleSusp(id){
- const a=ACC.find(x=>x.id===id);if(!a)return;
- if(a.status==='suspended'){
-  dbFS.collection('akun').doc(id).update({status:'active',suspAt:firebase.firestore.FieldValue.delete()})
-   .then(()=>{a.status='active';push('ok','Akun diaktifkan',a.nama+' bisa login kembali.');renderAcTable();openDrawerAc(id)})
-   .catch(e=>push('err','Gagal',mapErr(e)));
- }else{
-  confirmM({t:'Suspen Akun?',m:`Akun <b>${esc(a.nama)}</b> (${esc(a.email)}) akan <b>tidak bisa login</b> ke Kasflow sampai diaktifkan kembali.`,ok:'Ya, Suspen',dng:true,fn:async()=>{
-   await dbFS.collection('akun').doc(id).update({status:'suspended',suspAt:Date.now()});
-   a.status='suspended';push('warn','Akun disuspen',a.nama+' telah dinonaktifkan.');
-   renderAcTable();openDrawerAc(id);
-  }});
- }
-}
-/* ubah password akun lain */
-function openChgPass(id){
- const a=ACC.find(x=>x.id===id);if(!a)return;
- openModal(`<h3>Ubah Password Akun</h3><p style="font-size:12.5px;color:var(--tx2);margin-top:5px">${esc(a.nama)} · ${esc(a.email)}</p>
- <label class="f">Password Saat Ini *</label><input id="cp_cur" placeholder="Password lama akun">
- <label class="f">Password Baru *</label><input id="cp_new" placeholder="Minimal 6 karakter">
- <label class="f">Konfirmasi Password Baru *</label><input id="cp_con">
- <div class="lg-err hide" id="cpErr"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i><span></span></div>
- <p style="font-size:10.5px;color:var(--tx3);margin-top:10px;line-height:1.5">Verifikasi keamanan Firebase: untuk mengubah password dari panel, password lama akun diperlukan.</p>
- <div class="mrow"><button class="btn gho" onclick="closeModal()">Batal</button><button class="btn pri" id="cpSave" onclick="saveChgPass('${id}')"><i data-lucide="key-round"></i> Simpan</button></div>`,470);
-}
-async function saveChgPass(id){
- const a=ACC.find(x=>x.id===id);if(!a)return;
- const err=qs('#cpErr');err.classList.add('hide');
- const c=qv('#cp_cur'),n=qv('#cp_new'),k=qv('#cp_con');
- const bad=m=>{err.classList.remove('hide');err.querySelector('span').textContent=m};
- if(!c)return bad('Password saat ini wajib diisi.');
- if(n.length<6)return bad('Password baru minimal 6 karakter.');
- if(n!==k)return bad('Konfirmasi password tidak sama.');
- const b=qs('#cpSave');b.disabled=true;b.innerHTML='<span class="spin"></span> Menyimpan...';
- try{
-  const app=secApp();
-  await app.auth().signInWithEmailAndPassword(a.email,c);
-  await app.auth().currentUser.updatePassword(n);
-  await app.auth().signOut();
-  closeModal();push('ok','Password diubah','Password akun '+a.nama+' berhasil diperbarui.');
- }catch(e){bad(mapErr(e));b.disabled=false;b.innerHTML='<i data-lucide="key-round"></i> Simpan';lucide.createIcons()}
-}
-/* hapus akun */
-function openDelAc(id){
- const a=ACC.find(x=>x.id===id);if(!a)return;DELID=id;
- openModal(`<h3 style="color:var(--dn)">Hapus Akun?</h3>
- <p style="font-size:12.5px;color:var(--tx2);margin-top:6px;line-height:1.65">Akun <b>${esc(a.nama)}</b> (${esc(a.email)}) akan dihapus dari panel beserta data profilnya. Tindakan ini <b>permanen</b>.</p>
- <label class="f">Password Akun <span style="text-transform:none;letter-spacing:0">(opsional)</span></label>
- <input id="dl_pass" placeholder="Isi untuk ikut menghapus login di Firebase Auth">
- <label class="ck"><input type="checkbox" id="dl_ack" onchange="qs('#dl_go').disabled=!this.checked"><span>Saya mengerti akun ini dihapus permanen dan tidak bisa dikembalikan.</span></label>
- <div class="mrow"><button class="btn gho" onclick="closeModal()">Batal</button><button class="btn dng" id="dl_go" disabled onclick="doDelAc()"><i data-lucide="trash-2"></i> Hapus Permanen</button></div>`,470);
-}
-async function doDelAc(){
- const a=ACC.find(x=>x.id===DELID);if(!a)return;
- const pass=qv('#dl_pass');
- const b=qs('#dl_go');b.disabled=true;b.innerHTML='<span class="spin"></span> Menghapus...';
- let note='';
- try{
-  if(pass){
+  applyTheme();refreshIcons();
+  qs('#hDate').textContent=fdateL(new Date());
+  if(!fbAuth){toast('Firebase gagal dimuat — periksa koneksi.','alert-triangle',true);return}
+  fbAuth.onAuthStateChanged(async u=>{
+   if(!u){
+    qs('#app').classList.add('hide');qs('#login').classList.remove('hide');
+    setLoginLoading(false);return;
+   }
+   qs('#login').classList.add('hide');qs('#app').classList.remove('hide');
    try{
-    const app=secApp();
-    await app.auth().signInWithEmailAndPassword(a.email,pass);
-    await app.auth().currentUser.delete();
-   }catch(e){note=' Login akun tidak terhapus ('+(AUTH_ERR[e.code]||'password salah / dibatasi')+')'}
-  }else note=' Login di Firebase Auth masih ada — hapus lewat Firebase Console bila perlu.';
-  await dbFS.collection('akun').doc(DELID).delete();
-  ACC=ACC.filter(x=>x.id!==DELID);
-  closeModal();closeDrawer();
-  push('ok','Akun dihapus',a.nama+'.'+note);
- }catch(e){push('err','Gagal menghapus',mapErr(e));b.disabled=false;b.innerHTML='<i data-lucide="trash-2"></i> Hapus Permanen';lucide.createIcons()}
-}
+    await ensureAdmin(u);
+    await loadTracked();
+    await loadAllShops();
+    render();
+   }catch(e){
+    console.error(e);
+    toast('Gagal memuat data: '+(e.message||e),'alert-triangle',true);
+   }
+  });
+ }catch(e){console.error('boot:',e)}
+})();
 
-/* ================= PENGATURAN ================= */
-function renderSetting(){
- qs('#view').innerHTML=`
- <div class="phead"><div><h1>Pengaturan</h1><p>Konfigurasi pusat panel, paket langganan, dan traffic.</p></div>
-  <button class="btn pri" onclick="saveSetting(this)"><i data-lucide="save"></i> Simpan Perubahan</button></div>
- <div class="g2">
-  <div class="card pad">
-   <div class="chead"><h3>Umum</h3></div>
-   <label class="f">Nama Panel</label><input id="st_nama" value="${esc(SET.namaPanel)}">
-   <label class="f">Email Dukungan</label><input id="st_email" value="${esc(SET.supportEmail)}">
-   <label class="f">No. WhatsApp Pusat</label><input id="st_wa" value="${esc(SET.waPusat)}" placeholder="62812...">
-   <label class="f">Paket Default Akun Baru</label>
-   <select id="st_def">${PKEYS.map(k=>`<option value="${k}" ${SET.defPaket===k?'selected':''}>${esc(SET.plans[k].n)}</option>`).join('')}</select>
-   <div class="setrow" style="margin-top:16px;border:none;padding-top:4px">
-    <div class="in"><b>Rekam Traffic Website</b><small>Catat setiap kunjungan ke koleksi <span class="mono">webTraffic</span> untuk dashboard.</small></div>
-    <div class="sw ${SET.trafficOn!==false?'on':''}" id="sw_traffic"></div>
-   </div>
-  </div>
-  <div class="card pad">
-   <div class="chead"><h3>Paket Langganan</h3><small style="font-size:11px;color:var(--tx3)">Ditampilkan saat menambah akun</small></div>
-   ${PKEYS.map(k=>{const p=SET.plans[k];return `
-   <div style="border:1px solid var(--bd);border-radius:10px;padding:12px 14px;margin-bottom:10px">
-    <div style="display:flex;align-items:center;gap:10px">
-     <b style="flex:1;text-transform:uppercase;font-size:11px;letter-spacing:.06em;color:var(--tx2)">${k}</b>
-     <div class="sw ${p.on!==false?'on':''}" id="sw_${k}"></div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px">
-     <input id="pl_${k}_n" value="${esc(p.n)}" placeholder="Nama">
-     <input id="pl_${k}_dur" value="${esc(p.dur)}" placeholder="Durasi">
-     <input id="pl_${k}_harga" value="${esc(p.harga)}" placeholder="Harga">
-    </div>
-   </div>`}).join('')}
-   <p style="font-size:11px;color:var(--tx3);line-height:1.5">Switch di kanan atas = paket tersedia untuk dipilih saat membuat akun baru.</p>
-  </div>
- </div>`;
- qsa('#view .sw').forEach(s=>s.addEventListener('click',()=>s.classList.toggle('on')));
- lucide.createIcons();
-}
-async function saveSetting(btn){
- btn.disabled=true;btn.innerHTML='<span class="spin"></span> Menyimpan...';
- const plans={};
- PKEYS.forEach(k=>{plans[k]={n:qv('#pl_'+k+'_n')||DEF_SET.plans[k].n,dur:qv('#pl_'+k+'_dur')||DEF_SET.plans[k].dur,harga:qv('#pl_'+k+'_harga').replace(/^rp\s*/i,''),on:qs('#sw_'+k).classList.contains('on')}});
- const obj={namaPanel:qv('#st_nama')||'Pusat Panel',supportEmail:qv('#st_email'),waPusat:qv('#st_wa'),defPaket:qs('#st_def').value,trafficOn:qs('#sw_traffic').classList.contains('on'),plans,updatedAt:Date.now()};
- try{
-  await dbFS.collection('panelSettings').doc('panel').set(obj,{merge:true});
-  SET=Object.assign(SET,obj);
-  push('ok','Tersimpan','Pengaturan berhasil diperbarui.');
- }catch(e){push('err','Gagal menyimpan',mapErr(e))}
- btn.disabled=false;btn.innerHTML='<i data-lucide="save"></i> Simpan Perubahan';lucide.createIcons();
-}
-
-/* ================= PROFIL ================= */
-function renderProfil(){
- qs('#view').innerHTML=`
- <div class="phead"><div><h1>Profil</h1><p>Kelola informasi akun admin pusat.</p></div></div>
- <div class="g2">
-  <div class="card pad">
-   <div class="chead"><h3>Informasi Admin</h3></div>
-   <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px;flex-wrap:wrap">
-    <div class="photopick" id="ppBox" onclick="qs('#ppFile').click()">${MEdoc.foto?`<img src="${esc(MEdoc.foto)}">`:'<i data-lucide="camera"></i>'}</div>
-    <div><b style="font-size:14px">${esc(MEdoc.nama||'Admin')}</b><div style="font-size:11.5px;color:var(--tx2)">${esc(ME.email)}</div>
-     <button class="btn sm gho" style="margin-top:8px" onclick="qs('#ppFile').click()"><i data-lucide="upload" style="width:12px;height:12px"></i> Ganti Foto</button></div>
-   </div>
-   <input type="file" id="ppFile" class="hide" accept="image/*" onchange="upFoto(this)">
-   <label class="f">Nama Lengkap</label><input id="pf_nama" value="${esc(MEdoc.nama||'')}">
-   <label class="f">No. WhatsApp</label><input id="pf_wa" value="${esc(MEdoc.wa||'')}" placeholder="62812...">
-   <label class="f">Email (tidak bisa diubah)</label><input value="${esc(ME.email)}" disabled>
-   <button class="btn pri" style="margin-top:18px" onclick="saveProfil(this)"><i data-lucide="check"></i> Simpan Profil</button>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:16px">
-   <div class="card pad">
-    <div class="chead"><h3>Keamanan</h3></div>
-    <label class="f">Password Saat Ini</label><input id="my_cur" type="password" autocomplete="current-password">
-    <label class="f">Password Baru</label><input id="my_new" type="password" autocomplete="new-password" placeholder="Minimal 6 karakter">
-    <label class="f">Konfirmasi Password Baru</label><input id="my_con" type="password">
-    <div class="lg-err hide" id="pfErr"><i data-lucide="alert-triangle" style="width:14px;height:14px"></i><span></span></div>
-    <button class="btn pri" style="margin-top:18px" onclick="chgMyPass(this)"><i data-lucide="key-round"></i> Ubah Password</button>
-   </div>
-   <div class="card pad">
-    <div class="chead"><h3>Sesi</h3></div>
-    <div class="setrow"><div class="in"><b>Role</b><small>Admin Pusat — akses penuh panel</small></div><span class="badge b-admin">Admin</span></div>
-    <div class="setrow"><div class="in"><b>UID</b><small class="mono" style="font-size:10.5px;word-break:break-all">${esc(ME.uid)}</small></div></div>
-    <div class="setrow"><div class="in"><b>Keluar</b><small>Akhiri sesi di perangkat ini.</small></div><button class="btn dng sm" onclick="doLogout()">Keluar</button></div>
-   </div>
-  </div>
- </div>`;
- lucide.createIcons();
-}
-function upCloud(file){
- const fd=new FormData();fd.append('file',file);fd.append('upload_preset',CLOUD_PRESET);
- return fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,{method:'POST',body:fd})
-  .then(r=>r.json()).then(j=>{if(!j.secure_url)throw new Error((j.error&&j.error.message)||'upload gagal');return j.secure_url});
-}
-async function upFoto(inp){
- const f=inp.files[0];if(!f)return;
- const box=qs('#ppBox');
- box.insertAdjacentHTML('beforeend','<div class="upspin"><span class="spin"></span> Mengunggah...</div>');
- try{
-  const url=await upCloud(f);
-  await dbFS.collection('akun').doc(ME.uid).update({foto:url});
-  MEdoc.foto=url;renderHeaderDd();renderProfil();
-  push('ok','Foto diperbarui','Foto profil berhasil diunggah ke Cloudinary.');
- }catch(e){box.querySelector('.upspin')&&box.querySelector('.upspin').remove();push('err','Gagal unggah','Coba gambar lain / periksa koneksi.')}
-}
-async function saveProfil(b){
- b.disabled=true;b.innerHTML='<span class="spin"></span> Menyimpan...';
- try{
-  const nama=qv('#pf_nama'),wa=qv('#pf_wa');
-  await dbFS.collection('akun').doc(ME.uid).update({nama,wa});
-  MEdoc.nama=nama;MEdoc.wa=wa;renderHeaderDd();
-  push('ok','Tersimpan','Profil berhasil diperbarui.');
- }catch(e){push('err','Gagal',mapErr(e))}
- b.disabled=false;b.innerHTML='<i data-lucide="check"></i> Simpan Profil';lucide.createIcons();
-}
-async function chgMyPass(b){
- const err=qs('#pfErr');err.classList.add('hide');
- const c=qv('#my_cur'),n=qv('#my_new'),k=qv('#my_con');
- const bad=m=>{err.classList.remove('hide');err.querySelector('span').textContent=m};
- if(!c||!n)return bad('Lengkapi semua kolom.');
- if(n.length<6)return bad('Password baru minimal 6 karakter.');
- if(n!==k)return bad('Konfirmasi password tidak sama.');
- b.disabled=true;b.innerHTML='<span class="spin"></span> Memeriksa...';
- try{
-  const cred=firebase.auth.EmailAuthProvider.credential(ME.email,c);
-  await ME.reauthenticateWithCredential(cred);
-  await ME.updatePassword(n);
-  qs('#my_cur').value=qs('#my_new').value=qs('#my_con').value='';
-  push('ok','Password diubah','Password akunmu berhasil diperbarui.');
- }catch(e){bad(mapErr(e))}
- b.disabled=false;b.innerHTML='<i data-lucide="key-round"></i> Ubah Password';lucide.createIcons();
-}
-
-/* ================= RESIZE ================= */
-let rzT=null;
-window.addEventListener('resize',()=>{clearTimeout(rzT);rzT=setTimeout(()=>{if(route==='dashboard'&&qs('#chartBox'))drawChart()},150)});
-lucide.createIcons();
+/* ================= EXPOSE KE window.AD ================= */
+window.AD.doLogin=doLogin;window.AD.doLogout=doLogout;
+window.AD.ddToggle=ddToggle;window.AD.ddClose=ddClose;window.AD.closePanels=closePanels;
+window.AD.go=go;window.AD.goBack=goBack;window.AD.toggleTheme=toggleTheme;
+window.AD.calSel=calSel;window.AD.calMove=calMove;window.AD.clearCalSel=clearCalSel;
+window.AD.setTab=setTab;window.AD.brSearchRun=brSearchRun;
+window.AD.createBranchModal=createBranchModal;window.AD.createBranch=createBranch;
+window.AD.removeBranch=removeBranch;window.AD.brQueueTab=brQueueTab;
+window.AD.exportAllCSV=exportAllCSV;window.AD.exportBranchCSV=exportBranchCSV;
+window.AD.changePass=changePass;window.AD.sendCS=sendCS;
+window.AD.pickAdminPhoto=pickAdminPhoto;window.AD.saveProfile=saveProfile;window.AD.pwToggle=pwToggle;
+window.AD.galPick=galPick;window.AD.galDel=galDel;window.AD.epPickPhoto=epPickPhoto;window.AD.epPickGal=epPickGal;
+})();
 </script>
 </body>
 </html>
